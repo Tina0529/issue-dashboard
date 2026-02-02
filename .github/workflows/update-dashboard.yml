@@ -1,0 +1,42 @@
+name: Update PM Dashboard
+
+on:
+  # 每天早上 9:00 (北京时间) 自动运行
+  # UTC 时间 01:00 = 北京时间 09:00
+  schedule:
+    - cron: '0 1 * * *'
+
+  # 也可以手动触发
+  workflow_dispatch:
+
+  # 推送到 main 分支时也运行一次
+  push:
+    branches:
+      - main
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate Dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          python scripts/generate_dashboard.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/
+          git diff --staged --quiet || git commit -m "Update dashboard $(date +'%Y-%m-%d %H:%M')"
+          git push
