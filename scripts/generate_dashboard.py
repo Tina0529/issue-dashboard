@@ -2,12 +2,13 @@
 """
 PM Dashboard Generator
 自动从 GitHub Projects 获取 Issue 数据并生成 HTML 报告
+支持与昨天数据对比，显示变化
 """
 
 import json
 import os
 import subprocess
-from datetime import datetime
+from datetime import datetime, timedelta
 from collections import defaultdict
 
 # 从环境变量获取 Token (GitHub Actions 中配置)
@@ -21,6 +22,12 @@ PROJECTS = [
     ("PVT_kwDOBO9uks4BKSLM", "GBaseApp"),
     ("PVT_kwDOBO9uks4BGOWp", "Support产品预研"),
 ]
+
+# 获取项目根目录
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+DATA_DIR = os.path.join(PROJECT_DIR, 'data')
+PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public')
 
 
 def fetch_project_items(project_id, cursor=None):
@@ -120,7 +127,6 @@ def fetch_all_issues():
                 if not content or content.get('state') != 'OPEN':
                     continue
 
-                # 解析字段值
                 fields = {}
                 for fv in item.get('fieldValues', {}).get('nodes', []):
                     if not fv:
@@ -138,7 +144,6 @@ def fetch_all_issues():
                     elif 'name' in fv:
                         fields[field_name] = fv['name']
 
-                # 过滤 Done 状态
                 status = fields.get('Status')
                 if status and status.lower() == 'done':
                     continue
@@ -170,11 +175,109 @@ def fetch_all_issues():
     return all_items
 
 
-def calculate_risk(issue, today):
-    """计算 Issue 风险评分"""
+def save_snapshot(issues, date_str):
+    """保存当天数据快照"""
+    os.makedirs(DATA_DIR, exist_ok=True)
+    filepath = os.path.join(DATA_DIR, f'{date_str}.json')
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(issues, f, ensure_ascii=False, indent=2)
+    print(f"Snapshot saved: {filepath}")
+
+
+def load_snapshot(date_str):
+    """加载指定日期的数据快照"""
+    filepath = os.path.join(DATA_DIR, f'{date_str}.json')
+    if os.path.exists(filepath):
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return None
+
+
+def compare_data(today_issues, yesterday_issues):
+    """对比今天和昨天的数据，计算变化"""
+    changes = {
+        'new_issues': [],           # 新增 issue
+        'closed_issues': [],        # 已关闭 issue
+        'new_overdue': [],          # 新逾期
+        'priority_up': [],          # 优先级提升
+        'priority_down': [],        # 优先级降低
+        'new_assigned': [],         # 新分配负责人
+        'deadline_changed': [],     # 截止日期变更
+    }
+
+    if not yesterday_issues:
+        # 没有昨天数据，所有都标记为新增
+        changes['new_issues'] = [i['number'] for i in today_issues]
+        return changes
+
+    # 构建昨天数据的索引
+    yesterday_map = {i['number']: i for i in yesterday_issues}
+    today_map = {i['number']: i for i in today_issues}
+
+    # 检查新增和变化
+    for issue in today_issues:
+        num = issue['number']
+        if num not in yesterday_map:
+            changes['new_issues'].append(num)
+        else:
+            old = yesterday_map[num]
+            # 检查优先级变化
+            old_p = old.get('priority')
+            new_p = issue.get('priority')
+            priority_order = {'P0': 0, 'P1': 1, 'P2': 2, None: 3}
+            if old_p != new_p:
+                if priority_order.get(new_p, 3) < priority_order.get(old_p, 3):
+                    changes['priority_up'].append({'number': num, 'old': old_p, 'new': new_p})
+                elif priority_order.get(new_p, 3) > priority_order.get(old_p, 3):
+                    changes['priority_down'].append({'number': num, 'old': old_p, 'new': new_p})
+
+            # 检查截止日期变化
+            if old.get('end_date') != issue.get('end_date'):
+                changes['deadline_changed'].append({
+                    'number': num,
+                    'old': old.get('end_date'),
+                    'new': issue.get('end_date')
+                })
+
+            # 检查负责人变化（新分配）
+            old_assignees = set(old.get('assignees', []))
+            new_assignees = set(issue.get('assignees', []))
+            if not old_assignees and new_assignees:
+                changes['new_assigned'].append(num)
+
+    # 检查已关闭（昨天有，今天没有）
+    for num in yesterday_map:
+        if num not in today_map:
+            changes['closed_issues'].append(num)
+
+    return changes
+
+
+def calculate_risk(issue, today, changes):
+    """计算 Issue 风险评分，并标记变化"""
     score = 0
     reasons = []
     suggestions = []
+    issue_changes = []
+
+    num = issue['number']
+
+    # 标记变化
+    if num in changes.get('new_issues', []):
+        issue_changes.append('new')
+    for p in changes.get('priority_up', []):
+        if p['number'] == num:
+            issue_changes.append(f"priority_up:{p['old']}→{p['new']}")
+    for p in changes.get('priority_down', []):
+        if p['number'] == num:
+            issue_changes.append(f"priority_down:{p['old']}→{p['new']}")
+    if num in changes.get('new_assigned', []):
+        issue_changes.append('new_assigned')
+    for d in changes.get('deadline_changed', []):
+        if d['number'] == num:
+            issue_changes.append('deadline_changed')
+
+    issue['changes'] = issue_changes
 
     priority = issue.get('priority')
     if priority == 'P0':
@@ -201,6 +304,10 @@ def calculate_risk(issue, today):
                 score += 40
                 reasons.insert(0, f"已逾期 {abs(days_until)} 天")
                 suggestions.append("立即处理或调整截止日期")
+                # 检查是否是新逾期
+                if 'new' not in issue_changes:
+                    # 可以进一步检查昨天是否已经逾期
+                    pass
             elif days_until == 0:
                 score += 35
                 reasons.insert(0, "今天截止")
@@ -250,14 +357,53 @@ def calculate_risk(issue, today):
     return issue
 
 
-def generate_html(all_issues):
+def get_trend_html(current, previous, reverse=False):
+    """生成趋势 HTML（箭头和数字变化）"""
+    if previous is None:
+        return ''
+    diff = current - previous
+    if diff == 0:
+        return '<span class="trend neutral">-</span>'
+    elif diff > 0:
+        color = 'down' if reverse else 'up'
+        return f'<span class="trend {color}">+{diff}↑</span>'
+    else:
+        color = 'up' if reverse else 'down'
+        return f'<span class="trend {color}">{diff}↓</span>'
+
+
+def get_change_badge(issue):
+    """生成 issue 的变化标签 HTML"""
+    changes = issue.get('changes', [])
+    if not changes:
+        return ''
+
+    badges = []
+    for change in changes:
+        if change == 'new':
+            badges.append('<span class="change-badge new">🆕 新增</span>')
+        elif change.startswith('priority_up:'):
+            detail = change.split(':')[1]
+            badges.append(f'<span class="change-badge priority-up">⬆️ {detail}</span>')
+        elif change.startswith('priority_down:'):
+            detail = change.split(':')[1]
+            badges.append(f'<span class="change-badge priority-down">⬇️ {detail}</span>')
+        elif change == 'new_assigned':
+            badges.append('<span class="change-badge assigned">👤 新分配</span>')
+        elif change == 'deadline_changed':
+            badges.append('<span class="change-badge deadline">📅 截止日变更</span>')
+
+    return ' '.join(badges)
+
+
+def generate_html(all_issues, changes, yesterday_stats):
     """生成 HTML Dashboard"""
     now = datetime.now()
     today = now.date()
 
     # 计算风险
     for issue in all_issues:
-        calculate_risk(issue, today)
+        calculate_risk(issue, today, changes)
 
     # 分类统计
     p0_issues = sorted([i for i in all_issues if i.get('priority') == 'P0'],
@@ -297,7 +443,36 @@ def generate_html(all_issues):
     sorted_labels = sorted(label_stats.items(), key=lambda x: -(x[1]['overdue'] * 10 + x[1]['p0'] * 5 + x[1]['count']))
     sorted_assignees = sorted(assignee_stats.items(), key=lambda x: -(x[1]['overdue'] * 10 + x[1]['p0'] * 5 + x[1]['total']))
 
-    # 生成 HTML (完整模板)
+    # 当前统计
+    current_stats = {
+        'total': len(all_issues),
+        'overdue': len(overdue_issues),
+        'due_soon': len(due_soon),
+        'p0': len(p0_issues),
+        'p1': len(p1_issues),
+        'p2': len(p2_issues),
+        'unassigned': len(unassigned),
+    }
+
+    # 生成趋势 HTML
+    trends = {}
+    if yesterday_stats:
+        trends['overdue'] = get_trend_html(current_stats['overdue'], yesterday_stats.get('overdue'))
+        trends['due_soon'] = get_trend_html(current_stats['due_soon'], yesterday_stats.get('due_soon'))
+        trends['p0'] = get_trend_html(current_stats['p0'], yesterday_stats.get('p0'))
+        trends['p1'] = get_trend_html(current_stats['p1'], yesterday_stats.get('p1'))
+        trends['p2'] = get_trend_html(current_stats['p2'], yesterday_stats.get('p2'))
+        trends['unassigned'] = get_trend_html(current_stats['unassigned'], yesterday_stats.get('unassigned'))
+        trends['total'] = get_trend_html(current_stats['total'], yesterday_stats.get('total'))
+    else:
+        for k in ['overdue', 'due_soon', 'p0', 'p1', 'p2', 'unassigned', 'total']:
+            trends[k] = ''
+
+    # 变化摘要
+    has_changes = bool(changes.get('new_issues') or changes.get('closed_issues') or
+                       changes.get('priority_up') or changes.get('priority_down'))
+
+    # 生成 HTML
     html = generate_html_template(
         now=now,
         all_issues=all_issues,
@@ -310,10 +485,13 @@ def generate_html(all_issues):
         sorted_labels=sorted_labels,
         sorted_assignees=sorted_assignees,
         label_stats=label_stats,
-        assignee_stats=assignee_stats
+        current_stats=current_stats,
+        trends=trends,
+        changes=changes,
+        has_changes=has_changes,
     )
 
-    return html
+    return html, current_stats
 
 
 def generate_html_template(**kwargs):
@@ -329,6 +507,38 @@ def generate_html_template(**kwargs):
     sorted_labels = kwargs['sorted_labels']
     sorted_assignees = kwargs['sorted_assignees']
     label_stats = kwargs['label_stats']
+    current_stats = kwargs['current_stats']
+    trends = kwargs['trends']
+    changes = kwargs['changes']
+    has_changes = kwargs['has_changes']
+
+    # 变化摘要 HTML
+    changes_summary_html = ''
+    if has_changes:
+        new_count = len(changes.get('new_issues', []))
+        closed_count = len(changes.get('closed_issues', []))
+        priority_up_count = len(changes.get('priority_up', []))
+        priority_down_count = len(changes.get('priority_down', []))
+        deadline_count = len(changes.get('deadline_changed', []))
+        assigned_count = len(changes.get('new_assigned', []))
+
+        changes_summary_html = f'''
+            <div class="changes-summary">
+                <div class="changes-header">
+                    <span class="changes-icon">📈</span>
+                    <span class="changes-title">今日变化</span>
+                    <span class="changes-subtitle">vs 昨天</span>
+                </div>
+                <div class="changes-items">
+                    {'<div class="change-item new"><span class="change-value">+' + str(new_count) + '</span><span class="change-label">🆕 新增</span></div>' if new_count else ''}
+                    {'<div class="change-item closed"><span class="change-value">-' + str(closed_count) + '</span><span class="change-label">✅ 已关闭</span></div>' if closed_count else ''}
+                    {'<div class="change-item up"><span class="change-value">' + str(priority_up_count) + '</span><span class="change-label">⬆️ 优先级提升</span></div>' if priority_up_count else ''}
+                    {'<div class="change-item down"><span class="change-value">' + str(priority_down_count) + '</span><span class="change-label">⬇️ 优先级降低</span></div>' if priority_down_count else ''}
+                    {'<div class="change-item deadline"><span class="change-value">' + str(deadline_count) + '</span><span class="change-label">📅 截止日变更</span></div>' if deadline_count else ''}
+                    {'<div class="change-item assigned"><span class="change-value">' + str(assigned_count) + '</span><span class="change-label">👤 新分配</span></div>' if assigned_count else ''}
+                </div>
+            </div>
+        '''
 
     html = '''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -352,7 +562,7 @@ def generate_html_template(**kwargs):
             --warning: #EAB308;
             --danger: #EF4444;
             --sidebar-width: 220px;
-            --header-height: 130px;
+            --header-height: 180px;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -368,6 +578,10 @@ def generate_html_template(**kwargs):
             from { opacity: 0; transform: translateX(-10px); }
             to { opacity: 1; transform: translateX(0); }
         }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
         .content-section { animation: fadeIn 0.4s ease-out; }
         .risk-item {
             animation: slideIn 0.3s ease-out;
@@ -382,6 +596,72 @@ def generate_html_template(**kwargs):
         ::-webkit-scrollbar-track { background: var(--bg-primary); }
         ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+        /* 变化摘要 */
+        .changes-summary {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
+        .changes-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .changes-icon { font-size: 16px; }
+        .changes-title { font-weight: 600; font-size: 14px; color: white; }
+        .changes-subtitle { font-size: 11px; color: var(--text-muted); }
+        .changes-items {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .change-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        .change-item.new { background: rgba(34, 197, 94, 0.2); color: #86EFAC; }
+        .change-item.closed { background: rgba(59, 130, 246, 0.2); color: #93C5FD; }
+        .change-item.up { background: rgba(239, 68, 68, 0.2); color: #FCA5A5; }
+        .change-item.down { background: rgba(234, 179, 8, 0.2); color: #FDE047; }
+        .change-item.deadline { background: rgba(168, 85, 247, 0.2); color: #D8B4FE; }
+        .change-item.assigned { background: rgba(251, 146, 60, 0.2); color: #FDBA74; }
+        .change-value { font-weight: 700; }
+
+        /* 趋势指示器 */
+        .trend {
+            font-size: 11px;
+            margin-left: 4px;
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+        .trend.up { color: #FCA5A5; background: rgba(239, 68, 68, 0.2); }
+        .trend.down { color: #86EFAC; background: rgba(34, 197, 94, 0.2); }
+        .trend.neutral { color: var(--text-muted); }
+
+        /* 变化标签 */
+        .change-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 500;
+            margin-left: 8px;
+            animation: pulse 2s infinite;
+        }
+        .change-badge.new { background: rgba(34, 197, 94, 0.3); color: #86EFAC; }
+        .change-badge.priority-up { background: rgba(239, 68, 68, 0.3); color: #FCA5A5; }
+        .change-badge.priority-down { background: rgba(234, 179, 8, 0.3); color: #FDE047; }
+        .change-badge.assigned { background: rgba(251, 146, 60, 0.3); color: #FDBA74; }
+        .change-badge.deadline { background: rgba(168, 85, 247, 0.3); color: #D8B4FE; }
 
         .sidebar {
             position: fixed;
@@ -399,16 +679,8 @@ def generate_html_template(**kwargs):
             padding: 20px;
             border-bottom: 1px solid var(--border-color);
         }
-        .logo-text {
-            font-size: 18px;
-            font-weight: 700;
-            color: white;
-        }
-        .logo-subtitle {
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
+        .logo-text { font-size: 18px; font-weight: 700; color: white; }
+        .logo-subtitle { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
         .sidebar-nav {
             flex: 1;
             padding: 16px 12px;
@@ -434,20 +706,9 @@ def generate_html_template(**kwargs):
             margin-bottom: 4px;
             font-size: 13px;
         }
-        .nav-item:hover {
-            background: var(--bg-card-hover);
-            color: var(--text-primary);
-        }
-        .nav-item.active {
-            background: rgba(59, 130, 246, 0.15);
-            color: var(--primary);
-        }
-        .nav-item .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
+        .nav-item:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+        .nav-item.active { background: rgba(59, 130, 246, 0.15); color: var(--primary); }
+        .nav-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
         .nav-item .badge {
             margin-left: auto;
             background: var(--bg-card-hover);
@@ -455,9 +716,7 @@ def generate_html_template(**kwargs):
             border-radius: 10px;
             font-size: 11px;
         }
-        .nav-item.active .badge {
-            background: rgba(59, 130, 246, 0.3);
-        }
+        .nav-item.active .badge { background: rgba(59, 130, 246, 0.3); }
 
         .top-header {
             position: fixed;
@@ -468,7 +727,7 @@ def generate_html_template(**kwargs):
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border-color);
             z-index: 99;
-            padding: 16px 24px;
+            padding: 12px 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -478,20 +737,9 @@ def generate_html_template(**kwargs):
             align-items: center;
             justify-content: space-between;
         }
-        .header-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
-        }
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .search-box {
-            position: relative;
-            width: 240px;
-        }
+        .header-title { font-size: 18px; font-weight: 600; color: white; }
+        .header-actions { display: flex; align-items: center; gap: 16px; }
+        .search-box { position: relative; width: 240px; }
         .search-box input {
             width: 100%;
             background: var(--bg-card);
@@ -511,29 +759,22 @@ def generate_html_template(**kwargs):
             transform: translateY(-50%);
             color: var(--text-muted);
         }
-        .timestamp {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
+        .timestamp { font-size: 12px; color: var(--text-muted); }
 
         .stats-filter-row {
             display: flex;
             align-items: center;
             gap: 16px;
         }
-        .stats-row {
-            display: flex;
-            gap: 10px;
-            flex: 1;
-        }
+        .stats-row { display: flex; gap: 8px; flex: 1; flex-wrap: wrap; }
         .stat-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 10px 16px;
+            padding: 8px 14px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
             transition: all 0.2s;
             position: relative;
@@ -542,9 +783,7 @@ def generate_html_template(**kwargs):
         .stat-box::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 3px;
             opacity: 0;
             transition: opacity 0.2s;
@@ -555,8 +794,8 @@ def generate_html_template(**kwargs):
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
         .stat-box:hover::before { opacity: 1; }
-        .stat-box .value { font-size: 22px; font-weight: 700; }
-        .stat-box .label { font-size: 11px; color: var(--text-muted); }
+        .stat-box .value { font-size: 20px; font-weight: 700; }
+        .stat-box .label { font-size: 10px; color: var(--text-muted); }
         .stat-box.danger .value { color: var(--danger); }
         .stat-box.danger::before { background: var(--danger); }
         .stat-box.warning .value { color: var(--warning); }
@@ -564,35 +803,25 @@ def generate_html_template(**kwargs):
         .stat-box.info .value { color: var(--primary); }
         .stat-box.info::before { background: var(--primary); }
 
-        .customer-filter {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .filter-label {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
+        .customer-filter { display: flex; align-items: center; gap: 10px; }
+        .filter-label { font-size: 12px; color: var(--text-muted); }
         .customer-select {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 10px 16px;
+            padding: 8px 14px;
             color: var(--text-primary);
             font-size: 13px;
             cursor: pointer;
-            min-width: 200px;
+            min-width: 180px;
             outline: none;
         }
         .customer-select:focus { border-color: var(--primary); }
-        .customer-select option {
-            background: var(--bg-card);
-            color: var(--text-primary);
-        }
+        .customer-select option { background: var(--bg-card); color: var(--text-primary); }
 
         .main-content {
             margin-left: var(--sidebar-width);
-            padding: calc(var(--header-height) + 20px) 24px 24px;
+            padding: calc(var(--header-height) + 16px) 24px 24px;
         }
         .content-section {
             background: var(--bg-card);
@@ -618,8 +847,7 @@ def generate_html_template(**kwargs):
             color: white;
         }
         .section-title .icon {
-            width: 24px;
-            height: 24px;
+            width: 24px; height: 24px;
             border-radius: 6px;
             display: flex;
             align-items: center;
@@ -640,10 +868,10 @@ def generate_html_template(**kwargs):
         .risk-item {
             display: flex;
             align-items: flex-start;
-            padding: 16px;
+            padding: 14px;
             background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 41, 59, 0.8) 100%);
             border-radius: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border-left: 4px solid;
             transition: all 0.3s;
         }
@@ -655,17 +883,17 @@ def generate_html_template(**kwargs):
         .risk-item.high { border-left-color: var(--warning); background: linear-gradient(135deg, rgba(234, 179, 8, 0.1) 0%, var(--bg-card) 100%); }
         .risk-item.medium { border-left-color: var(--primary); }
         .risk-item.low { border-left-color: var(--success); }
+        .risk-item.has-change { box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.5); }
 
         .risk-priority {
-            width: 40px;
-            height: 40px;
+            width: 36px; height: 36px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 12px;
-            margin-right: 16px;
+            font-size: 11px;
+            margin-right: 14px;
             flex-shrink: 0;
         }
         .risk-priority.p0 { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
@@ -673,117 +901,111 @@ def generate_html_template(**kwargs):
         .risk-priority.p2 { background: rgba(59, 130, 246, 0.2); color: var(--primary); }
         .risk-priority.none { background: var(--bg-card-hover); color: var(--text-muted); }
         .risk-content { flex: 1; min-width: 0; }
-        .risk-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+        .risk-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; display: flex; align-items: center; flex-wrap: wrap; }
         .risk-title a { color: var(--text-primary); text-decoration: none; }
         .risk-title a:hover { color: var(--primary); }
         .risk-meta {
             display: flex;
-            gap: 12px;
-            font-size: 12px;
+            gap: 10px;
+            font-size: 11px;
             color: var(--text-muted);
             flex-wrap: wrap;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .risk-reason {
             display: inline-flex;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 6px;
-            font-size: 12px;
+            font-size: 11px;
         }
         .risk-item.critical .risk-reason { background: rgba(239, 68, 68, 0.15); color: #FCA5A5; }
         .risk-item.high .risk-reason { background: rgba(234, 179, 8, 0.15); color: #FDE047; }
         .risk-item.medium .risk-reason { background: rgba(59, 130, 246, 0.15); color: #93C5FD; }
         .risk-suggestion {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
-            margin-top: 6px;
-            padding-left: 12px;
+            margin-top: 4px;
+            padding-left: 10px;
             border-left: 2px solid var(--border-color);
         }
 
         .badge {
             display: inline-flex;
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
         }
         .badge.danger { background: rgba(239, 68, 68, 0.2); color: #FCA5A5; }
         .badge.warning { background: rgba(234, 179, 8, 0.2); color: #FDE047; }
         .badge.info { background: rgba(59, 130, 246, 0.2); color: #93C5FD; }
         .deadline-badge {
-            padding: 3px 10px;
+            padding: 2px 8px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
         }
         .deadline-badge.overdue { background: var(--danger); color: white; }
         .deadline-badge.urgent { background: var(--warning); color: #1E293B; }
         .deadline-badge.normal { background: var(--bg-card-hover); color: var(--text-muted); }
 
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        @media (max-width: 1400px) {
-            .two-col { grid-template-columns: 1fr; }
-        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        @media (max-width: 1600px) { .three-col { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 1400px) { .two-col { grid-template-columns: 1fr; } }
+        @media (max-width: 1200px) { .three-col { grid-template-columns: 1fr; } }
+
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
         }
         .card-item {
             background: var(--bg-card-hover);
             border-radius: 12px;
-            padding: 16px;
+            padding: 14px;
             border: 1px solid var(--border-color);
             cursor: pointer;
             transition: all 0.2s;
         }
-        .card-item:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
+        .card-item:hover { border-color: var(--primary); transform: translateY(-2px); }
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        .card-name { font-size: 14px; font-weight: 600; color: white; }
+        .card-name { font-size: 13px; font-weight: 600; color: white; }
         .card-count {
             background: var(--primary);
             color: white;
-            padding: 2px 10px;
+            padding: 2px 8px;
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
         }
-        .card-stats { display: flex; gap: 8px; flex-wrap: wrap; }
+        .card-stats { display: flex; gap: 6px; flex-wrap: wrap; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
-        .empty-state {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-muted);
-        }
+        .empty-state { text-align: center; padding: 40px; color: var(--text-muted); }
         .empty-state-icon { font-size: 48px; margin-bottom: 16px; }
         .assignee-select {
             background: var(--bg-card-hover);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 8px 16px;
+            padding: 8px 14px;
             color: var(--text-primary);
-            font-size: 13px;
-            min-width: 200px;
+            font-size: 12px;
+            min-width: 180px;
         }
         .assignee-select:focus { outline: none; border-color: var(--primary); }
 
         @media (max-width: 900px) {
-            :root { --sidebar-width: 0px; }
+            :root { --sidebar-width: 0px; --header-height: 220px; }
             .sidebar { display: none; }
             .top-header { left: 0; }
+            .stats-row { gap: 6px; }
+            .stat-box { padding: 6px 10px; }
+            .stat-box .value { font-size: 16px; }
         }
     </style>
 </head>
@@ -847,41 +1069,42 @@ def generate_html_template(**kwargs):
                 <div class="timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
             </div>
         </div>
+        ''' + changes_summary_html + '''
         <div class="stats-filter-row">
             <div class="stats-row">
                 <div class="stat-box danger" onclick="showTab('deadline')">
-                    <div class="value">''' + str(len(overdue_issues)) + '''</div>
-                    <div class="label">🚨 已逾期</div>
+                    <div class="value">''' + str(current_stats['overdue']) + '''</div>
+                    <div class="label">🚨 已逾期 ''' + trends['overdue'] + '''</div>
                 </div>
                 <div class="stat-box warning" onclick="showTab('deadline')">
-                    <div class="value">''' + str(len(due_soon)) + '''</div>
-                    <div class="label">⏰ 7天内</div>
+                    <div class="value">''' + str(current_stats['due_soon']) + '''</div>
+                    <div class="label">⏰ 7天内 ''' + trends['due_soon'] + '''</div>
                 </div>
                 <div class="stat-box danger" onclick="showTab('priority')">
-                    <div class="value">''' + str(len(p0_issues)) + '''</div>
-                    <div class="label">🔴 P0</div>
+                    <div class="value">''' + str(current_stats['p0']) + '''</div>
+                    <div class="label">🔴 P0 ''' + trends['p0'] + '''</div>
                 </div>
                 <div class="stat-box warning" onclick="showTab('priority')">
-                    <div class="value">''' + str(len(p1_issues)) + '''</div>
-                    <div class="label">🟠 P1</div>
+                    <div class="value">''' + str(current_stats['p1']) + '''</div>
+                    <div class="label">🟠 P1 ''' + trends['p1'] + '''</div>
                 </div>
                 <div class="stat-box info" onclick="showTab('priority')">
-                    <div class="value">''' + str(len(p2_issues)) + '''</div>
-                    <div class="label">🔵 P2</div>
+                    <div class="value">''' + str(current_stats['p2']) + '''</div>
+                    <div class="label">🔵 P2 ''' + trends['p2'] + '''</div>
                 </div>
                 <div class="stat-box" onclick="showTab('assignees'); setTimeout(() => filterByAssignee('__unassigned__'), 100)">
-                    <div class="value">''' + str(len(unassigned)) + '''</div>
-                    <div class="label">👤 未分配</div>
+                    <div class="value">''' + str(current_stats['unassigned']) + '''</div>
+                    <div class="label">👤 未分配 ''' + trends['unassigned'] + '''</div>
                 </div>
                 <div class="stat-box info">
-                    <div class="value">''' + str(len(all_issues)) + '''</div>
-                    <div class="label">📋 总计</div>
+                    <div class="value">''' + str(current_stats['total']) + '''</div>
+                    <div class="label">📋 总计 ''' + trends['total'] + '''</div>
                 </div>
             </div>
             <div class="customer-filter">
-                <span class="filter-label">客户筛选:</span>
+                <span class="filter-label">客户:</span>
                 <select class="customer-select" id="customerSelect" onchange="filterByCustomer(this.value)">
-                    <option value="">全部客户 (''' + str(len(all_issues)) + ''')</option>
+                    <option value="">全部 (''' + str(len(all_issues)) + ''')</option>
 '''
 
     for label, stats in sorted_labels:
@@ -909,12 +1132,14 @@ def generate_html_template(**kwargs):
         priority_class = priority.lower() if priority in ['P0', 'P1', 'P2'] else 'none'
         assignee_str = ', '.join(issue.get('assignees', [])) or '未分配'
         labels_str = ', '.join(issue.get('labels', [])[:2]) or '-'
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
 
         html += f'''
-                    <div class="risk-item critical" data-labels="{','.join(issue.get('labels', []))}">
+                    <div class="risk-item critical {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
                         <div class="risk-priority {priority_class}">{priority}</div>
                         <div class="risk-content">
-                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:50]}{'...' if len(issue['title']) > 50 else ''}</a></div>
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:45]}{'...' if len(issue['title']) > 45 else ''}</a>{change_badge}</div>
                             <div class="risk-meta"><span>🏷️ {labels_str}</span><span>👤 {assignee_str}</span></div>
                             <span class="risk-reason">⚠️ 已逾期 {abs(issue['days_until_deadline'])} 天</span>
                         </div>
@@ -940,12 +1165,14 @@ def generate_html_template(**kwargs):
         assignee_str = ', '.join(issue.get('assignees', [])) or '未分配'
         days = issue['days_until_deadline']
         days_text = '今天截止!' if days == 0 else f'{days} 天后截止'
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
 
         html += f'''
-                    <div class="risk-item {risk_class}" data-labels="{','.join(issue.get('labels', []))}">
+                    <div class="risk-item {risk_class} {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
                         <div class="risk-priority {priority_class}">{priority}</div>
                         <div class="risk-content">
-                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:50]}{'...' if len(issue['title']) > 50 else ''}</a></div>
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:45]}{'...' if len(issue['title']) > 45 else ''}</a>{change_badge}</div>
                             <div class="risk-meta"><span>🏷️ {', '.join(issue.get('labels', [])[:2]) or '-'}</span><span>👤 {assignee_str}</span></div>
                             <span class="risk-reason">📅 {days_text}</span>
                         </div>
@@ -974,12 +1201,14 @@ def generate_html_template(**kwargs):
         priority_class = priority.lower() if priority in ['P0', 'P1', 'P2'] else 'none'
         assignee_str = ', '.join(issue.get('assignees', [])) or '未分配'
         suggestion = issue['risk_suggestions'][0] if issue.get('risk_suggestions') else '请立即处理'
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
 
         html += f'''
-                    <div class="risk-item critical" data-labels="{','.join(issue.get('labels', []))}">
+                    <div class="risk-item critical {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
                         <div class="risk-priority {priority_class}">{priority}</div>
                         <div class="risk-content">
-                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title']}</a></div>
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title']}</a>{change_badge}</div>
                             <div class="risk-meta"><span>🏷️ {', '.join(issue.get('labels', [])[:2]) or '-'}</span><span>👤 {assignee_str}</span></div>
                             <span class="risk-reason">⚠️ 已逾期 {abs(issue['days_until_deadline'])} 天</span>
                             <div class="risk-suggestion">💡 {suggestion}</div>
@@ -1005,12 +1234,14 @@ def generate_html_template(**kwargs):
         risk_class = 'critical' if issue['days_until_deadline'] <= 1 else 'high' if issue['days_until_deadline'] <= 3 else 'medium'
         assignee_str = ', '.join(issue.get('assignees', [])) or '未分配'
         days = issue['days_until_deadline']
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
 
         html += f'''
-                    <div class="risk-item {risk_class}" data-labels="{','.join(issue.get('labels', []))}">
+                    <div class="risk-item {risk_class} {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
                         <div class="risk-priority {priority_class}">{priority}</div>
                         <div class="risk-content">
-                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title']}</a></div>
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title']}</a>{change_badge}</div>
                             <div class="risk-meta"><span>🏷️ {', '.join(issue.get('labels', [])[:2]) or '-'}</span><span>👤 {assignee_str}</span></div>
                             <span class="risk-reason">📅 {days}天后截止</span>
                         </div>
@@ -1026,7 +1257,7 @@ def generate_html_template(**kwargs):
         </div>
 
         <div id="tab-priority" class="tab-content">
-            <div class="two-col">
+            <div class="three-col">
                 <div class="content-section">
                     <div class="section-header">
                         <div class="section-title"><span class="icon danger">🔴</span>P0 最高优先</div>
@@ -1043,12 +1274,14 @@ def generate_html_template(**kwargs):
                 deadline_html = f'<span class="deadline-badge overdue">逾期{abs(days)}天</span>'
             elif days <= 7:
                 deadline_html = f'<span class="deadline-badge urgent">{issue["end_date_formatted"]}</span>'
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
 
         html += f'''
-                    <div class="risk-item critical" data-labels="{','.join(issue.get('labels', []))}">
+                    <div class="risk-item critical {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
                         <div class="risk-priority p0">P0</div>
                         <div class="risk-content">
-                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title']}</a></div>
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:50]}{'...' if len(issue['title']) > 50 else ''}</a>{change_badge}</div>
                             <div class="risk-meta"><span>🏷️ {', '.join(issue.get('labels', [])[:2]) or '-'}</span><span>👤 {assignee_str}</span>{deadline_html}</div>
                             <span class="risk-reason">🔴 {issue['risk_summary']}</span>
                         </div>
@@ -1076,16 +1309,52 @@ def generate_html_template(**kwargs):
                 deadline_html = f'<span class="deadline-badge overdue">逾期{abs(days)}天</span>'
             elif days <= 7:
                 deadline_html = f'<span class="deadline-badge urgent">{issue["end_date_formatted"]}</span>'
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
 
         html += f'''
-                    <div class="risk-item high" data-labels="{','.join(issue.get('labels', []))}">
+                    <div class="risk-item high {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
                         <div class="risk-priority p1">P1</div>
                         <div class="risk-content">
-                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:60]}{'...' if len(issue['title']) > 60 else ''}</a></div>
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:50]}{'...' if len(issue['title']) > 50 else ''}</a>{change_badge}</div>
                             <div class="risk-meta"><span>🏷️ {', '.join(issue.get('labels', [])[:2]) or '-'}</span><span>👤 {assignee_str}</span>{deadline_html}</div>
                         </div>
                     </div>
 '''
+
+    html += '''
+                </div>
+                <div class="content-section">
+                    <div class="section-header">
+                        <div class="section-title"><span class="icon info">🔵</span>P2 一般优先</div>
+                        <span class="section-count">''' + str(len(p2_issues)) + '''</span>
+                    </div>
+'''
+
+    for issue in p2_issues[:20]:
+        assignee_str = ', '.join(issue.get('assignees', [])) or '未分配'
+        deadline_html = ''
+        if issue.get('end_date_formatted'):
+            days = issue.get('days_until_deadline', 999)
+            if days < 0:
+                deadline_html = f'<span class="deadline-badge overdue">逾期{abs(days)}天</span>'
+            elif days <= 7:
+                deadline_html = f'<span class="deadline-badge urgent">{issue["end_date_formatted"]}</span>'
+        change_badge = get_change_badge(issue)
+        has_change_class = 'has-change' if issue.get('changes') else ''
+
+        html += f'''
+                    <div class="risk-item medium {has_change_class}" data-labels="{','.join(issue.get('labels', []))}">
+                        <div class="risk-priority p2">P2</div>
+                        <div class="risk-content">
+                            <div class="risk-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:50]}{'...' if len(issue['title']) > 50 else ''}</a>{change_badge}</div>
+                            <div class="risk-meta"><span>🏷️ {', '.join(issue.get('labels', [])[:2]) or '-'}</span><span>👤 {assignee_str}</span>{deadline_html}</div>
+                        </div>
+                    </div>
+'''
+
+    if not p2_issues:
+        html += '                    <div class="empty-state"><div class="empty-state-icon">✅</div><p>没有 P2</p></div>'
 
     html += '''
                 </div>
@@ -1129,10 +1398,10 @@ def generate_html_template(**kwargs):
 
         <div id="tab-assignees" class="tab-content">
             <div class="content-section">
-                <div class="section-header">
-                    <div class="section-title"><span class="icon info">👥</span>按负责人分类</div>
+                <div class="section-header" id="assigneeHeader">
+                    <div class="section-title" id="assigneeTitle"><span class="icon info">👥</span>按负责人分类</div>
                     <select class="assignee-select" id="assigneeSelect" onchange="filterByAssignee(this.value)">
-                        <option value="">-- 选择负责人 --</option>
+                        <option value="">-- 全部负责人 --</option>
                         <option value="__unassigned__">⚠️ 未分配 (''' + str(len(unassigned)) + ''')</option>
 '''
 
@@ -1232,16 +1501,25 @@ def generate_html_template(**kwargs):
 
         function filterByAssignee(assignee) {
             document.getElementById('assigneeSelect').value = assignee;
+            const cardsSection = document.getElementById('assigneeCards');
+            const titleSection = document.getElementById('assigneeTitle');
+
             let issues, title;
             if (assignee === '__unassigned__') {
                 issues = allIssues.filter(i => !i.assignees || i.assignees.length === 0);
                 title = '未分配';
+                if (cardsSection) cardsSection.style.display = 'none';
+                if (titleSection) titleSection.style.display = 'none';
             } else if (!assignee) {
                 document.getElementById('assigneeIssueList').innerHTML = '';
+                if (cardsSection) cardsSection.style.display = '';
+                if (titleSection) titleSection.style.display = '';
                 return;
             } else {
                 issues = allIssues.filter(i => i.assignees && i.assignees.includes(assignee));
                 title = assignee;
+                if (cardsSection) cardsSection.style.display = '';
+                if (titleSection) titleSection.style.display = '';
             }
             renderIssueList('assigneeIssueList', title, issues);
         }
@@ -1255,7 +1533,17 @@ def generate_html_template(**kwargs):
                 const riskClass = issue.risk_level || 'medium';
                 const assignee = issue.assignees?.length ? issue.assignees.join(', ') : '未分配';
                 const labels = issue.labels?.slice(0, 2).join(', ') || '-';
-                html += '<div class="risk-item ' + riskClass + '"><div class="risk-priority ' + priorityClass + '">' + priority + '</div><div class="risk-content"><div class="risk-title"><a href="' + issue.url + '" target="_blank">#' + issue.number + ' ' + issue.title + '</a></div><div class="risk-meta"><span>🏷️ ' + labels + '</span><span>👤 ' + assignee + '</span></div><span class="risk-reason">' + (issue.risk_summary || '正常') + '</span></div></div>';
+                const changes = issue.changes || [];
+                let changeBadges = '';
+                changes.forEach(c => {
+                    if (c === 'new') changeBadges += '<span class="change-badge new">🆕 新增</span>';
+                    else if (c.startsWith('priority_up:')) changeBadges += '<span class="change-badge priority-up">⬆️ ' + c.split(':')[1] + '</span>';
+                    else if (c.startsWith('priority_down:')) changeBadges += '<span class="change-badge priority-down">⬇️ ' + c.split(':')[1] + '</span>';
+                    else if (c === 'new_assigned') changeBadges += '<span class="change-badge assigned">👤 新分配</span>';
+                    else if (c === 'deadline_changed') changeBadges += '<span class="change-badge deadline">📅 截止日变更</span>';
+                });
+                const hasChange = changes.length > 0 ? 'has-change' : '';
+                html += '<div class="risk-item ' + riskClass + ' ' + hasChange + '"><div class="risk-priority ' + priorityClass + '">' + priority + '</div><div class="risk-content"><div class="risk-title"><a href="' + issue.url + '" target="_blank">#' + issue.number + ' ' + issue.title + '</a>' + changeBadges + '</div><div class="risk-meta"><span>🏷️ ' + labels + '</span><span>👤 ' + assignee + '</span></div><span class="risk-reason">' + (issue.risk_summary || '正常') + '</span></div></div>';
             });
             document.getElementById(containerId).innerHTML = html;
         }
@@ -1273,22 +1561,62 @@ def main():
         print("Error: GITHUB_TOKEN not set")
         return
 
+    now = datetime.now()
+    today_str = now.strftime('%Y-%m-%d')
+    yesterday_str = (now - timedelta(days=1)).strftime('%Y-%m-%d')
+
     # 获取所有 Issues
     all_issues = fetch_all_issues()
 
+    # 加载昨天的数据
+    yesterday_issues = load_snapshot(yesterday_str)
+    if yesterday_issues:
+        print(f"Loaded yesterday's data: {len(yesterday_issues)} issues")
+    else:
+        print("No yesterday's data found (first run or data missing)")
+
+    # 计算昨天的统计数据
+    yesterday_stats = None
+    if yesterday_issues:
+        yesterday_today = (now - timedelta(days=1)).date()
+        y_overdue = len([i for i in yesterday_issues if i.get('end_date') and
+                         datetime.strptime(i['end_date'], '%Y-%m-%d').date() < yesterday_today])
+        y_due_soon = len([i for i in yesterday_issues if i.get('end_date') and
+                          0 <= (datetime.strptime(i['end_date'], '%Y-%m-%d').date() - yesterday_today).days <= 7])
+        yesterday_stats = {
+            'total': len(yesterday_issues),
+            'overdue': y_overdue,
+            'due_soon': y_due_soon,
+            'p0': len([i for i in yesterday_issues if i.get('priority') == 'P0']),
+            'p1': len([i for i in yesterday_issues if i.get('priority') == 'P1']),
+            'p2': len([i for i in yesterday_issues if i.get('priority') == 'P2']),
+            'unassigned': len([i for i in yesterday_issues if not i.get('assignees')]),
+        }
+
+    # 对比数据
+    changes = compare_data(all_issues, yesterday_issues)
+    print(f"Changes: +{len(changes['new_issues'])} new, -{len(changes['closed_issues'])} closed, "
+          f"{len(changes['priority_up'])} priority up, {len(changes['priority_down'])} priority down")
+
     # 生成 HTML
-    html = generate_html(all_issues)
+    html, current_stats = generate_html(all_issues, changes, yesterday_stats)
 
-    # 保存到 public 目录
-    output_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'public')
-    os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, 'index.html')
-
+    # 保存 HTML
+    os.makedirs(PUBLIC_DIR, exist_ok=True)
+    output_path = os.path.join(PUBLIC_DIR, 'index.html')
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
     print(f"Dashboard generated: {output_path}")
     print(f"Total issues: {len(all_issues)}")
+
+    # 保存今天的快照
+    save_snapshot(all_issues, today_str)
+
+    # 同时保存统计数据
+    stats_path = os.path.join(DATA_DIR, f'{today_str}_stats.json')
+    with open(stats_path, 'w', encoding='utf-8') as f:
+        json.dump(current_stats, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == '__main__':
