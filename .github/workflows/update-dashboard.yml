@@ -1,10 +1,10 @@
 name: Update PM Dashboard
 
 on:
-  # 每天早上 9:00 (北京时间) 自动运行
-  # UTC 时间 01:00 = 北京时间 09:00
+  # 每天早上 8:00 (东京时间) 自动运行
+  # UTC 时间 23:00 = 东京时间 08:00 (JST = UTC+9)
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 23 * * *'
 
   # 也可以手动触发
   workflow_dispatch:
@@ -13,6 +13,9 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
 
 jobs:
   update:
