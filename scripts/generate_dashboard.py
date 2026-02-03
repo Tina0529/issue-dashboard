@@ -1010,6 +1010,95 @@ def generate_html_template(**kwargs):
             .stat-box { padding: 6px 10px; }
             .stat-box .value { font-size: 16px; }
         }
+
+        /* 刷新按钮 */
+        .refresh-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 14px;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        .refresh-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .refresh-btn.loading .refresh-icon {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .refresh-btn .refresh-icon {
+            display: inline-block;
+        }
+
+        /* 更新状态弹窗 */
+        .refresh-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .refresh-modal.active { display: flex; }
+        .refresh-modal-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 32px 48px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .refresh-modal-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+        .refresh-modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .refresh-modal-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .refresh-modal-progress {
+            width: 200px;
+            height: 4px;
+            background: var(--bg-card-hover);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .refresh-modal-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--purple));
+            width: 0%;
+            transition: width 0.5s ease-out;
+        }
     </style>
 </head>
 <body>
@@ -1070,6 +1159,10 @@ def generate_html_template(**kwargs):
                     <input type="text" placeholder="搜索 Issue..." id="searchInput" onkeyup="searchIssues()">
                 </div>
                 <div class="timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
+                <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
+                    <span class="refresh-icon">🔄</span>
+                    <span class="refresh-text">更新</span>
+                </button>
             </div>
         </div>
         ''' + changes_summary_html + '''
@@ -1550,7 +1643,90 @@ def generate_html_template(**kwargs):
             });
             document.getElementById(containerId).innerHTML = html;
         }
+
+        // 手动刷新功能
+        async function triggerRefresh() {
+            const btn = document.getElementById('refreshBtn');
+            const modal = document.getElementById('refreshModal');
+            const progressBar = document.getElementById('progressBar');
+            const statusText = document.getElementById('refreshStatus');
+
+            // 禁用按钮，显示加载状态
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.querySelector('.refresh-text').textContent = '触发中...';
+
+            try {
+                // 调用 Netlify Function 触发 GitHub Actions
+                const response = await fetch('/.netlify/functions/trigger-update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // 显示进度弹窗
+                    modal.classList.add('active');
+                    btn.querySelector('.refresh-text').textContent = '更新中...';
+
+                    // 模拟进度条 (90秒)
+                    const totalTime = 90000;
+                    const interval = 500;
+                    let elapsed = 0;
+
+                    const progressInterval = setInterval(() => {
+                        elapsed += interval;
+                        const progress = Math.min((elapsed / totalTime) * 100, 95);
+                        progressBar.style.width = progress + '%';
+
+                        if (elapsed < 10000) {
+                            statusText.textContent = '正在触发 GitHub Actions...';
+                        } else if (elapsed < 30000) {
+                            statusText.textContent = '正在获取最新 Issue 数据...';
+                        } else if (elapsed < 60000) {
+                            statusText.textContent = '正在生成 Dashboard...';
+                        } else if (elapsed < 80000) {
+                            statusText.textContent = '正在部署到 Netlify...';
+                        } else {
+                            statusText.textContent = '即将完成，准备刷新页面...';
+                        }
+
+                        if (elapsed >= totalTime) {
+                            clearInterval(progressInterval);
+                            progressBar.style.width = '100%';
+                            statusText.textContent = '更新完成！正在刷新...';
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1000);
+                        }
+                    }, interval);
+
+                } else {
+                    throw new Error(result.error || 'Failed to trigger update');
+                }
+
+            } catch (error) {
+                console.error('Refresh error:', error);
+                alert('触发更新失败: ' + error.message + '\\n\\n请检查 Netlify 环境变量是否配置了 GITHUB_TOKEN');
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.querySelector('.refresh-text').textContent = '更新';
+            }
+        }
     </script>
+
+    <!-- 刷新进度弹窗 -->
+    <div class="refresh-modal" id="refreshModal">
+        <div class="refresh-modal-content">
+            <div class="refresh-modal-icon">🔄</div>
+            <div class="refresh-modal-title">正在更新数据</div>
+            <div class="refresh-modal-text" id="refreshStatus">正在触发 GitHub Actions...</div>
+            <div class="refresh-modal-progress">
+                <div class="refresh-modal-progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 '''
