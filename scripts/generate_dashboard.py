@@ -1703,12 +1703,15 @@ def generate_html_template(**kwargs):
                     }, interval);
 
                 } else {
-                    throw new Error(result.error || 'Failed to trigger update');
+                    // 显示详细错误
+                    const errorMsg = result.error || 'Failed to trigger update';
+                    const details = result.details || '';
+                    throw new Error(errorMsg + (details ? '\\n\\n详情: ' + details : ''));
                 }
 
             } catch (error) {
                 console.error('Refresh error:', error);
-                alert('触发更新失败: ' + error.message + '\\n\\n请检查 Netlify 环境变量是否配置了 GITHUB_TOKEN');
+                alert('触发更新失败: ' + error.message);
                 btn.disabled = false;
                 btn.classList.remove('loading');
                 btn.querySelector('.refresh-text').textContent = '更新';

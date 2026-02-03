@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GH_PAT;
   const REPO_OWNER = 'Tina0529';
   const REPO_NAME = 'issue-dashboard';
-  const WORKFLOW_ID = 'update.yml';
+  const WORKFLOW_ID = 'update-dashboard.yml';
 
   // 调试日志
   console.log('Environment check:', {
