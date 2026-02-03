@@ -1518,7 +1518,7 @@ def generate_html_template(**kwargs):
                 <div class="card-grid" id="assigneeCards">
 '''
 
-    for name, stats in sorted_assignees[:12]:
+    for name, stats in sorted_assignees:
         html += f'''
                     <div class="card-item" onclick="filterByAssignee('{name}')">
                         <div class="card-header">
@@ -2079,6 +2079,38 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             <a href="index.html" class="nav-item">
                 <span class="dot" style="background: var(--primary)"></span>
                 总览
+            </a>
+            <a href="index.html#deadline" class="nav-item">
+                <span class="dot" style="background: #EF4444"></span>
+                截止日期
+            </a>
+            <a href="index.html#priority" class="nav-item">
+                <span class="dot" style="background: #EAB308"></span>
+                优先级
+            </a>
+            <a href="index.html#customers" class="nav-item">
+                <span class="dot" style="background: #A855F7"></span>
+                客户/标签
+            </a>
+            <a href="index.html#assignees" class="nav-item">
+                <span class="dot" style="background: #FB923C"></span>
+                负责人
+            </a>
+            <div class="nav-section-title">快速跳转</div>
+            <a href="index.html#deadline" class="nav-item">
+                <span class="dot" style="background: #EF4444"></span>
+                已逾期
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">''' + str(current_stats.get('overdue', 0)) + '''</span>
+            </a>
+            <a href="index.html#priority" class="nav-item">
+                <span class="dot" style="background: #EF4444"></span>
+                P0 紧急
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">''' + str(current_stats.get('p0', 0)) + '''</span>
+            </a>
+            <a href="index.html#assignees" class="nav-item">
+                <span class="dot" style="background: var(--text-muted)"></span>
+                未分配
+                <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">''' + str(current_stats.get('unassigned', 0)) + '''</span>
             </a>
         </nav>
     </aside>
