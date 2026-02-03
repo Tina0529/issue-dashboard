@@ -33,6 +33,38 @@
     "risk_summary": "3 天后截止"
   },
   {
+    "number": 1670,
+    "title": "新版agentbot的回答不显示出典",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1670",
+    "state": "OPEN",
+    "created_at": "2026-02-02T08:12:52Z",
+    "updated_at": "2026-02-02T09:05:15Z",
+    "labels": [
+      "三菱電機"
+    ],
+    "assignees": [
+      "zhuchaowe"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": "P0",
+    "end_date": "2026-02-06",
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "changes": [],
+    "days_until_deadline": 3,
+    "end_date_formatted": "02/06",
+    "days_stale": 0,
+    "risk_score": 70,
+    "risk_reasons": [
+      "3 天后截止",
+      "P0 最高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "critical",
+    "risk_summary": "3 天后截止"
+  },
+  {
     "number": 1473,
     "title": "【Realtime】持续长时间的对话场景的安定性确保",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1473",
@@ -49,22 +81,24 @@
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
-    "priority": "P0",
+    "priority": "P1",
     "end_date": "2026-03-31",
     "start_date": "2025-12-01",
     "status": "Agent review & test",
-    "changes": [],
+    "changes": [
+      "priority_down:P0→P1"
+    ],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
     "days_stale": 80,
-    "risk_score": 55,
+    "risk_score": 40,
     "risk_reasons": [
-      "P0 最高优先级",
+      "P1 高优先级",
       "停滞 80 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1485,
@@ -82,22 +116,24 @@
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
-    "priority": "P0",
+    "priority": "P1",
     "end_date": "2026-03-31",
     "start_date": "2025-11-17",
     "status": "Agent review & test",
-    "changes": [],
+    "changes": [
+      "priority_down:P0→P1"
+    ],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
     "days_stale": 53,
-    "risk_score": 55,
+    "risk_score": 40,
     "risk_reasons": [
-      "P0 最高优先级",
+      "P1 高优先级",
       "停滞 53 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1222,
@@ -105,33 +141,33 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1222",
     "state": "OPEN",
     "created_at": "2025-09-22T05:00:38Z",
-    "updated_at": "2026-01-28T00:44:30Z",
+    "updated_at": "2026-02-03T02:03:47Z",
     "labels": [
       "AI Inside"
     ],
     "assignees": [
-      "peng-an"
+      "ianhuangsp"
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2025-11-26",
-    "start_date": "2025-11-24",
+    "priority": "P0",
+    "end_date": "2026-02-27",
+    "start_date": "2026-02-03",
     "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": -69,
-    "end_date_formatted": "11/26",
-    "days_stale": 6,
-    "risk_score": 65,
+    "changes": [
+      "priority_up:P1→P0",
+      "deadline_changed"
+    ],
+    "days_until_deadline": 24,
+    "end_date_formatted": "02/27",
+    "days_stale": 0,
+    "risk_score": 40,
     "risk_reasons": [
-      "已逾期 69 天",
-      "P1 高优先级"
+      "P0 最高优先级"
     ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 69 天"
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 1380,
@@ -185,7 +221,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 11,
+    "days_stale": 12,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -253,7 +289,7 @@
     "changes": [],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -555,16 +591,16 @@
     ],
     "days_until_deadline": 25,
     "end_date_formatted": "02/28",
-    "days_stale": 89,
+    "days_stale": 90,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 89 天"
+      "停滞 90 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 89 天"
+    "risk_summary": "停滞 90 天"
   },
   {
     "number": 1269,
@@ -657,7 +693,7 @@
     "changes": [],
     "days_until_deadline": 25,
     "end_date_formatted": "02/28",
-    "days_stale": 13,
+    "days_stale": 14,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -681,22 +717,24 @@
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-02-06",
+    "priority": "P0",
+    "end_date": "2026-02-28",
     "start_date": "2025-12-29",
     "status": "Human in Progress",
-    "changes": [],
-    "days_until_deadline": 3,
-    "end_date_formatted": "02/06",
-    "days_stale": 3,
-    "risk_score": 55,
+    "changes": [
+      "priority_up:P1→P0",
+      "deadline_changed"
+    ],
+    "days_until_deadline": 25,
+    "end_date_formatted": "02/28",
+    "days_stale": 4,
+    "risk_score": 40,
     "risk_reasons": [
-      "3 天后截止",
-      "P1 高优先级"
+      "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 1444,
@@ -834,24 +872,25 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1217",
     "state": "OPEN",
     "created_at": "2025-09-22T04:45:49Z",
-    "updated_at": "2026-01-28T00:46:31Z",
+    "updated_at": "2026-02-03T02:04:33Z",
     "labels": [
       "AI Inside"
     ],
     "assignees": [
-      "annSharon",
-      "peng-an"
+      "ianhuangsp"
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P0",
-    "end_date": "2026-03-31",
+    "end_date": "2026-02-27",
     "start_date": "2025-12-08",
     "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": 56,
-    "end_date_formatted": "03/31",
-    "days_stale": 6,
+    "changes": [
+      "deadline_changed"
+    ],
+    "days_until_deadline": 24,
+    "end_date_formatted": "02/27",
+    "days_stale": 0,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -914,16 +953,16 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 89,
+    "days_stale": 90,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 89 天"
+      "停滞 90 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 89 天"
+    "risk_summary": "停滞 90 天"
   },
   {
     "number": 1242,
@@ -947,16 +986,16 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 89,
+    "days_stale": 90,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 89 天"
+      "停滞 90 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 89 天"
+    "risk_summary": "停滞 90 天"
   },
   {
     "number": 1249,
@@ -1208,12 +1247,14 @@
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
-    "end_date": "2026-03-31",
-    "start_date": null,
+    "end_date": "2026-04-30",
+    "start_date": "2026-04-01",
     "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": 56,
-    "end_date_formatted": "03/31",
+    "changes": [
+      "deadline_changed"
+    ],
+    "days_until_deadline": 86,
+    "end_date_formatted": "04/30",
     "days_stale": 90,
     "risk_score": 25,
     "risk_reasons": [
@@ -1278,11 +1319,11 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 55,
     "risk_reasons": [
       "P0 最高优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1348,16 +1389,16 @@
       "deadline_changed"
     ],
     "days_until_deadline": null,
-    "days_stale": 80,
+    "days_stale": 81,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 80 天"
+      "停滞 81 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 80 天"
+    "risk_summary": "停滞 81 天"
   },
   {
     "number": 1263,
@@ -1446,7 +1487,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 11,
+    "days_stale": 12,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1486,43 +1527,6 @@
     ],
     "risk_level": "low",
     "risk_summary": "停滞 84 天"
-  },
-  {
-    "number": 1330,
-    "title": "解析：Open search内存占用，随着服务变大，内存占用越来越大",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1330",
-    "state": "OPEN",
-    "created_at": "2025-10-23T00:09:49Z",
-    "updated_at": "2025-11-10T11:43:36Z",
-    "labels": [
-      "精度与infra"
-    ],
-    "assignees": [
-      "qq98982"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-02-06",
-    "start_date": "2026-02-03",
-    "status": "Awaiting Human Review",
-    "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed",
-      "deadline_changed"
-    ],
-    "days_until_deadline": 3,
-    "end_date_formatted": "02/06",
-    "days_stale": 84,
-    "risk_score": 70,
-    "risk_reasons": [
-      "3 天后截止",
-      "P1 高优先级",
-      "停滞 84 天"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "critical",
-    "risk_summary": "3 天后截止"
   },
   {
     "number": 1326,
@@ -1577,7 +1581,7 @@
     "status": "Agent review & test",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1608,11 +1612,11 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 83,
+    "days_stale": 84,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 83 天"
+      "停滞 84 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1634,12 +1638,14 @@
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
-    "end_date": "2026-03-27",
-    "start_date": null,
+    "end_date": "2026-04-30",
+    "start_date": "2026-04-01",
     "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": 52,
-    "end_date_formatted": "03/27",
+    "changes": [
+      "deadline_changed"
+    ],
+    "days_until_deadline": 86,
+    "end_date_formatted": "04/30",
     "days_stale": 82,
     "risk_score": 25,
     "risk_reasons": [
@@ -1770,11 +1776,11 @@
     "changes": [],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
-    "days_stale": 76,
+    "days_stale": 77,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 76 天"
+      "停滞 77 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1814,37 +1820,6 @@
     ],
     "risk_level": "critical",
     "risk_summary": "已逾期 26 天"
-  },
-  {
-    "number": 1540,
-    "title": "sc横展开：feature（后端）：需要给用户分享页面加一个homepage，可以以bot为单位进行定制开发。（比如调用gbase的livepage功能）。目的是让用户有一个展现给用户的初期画面（特别是用电视机尺寸的大屏的时候",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1540",
-    "state": "OPEN",
-    "created_at": "2025-11-21T05:57:20Z",
-    "updated_at": "2026-02-01T16:34:41Z",
-    "labels": [
-      "リゾーム"
-    ],
-    "assignees": [
-      "ianhuangsp"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-03-31",
-    "start_date": "2025-12-22",
-    "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": 56,
-    "end_date_formatted": "03/31",
-    "days_stale": 1,
-    "risk_score": 40,
-    "risk_reasons": [
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 1391,
@@ -1926,20 +1901,24 @@
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
-    "priority": null,
-    "end_date": null,
+    "priority": "P1",
+    "end_date": "2026-02-27",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": null,
-    "days_stale": 7,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
+    "changes": [
+      "priority_up:None→P1",
+      "deadline_changed"
     ],
-    "risk_level": "low",
-    "risk_summary": "正常"
+    "days_until_deadline": 24,
+    "end_date_formatted": "02/27",
+    "days_stale": 8,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1956,
@@ -2122,11 +2101,11 @@
     "changes": [],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
-    "days_stale": 56,
+    "days_stale": 57,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 56 天",
+      "停滞 57 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -2479,7 +2458,10 @@
     "end_date": null,
     "start_date": null,
     "status": "Awaiting Human Review",
-    "changes": [],
+    "changes": [
+      "priority_up:None→P1",
+      "deadline_changed"
+    ],
     "days_until_deadline": null,
     "days_stale": 0,
     "risk_score": 0,
@@ -2621,39 +2603,6 @@
     "risk_summary": "已逾期 4 天"
   },
   {
-    "number": 1662,
-    "title": "【LINE集成】目前LINE接续上bot后无法回答问题",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1662",
-    "state": "OPEN",
-    "created_at": "2025-12-15T00:07:18Z",
-    "updated_at": "2026-02-02T10:38:02Z",
-    "labels": [
-      "roadMap",
-      "LINE"
-    ],
-    "assignees": [
-      "Denya0529",
-      "ianhuangsp"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-02-28",
-    "start_date": "2026-01-01",
-    "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": 25,
-    "end_date_formatted": "02/28",
-    "days_stale": 0,
-    "risk_score": 25,
-    "risk_reasons": [
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "medium",
-    "risk_summary": "P1 高优先级"
-  },
-  {
     "number": 1663,
     "title": "关于创建bot流程优化（案）",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1663",
@@ -2675,8 +2624,8 @@
     "changes": [],
     "days_until_deadline": 24,
     "end_date_formatted": "02/27",
-    "days_stale": 14,
-    "risk_score": 25,
+    "days_stale": 15,
+    "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级"
     ],
@@ -2729,7 +2678,6 @@
       "roadMap"
     ],
     "assignees": [
-      "annSharon",
       "Denya0529",
       "ianhuangsp"
     ],
@@ -3169,7 +3117,7 @@
     ],
     "days_until_deadline": 3,
     "end_date_formatted": "02/06",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 30,
     "risk_reasons": [
       "3 天后截止"
@@ -3203,7 +3151,7 @@
     "changes": [],
     "days_until_deadline": 3,
     "end_date_formatted": "02/06",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 70,
     "risk_reasons": [
       "3 天后截止",
@@ -3655,21 +3603,23 @@
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
-    "priority": "P2",
+    "priority": "P1",
     "end_date": "2026-02-27",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "changes": [],
+    "changes": [
+      "priority_up:P2→P1"
+    ],
     "days_until_deadline": 24,
     "end_date_formatted": "02/27",
     "days_stale": 7,
-    "risk_score": 10,
+    "risk_score": 25,
     "risk_reasons": [
-      "P2 一般优先级"
+      "P1 高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "low",
-    "risk_summary": "P2 一般优先级"
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1879,
@@ -3777,36 +3727,6 @@
     "risk_summary": "已逾期 6 天"
   },
   {
-    "number": 78,
-    "title": "agentic-parser立项和方案文档",
-    "url": "https://github.com/sparticleinc/gptbase-parser/issues/78",
-    "state": "OPEN",
-    "created_at": "2026-01-28T01:48:15Z",
-    "updated_at": "2026-02-02T08:49:43Z",
-    "labels": [
-      "Parser"
-    ],
-    "assignees": [
-      "vincentdotli"
-    ],
-    "repo": "gptbase-parser",
-    "project": "Support应用&功能",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Human in Progress",
-    "changes": [],
-    "days_until_deadline": null,
-    "days_stale": 0,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
-    ],
-    "risk_level": "low",
-    "risk_summary": "正常"
-  },
-  {
     "number": 1682,
     "title": "【Parser】最新的temporal要部署到OnPrem",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1682",
@@ -3828,7 +3748,7 @@
     "changes": [],
     "days_until_deadline": 3,
     "end_date_formatted": "02/06",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 55,
     "risk_reasons": [
       "3 天后截止",
@@ -3938,38 +3858,6 @@
     ],
     "risk_level": "critical",
     "risk_summary": "已逾期 5 天"
-  },
-  {
-    "number": 1647,
-    "title": "【bug】チャット履歴的“概要”栏显示的消息件数不对",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1647",
-    "state": "OPEN",
-    "created_at": "2026-01-29T07:01:05Z",
-    "updated_at": "2026-01-30T02:33:48Z",
-    "labels": [
-      "Lumine"
-    ],
-    "assignees": [
-      "Denya0529",
-      "ianhuangsp"
-    ],
-    "repo": "mygpt-frontend",
-    "project": "Support应用&功能",
-    "priority": null,
-    "end_date": "2026-02-28",
-    "start_date": null,
-    "status": "Agent review & test",
-    "changes": [],
-    "days_until_deadline": 25,
-    "end_date_formatted": "02/28",
-    "days_stale": 3,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
-    ],
-    "risk_level": "low",
-    "risk_summary": "正常"
   },
   {
     "number": 1917,
@@ -4090,7 +3978,7 @@
     "changes": [],
     "days_until_deadline": 3,
     "end_date_formatted": "02/06",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 70,
     "risk_reasons": [
       "3 天后截止",
@@ -4180,20 +4068,22 @@
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
-    "priority": null,
+    "priority": "P0",
     "end_date": null,
     "start_date": null,
     "status": "Agent in Progress",
-    "changes": [],
+    "changes": [
+      "priority_up:None→P0"
+    ],
     "days_until_deadline": null,
     "days_stale": 0,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
+    "risk_score": 40,
+    "risk_reasons": [
+      "P0 最高优先级"
     ],
-    "risk_level": "low",
-    "risk_summary": "正常"
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 1928,
@@ -4283,7 +4173,7 @@
     ],
     "days_until_deadline": 32,
     "end_date_formatted": "03/07",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4380,7 +4270,7 @@
     "changes": [],
     "days_until_deadline": 3,
     "end_date_formatted": "02/06",
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 40,
     "risk_reasons": [
       "3 天后截止",
@@ -4450,38 +4340,6 @@
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
-  },
-  {
-    "number": 1670,
-    "title": "新版agentbot的回答不显示出典",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1670",
-    "state": "OPEN",
-    "created_at": "2026-02-02T08:12:52Z",
-    "updated_at": "2026-02-02T09:05:15Z",
-    "labels": [
-      "三菱電機"
-    ],
-    "assignees": [
-      "zhuchaowe"
-    ],
-    "repo": "mygpt-frontend",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-02-06",
-    "start_date": null,
-    "status": "Agent in Progress",
-    "changes": [],
-    "days_until_deadline": 3,
-    "end_date_formatted": "02/06",
-    "days_stale": 0,
-    "risk_score": 70,
-    "risk_reasons": [
-      "3 天后截止",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "critical",
     "risk_summary": "3 天后截止"
   },
   {
@@ -4640,6 +4498,109 @@
     "risk_suggestions": [],
     "risk_level": "critical",
     "risk_summary": "今天截止"
+  },
+  {
+    "number": 1963,
+    "title": "料金诊断skill优化完善",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1963",
+    "state": "OPEN",
+    "created_at": "2026-02-03T01:32:27Z",
+    "updated_at": "2026-02-03T01:38:12Z",
+    "labels": [
+      "Skill"
+    ],
+    "assignees": [
+      "baoshi1970"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P0",
+    "end_date": "2026-02-27",
+    "start_date": "2026-02-09",
+    "status": "Agent in Progress",
+    "changes": [
+      "new"
+    ],
+    "days_until_deadline": 24,
+    "end_date_formatted": "02/27",
+    "days_stale": 0,
+    "risk_score": 40,
+    "risk_reasons": [
+      "P0 最高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
+  },
+  {
+    "number": 1964,
+    "title": "优化opensearch的内存使用",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1964",
+    "state": "OPEN",
+    "created_at": "2026-02-03T02:15:14Z",
+    "updated_at": "2026-02-03T02:19:03Z",
+    "labels": [
+      "精度与infra"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-04",
+    "start_date": null,
+    "status": "Human in Progress",
+    "changes": [
+      "new"
+    ],
+    "days_until_deadline": 1,
+    "end_date_formatted": "02/04",
+    "days_stale": 0,
+    "risk_score": 55,
+    "risk_reasons": [
+      "1 天后截止",
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "1 天后截止"
+  },
+  {
+    "number": 1330,
+    "title": "解析：Open search内存占用，随着服务变大，内存占用越来越大",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1330",
+    "state": "OPEN",
+    "created_at": "2025-10-23T00:09:49Z",
+    "updated_at": "2026-02-03T02:43:47Z",
+    "labels": [
+      "精度与infra"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-06",
+    "start_date": "2026-02-03",
+    "status": "Human in Progress",
+    "changes": [
+      "priority_up:P2→P1",
+      "deadline_changed",
+      "deadline_changed"
+    ],
+    "days_until_deadline": 3,
+    "end_date_formatted": "02/06",
+    "days_stale": 0,
+    "risk_score": 55,
+    "risk_reasons": [
+      "3 天后截止",
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "3 天后截止"
   },
   {
     "number": 1,
