@@ -8,8 +8,11 @@ PM Dashboard Generator
 import json
 import os
 import subprocess
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from collections import defaultdict
+
+# 东京时区 (UTC+9)
+JST = timezone(timedelta(hours=9))
 
 # 从环境变量获取 Token (GitHub Actions 中配置)
 TOKEN = os.environ.get('GITHUB_TOKEN', '')
@@ -322,9 +325,9 @@ def calculate_risk(issue, today, changes):
     else:
         issue['days_until_deadline'] = None
 
-    now = datetime.now()
+    now = datetime.now(JST)
     if issue.get('updated_at'):
-        updated = datetime.fromisoformat(issue['updated_at'].replace('Z', '+00:00')).replace(tzinfo=None)
+        updated = datetime.fromisoformat(issue['updated_at'].replace('Z', '+00:00'))
         days_stale = (now - updated).days
         issue['days_stale'] = days_stale
         if days_stale > 30:
@@ -398,7 +401,7 @@ def get_change_badge(issue):
 
 def generate_html(all_issues, changes, yesterday_stats):
     """生成 HTML Dashboard"""
-    now = datetime.now()
+    now = datetime.now(JST)
     today = now.date()
 
     # 计算风险
@@ -1561,9 +1564,11 @@ def main():
         print("Error: GITHUB_TOKEN not set")
         return
 
-    now = datetime.now()
+    # 使用东京时区
+    now = datetime.now(JST)
     today_str = now.strftime('%Y-%m-%d')
     yesterday_str = (now - timedelta(days=1)).strftime('%Y-%m-%d')
+    print(f"Tokyo time: {now.strftime('%Y-%m-%d %H:%M:%S')} JST")
 
     # 获取所有 Issues
     all_issues = fetch_all_issues()
