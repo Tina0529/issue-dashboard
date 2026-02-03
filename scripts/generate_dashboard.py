@@ -7,12 +7,16 @@ PM Dashboard Generator
 
 import json
 import os
+import sys
 import subprocess
 from datetime import datetime, timedelta, timezone
 from collections import defaultdict
 
 # 东京时区 (UTC+9)
 JST = timezone(timedelta(hours=9))
+
+# 运行模式: scheduled (定时) 或 manual (手动)
+RUN_MODE = 'manual' if '--manual' in sys.argv else 'scheduled'
 
 # 从环境变量获取 Token (GitHub Actions 中配置)
 TOKEN = os.environ.get('GITHUB_TOKEN', '')
@@ -1109,6 +1113,10 @@ def generate_html_template(**kwargs):
         </div>
         <nav class="sidebar-nav">
             <div class="nav-section-title">导航</div>
+            <a href="dashboard.html" class="nav-item" style="text-decoration:none;">
+                <span class="dot" style="background: var(--purple)"></span>
+                Dashboard
+            </a>
             <div class="nav-item active" onclick="showTab('overview', this)">
                 <span class="dot" style="background: var(--primary)"></span>
                 总览
@@ -1737,6 +1745,656 @@ def generate_html_template(**kwargs):
     return html
 
 
+def get_historical_stats():
+    """获取历史统计数据用于趋势图"""
+    stats_files = []
+    if os.path.exists(DATA_DIR):
+        for f in os.listdir(DATA_DIR):
+            if f.endswith('_stats.json'):
+                date_str = f.replace('_stats.json', '')
+                filepath = os.path.join(DATA_DIR, f)
+                try:
+                    with open(filepath, 'r', encoding='utf-8') as file:
+                        stats = json.load(file)
+                        stats['date'] = date_str
+                        stats_files.append(stats)
+                except:
+                    pass
+    return sorted(stats_files, key=lambda x: x['date'])
+
+
+def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historical_stats, now):
+    """生成图表 Dashboard 页面"""
+    today = now.date()
+
+    # 标签统计
+    label_stats = defaultdict(lambda: {'count': 0, 'p0': 0, 'p1': 0, 'p2': 0, 'overdue': 0})
+    for issue in all_issues:
+        for label in issue.get('labels', []):
+            label_stats[label]['count'] += 1
+            if issue.get('priority') == 'P0': label_stats[label]['p0'] += 1
+            elif issue.get('priority') == 'P1': label_stats[label]['p1'] += 1
+            elif issue.get('priority') == 'P2': label_stats[label]['p2'] += 1
+            if issue.get('days_until_deadline') is not None and issue['days_until_deadline'] < 0:
+                label_stats[label]['overdue'] += 1
+
+    # 负责人统计
+    assignee_stats = defaultdict(lambda: {'total': 0, 'p0': 0, 'p1': 0, 'overdue': 0})
+    for issue in all_issues:
+        for assignee in issue.get('assignees', []):
+            assignee_stats[assignee]['total'] += 1
+            if issue.get('priority') == 'P0': assignee_stats[assignee]['p0'] += 1
+            elif issue.get('priority') == 'P1': assignee_stats[assignee]['p1'] += 1
+            if issue.get('days_until_deadline') is not None and issue['days_until_deadline'] < 0:
+                assignee_stats[assignee]['overdue'] += 1
+
+    # 截止日期分布
+    deadline_dist = {'overdue': 0, 'this_week': 0, 'this_month': 0, 'later': 0, 'no_deadline': 0}
+    for issue in all_issues:
+        days = issue.get('days_until_deadline')
+        if days is None:
+            deadline_dist['no_deadline'] += 1
+        elif days < 0:
+            deadline_dist['overdue'] += 1
+        elif days <= 7:
+            deadline_dist['this_week'] += 1
+        elif days <= 30:
+            deadline_dist['this_month'] += 1
+        else:
+            deadline_dist['later'] += 1
+
+    # 优先级分布
+    priority_dist = {
+        'P0': current_stats.get('p0', 0),
+        'P1': current_stats.get('p1', 0),
+        'P2': current_stats.get('p2', 0),
+        'None': current_stats.get('total', 0) - current_stats.get('p0', 0) - current_stats.get('p1', 0) - current_stats.get('p2', 0)
+    }
+
+    # 计算健康度分数 (0-100)
+    total = current_stats.get('total', 1)
+    overdue_rate = current_stats.get('overdue', 0) / total if total > 0 else 0
+    p0_rate = current_stats.get('p0', 0) / total if total > 0 else 0
+    unassigned_rate = current_stats.get('unassigned', 0) / total if total > 0 else 0
+    health_score = max(0, min(100, int(100 - (overdue_rate * 40 + p0_rate * 30 + unassigned_rate * 20) * 100)))
+
+    # 排序标签和负责人
+    sorted_labels = sorted(label_stats.items(), key=lambda x: -x[1]['count'])[:15]
+    sorted_assignees = sorted(assignee_stats.items(), key=lambda x: -x[1]['total'])[:12]
+
+    # 逾期最久 Top 10
+    overdue_issues = sorted(
+        [i for i in all_issues if i.get('days_until_deadline') is not None and i['days_until_deadline'] < 0],
+        key=lambda x: x['days_until_deadline']
+    )[:10]
+
+    # 历史趋势数据
+    trend_dates = [s['date'] for s in historical_stats[-14:]]  # 最近14天
+    trend_total = [s.get('total', 0) for s in historical_stats[-14:]]
+    trend_overdue = [s.get('overdue', 0) for s in historical_stats[-14:]]
+    trend_p0 = [s.get('p0', 0) for s in historical_stats[-14:]]
+
+    html = '''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Dashboard - Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0F172A;
+            --bg-card: #1E293B;
+            --bg-card-hover: #334155;
+            --text-primary: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --primary: #3B82F6;
+            --purple: #A855F7;
+            --success: #22C55E;
+            --warning: #EAB308;
+            --danger: #EF4444;
+            --sidebar-width: 220px;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo-text { font-size: 18px; font-weight: 700; color: white; }
+        .logo-subtitle { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        .sidebar-nav {
+            flex: 1;
+            padding: 16px 12px;
+            overflow-y: auto;
+        }
+        .nav-section-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            margin-top: 8px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .nav-item:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+        .nav-item.active { background: rgba(59, 130, 246, 0.15); color: var(--primary); }
+        .nav-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 24px;
+        }
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        .page-title { font-size: 24px; font-weight: 700; }
+        .timestamp { font-size: 12px; color: var(--text-muted); }
+
+        .grid { display: grid; gap: 20px; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1400px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 900px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-title .icon {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .card-title .icon.blue { background: rgba(59, 130, 246, 0.2); }
+        .card-title .icon.red { background: rgba(239, 68, 68, 0.2); }
+        .card-title .icon.yellow { background: rgba(234, 179, 8, 0.2); }
+        .card-title .icon.green { background: rgba(34, 197, 94, 0.2); }
+        .card-title .icon.purple { background: rgba(168, 85, 247, 0.2); }
+
+        .chart-container { position: relative; height: 250px; }
+        .chart-container.large { height: 300px; }
+        .chart-container.small { height: 200px; }
+
+        /* 健康度仪表盘 */
+        .health-gauge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+        .health-score {
+            font-size: 64px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--success), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .health-score.warning {
+            background: linear-gradient(135deg, var(--warning), var(--danger));
+            -webkit-background-clip: text;
+        }
+        .health-label { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+        .health-details {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .health-detail {
+            text-align: center;
+        }
+        .health-detail-value { font-size: 18px; font-weight: 600; }
+        .health-detail-label { font-size: 11px; color: var(--text-muted); }
+
+        /* 统计卡片 */
+        .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .stat-card-value { font-size: 28px; font-weight: 700; }
+        .stat-card-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .stat-card-change { font-size: 11px; margin-top: 8px; }
+        .stat-card-change.up { color: var(--danger); }
+        .stat-card-change.down { color: var(--success); }
+        .stat-card.danger .stat-card-value { color: var(--danger); }
+        .stat-card.warning .stat-card-value { color: var(--warning); }
+        .stat-card.info .stat-card-value { color: var(--primary); }
+        .stat-card.success .stat-card-value { color: var(--success); }
+        @media (max-width: 900px) { .stat-cards { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Top 10 列表 */
+        .top-list { max-height: 300px; overflow-y: auto; }
+        .top-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .top-item:last-child { border-bottom: none; }
+        .top-rank {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--bg-card-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+        .top-rank.danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .top-content { flex: 1; min-width: 0; }
+        .top-title {
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .top-title a { color: var(--text-primary); text-decoration: none; }
+        .top-title a:hover { color: var(--primary); }
+        .top-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+        .top-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--danger);
+            margin-left: 12px;
+        }
+
+        @media (max-width: 900px) {
+            :root { --sidebar-width: 0px; }
+            .sidebar { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-text">PM Dashboard</div>
+            <div class="logo-subtitle">Issue Monitor</div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">导航</div>
+            <a href="dashboard.html" class="nav-item active">
+                <span class="dot" style="background: var(--purple)"></span>
+                Dashboard
+            </a>
+            <a href="index.html" class="nav-item">
+                <span class="dot" style="background: var(--primary)"></span>
+                总览
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div class="page-title">📊 Dashboard</div>
+            <div class="timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
+        </div>
+
+        <!-- 统计卡片 -->
+        <div class="stat-cards">
+            <div class="stat-card danger">
+                <div class="stat-card-value">''' + str(current_stats.get('overdue', 0)) + '''</div>
+                <div class="stat-card-label">🚨 已逾期</div>
+                ''' + (f'<div class="stat-card-change up">↑ {current_stats.get("overdue", 0) - yesterday_stats.get("overdue", 0)}</div>' if yesterday_stats and current_stats.get('overdue', 0) > yesterday_stats.get('overdue', 0) else
+                       f'<div class="stat-card-change down">↓ {yesterday_stats.get("overdue", 0) - current_stats.get("overdue", 0)}</div>' if yesterday_stats and current_stats.get('overdue', 0) < yesterday_stats.get('overdue', 0) else
+                       '<div class="stat-card-change">- 无变化</div>') + '''
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-card-value">''' + str(current_stats.get('p0', 0)) + '''</div>
+                <div class="stat-card-label">🔴 P0 紧急</div>
+                ''' + (f'<div class="stat-card-change up">↑ {current_stats.get("p0", 0) - yesterday_stats.get("p0", 0)}</div>' if yesterday_stats and current_stats.get('p0', 0) > yesterday_stats.get('p0', 0) else
+                       f'<div class="stat-card-change down">↓ {yesterday_stats.get("p0", 0) - current_stats.get("p0", 0)}</div>' if yesterday_stats and current_stats.get('p0', 0) < yesterday_stats.get('p0', 0) else
+                       '<div class="stat-card-change">- 无变化</div>') + '''
+            </div>
+            <div class="stat-card info">
+                <div class="stat-card-value">''' + str(current_stats.get('total', 0)) + '''</div>
+                <div class="stat-card-label">📋 总计</div>
+                ''' + (f'<div class="stat-card-change up">↑ {current_stats.get("total", 0) - yesterday_stats.get("total", 0)}</div>' if yesterday_stats and current_stats.get('total', 0) > yesterday_stats.get('total', 0) else
+                       f'<div class="stat-card-change down">↓ {yesterday_stats.get("total", 0) - current_stats.get("total", 0)}</div>' if yesterday_stats and current_stats.get('total', 0) < yesterday_stats.get('total', 0) else
+                       '<div class="stat-card-change">- 无变化</div>') + '''
+            </div>
+            <div class="stat-card success">
+                <div class="stat-card-value">''' + str(health_score) + '''</div>
+                <div class="stat-card-label">💚 健康度</div>
+                <div class="stat-card-change">基于逾期率、P0占比</div>
+            </div>
+        </div>
+
+        <!-- 第一行：健康度 + 优先级 + 截止日期 -->
+        <div class="grid grid-3" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">💚</span>项目健康度</div>
+                </div>
+                <div class="health-gauge">
+                    <div class="health-score ''' + ('warning' if health_score < 60 else '') + '''">''' + str(health_score) + '''</div>
+                    <div class="health-label">健康评分 (满分100)</div>
+                    <div class="health-details">
+                        <div class="health-detail">
+                            <div class="health-detail-value" style="color: var(--danger)">''' + str(round(current_stats.get('overdue', 0) / max(current_stats.get('total', 1), 1) * 100)) + '''%</div>
+                            <div class="health-detail-label">逾期率</div>
+                        </div>
+                        <div class="health-detail">
+                            <div class="health-detail-value" style="color: var(--warning)">''' + str(round(current_stats.get('p0', 0) / max(current_stats.get('total', 1), 1) * 100)) + '''%</div>
+                            <div class="health-detail-label">P0占比</div>
+                        </div>
+                        <div class="health-detail">
+                            <div class="health-detail-value" style="color: var(--text-muted)">''' + str(round(current_stats.get('unassigned', 0) / max(current_stats.get('total', 1), 1) * 100)) + '''%</div>
+                            <div class="health-detail-label">未分配率</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🎯</span>优先级分布</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="priorityChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon yellow">⏰</span>截止日期分布</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="deadlineChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二行：趋势图 -->
+        <div class="grid grid-2" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon purple">📈</span>Issue 趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon red">🔥</span>逾期最久 Top 10</div>
+                </div>
+                <div class="top-list">
+'''
+
+    # 添加 Top 10 逾期列表
+    for i, issue in enumerate(overdue_issues):
+        rank_class = 'danger' if i < 3 else ''
+        days = abs(issue.get('days_until_deadline', 0))
+        html += f'''
+                    <div class="top-item">
+                        <div class="top-rank {rank_class}">{i + 1}</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="{issue['url']}" target="_blank">#{issue['number']} {issue['title'][:40]}{'...' if len(issue['title']) > 40 else ''}</a></div>
+                            <div class="top-meta">👤 {', '.join(issue.get('assignees', [])) or '未分配'}</div>
+                        </div>
+                        <div class="top-value">-{days}天</div>
+                    </div>
+'''
+
+    if not overdue_issues:
+        html += '                    <div style="text-align:center;padding:40px;color:var(--text-muted)">🎉 没有逾期 Issue</div>'
+
+    html += '''
+                </div>
+            </div>
+        </div>
+
+        <!-- 第三行：标签分布 + 负责人分布 -->
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🏷️</span>客户/标签分布 (Top 15)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="labelChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon purple">👥</span>负责人工作量 (Top 12)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="assigneeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Chart.js 配置
+        Chart.defaults.color = '#94A3B8';
+        Chart.defaults.borderColor = '#334155';
+
+        // 优先级分布 (环形图)
+        new Chart(document.getElementById('priorityChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['P0', 'P1', 'P2', '未设置'],
+                datasets: [{
+                    data: [''' + str(priority_dist['P0']) + ', ' + str(priority_dist['P1']) + ', ' + str(priority_dist['P2']) + ', ' + str(priority_dist['None']) + '''],
+                    backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { padding: 16 } }
+                },
+                cutout: '60%'
+            }
+        });
+
+        // 截止日期分布 (环形图)
+        new Chart(document.getElementById('deadlineChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
+                datasets: [{
+                    data: [''' + str(deadline_dist['overdue']) + ', ' + str(deadline_dist['this_week']) + ', ' + str(deadline_dist['this_month']) + ', ' + str(deadline_dist['later']) + ', ' + str(deadline_dist['no_deadline']) + '''],
+                    backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { padding: 16 } }
+                },
+                cutout: '60%'
+            }
+        });
+
+        // 趋势图 (折线图)
+        new Chart(document.getElementById('trendChart'), {
+            type: 'line',
+            data: {
+                labels: ''' + json.dumps(trend_dates) + ''',
+                datasets: [
+                    {
+                        label: '总数',
+                        data: ''' + json.dumps(trend_total) + ''',
+                        borderColor: '#3B82F6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: '逾期',
+                        data: ''' + json.dumps(trend_overdue) + ''',
+                        borderColor: '#EF4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'P0',
+                        data: ''' + json.dumps(trend_p0) + ''',
+                        borderColor: '#EAB308',
+                        backgroundColor: 'rgba(234, 179, 8, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 标签分布 (横向柱状图)
+        new Chart(document.getElementById('labelChart'), {
+            type: 'bar',
+            data: {
+                labels: ''' + json.dumps([l[0] for l in sorted_labels]) + ''',
+                datasets: [
+                    {
+                        label: 'P0',
+                        data: ''' + json.dumps([l[1]['p0'] for l in sorted_labels]) + ''',
+                        backgroundColor: '#EF4444'
+                    },
+                    {
+                        label: 'P1',
+                        data: ''' + json.dumps([l[1]['p1'] for l in sorted_labels]) + ''',
+                        backgroundColor: '#EAB308'
+                    },
+                    {
+                        label: 'P2',
+                        data: ''' + json.dumps([l[1]['p2'] for l in sorted_labels]) + ''',
+                        backgroundColor: '#3B82F6'
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { stacked: true, grid: { color: '#334155' } },
+                    y: { stacked: true, grid: { display: false } }
+                }
+            }
+        });
+
+        // 负责人工作量 (柱状图)
+        new Chart(document.getElementById('assigneeChart'), {
+            type: 'bar',
+            data: {
+                labels: ''' + json.dumps([a[0] for a in sorted_assignees]) + ''',
+                datasets: [
+                    {
+                        label: '逾期',
+                        data: ''' + json.dumps([a[1]['overdue'] for a in sorted_assignees]) + ''',
+                        backgroundColor: '#EF4444'
+                    },
+                    {
+                        label: 'P0',
+                        data: ''' + json.dumps([a[1]['p0'] for a in sorted_assignees]) + ''',
+                        backgroundColor: '#EAB308'
+                    },
+                    {
+                        label: '其他',
+                        data: ''' + json.dumps([a[1]['total'] - a[1]['overdue'] - a[1]['p0'] for a in sorted_assignees]) + ''',
+                        backgroundColor: '#3B82F6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, grid: { color: '#334155' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+'''
+
+    return html
+
+
 def main():
     """主函数"""
     if not TOKEN:
@@ -1748,16 +2406,17 @@ def main():
     today_str = now.strftime('%Y-%m-%d')
     yesterday_str = (now - timedelta(days=1)).strftime('%Y-%m-%d')
     print(f"Tokyo time: {now.strftime('%Y-%m-%d %H:%M:%S')} JST")
+    print(f"Run mode: {RUN_MODE}")
 
     # 获取所有 Issues
     all_issues = fetch_all_issues()
 
-    # 加载昨天的数据
+    # 始终加载昨天早8点的定时快照作为基准
     yesterday_issues = load_snapshot(yesterday_str)
     if yesterday_issues:
-        print(f"Loaded yesterday's data: {len(yesterday_issues)} issues")
+        print(f"Loaded yesterday's baseline data: {len(yesterday_issues)} issues")
     else:
-        print("No yesterday's data found (first run or data missing)")
+        print("No yesterday's baseline data found")
 
     # 计算昨天的统计数据
     yesterday_stats = None
@@ -1782,25 +2441,60 @@ def main():
     print(f"Changes: +{len(changes['new_issues'])} new, -{len(changes['closed_issues'])} closed, "
           f"{len(changes['priority_up'])} priority up, {len(changes['priority_down'])} priority down")
 
-    # 生成 HTML
+    # 为每个 issue 计算 days_until_deadline (供 dashboard 使用)
+    today = now.date()
+    for issue in all_issues:
+        end_date_str = issue.get('end_date')
+        if end_date_str:
+            try:
+                end_date = datetime.strptime(end_date_str, '%Y-%m-%d').date()
+                issue['days_until_deadline'] = (end_date - today).days
+            except:
+                issue['days_until_deadline'] = None
+        else:
+            issue['days_until_deadline'] = None
+
+    # 生成主页 HTML
     html, current_stats = generate_html(all_issues, changes, yesterday_stats)
 
-    # 保存 HTML
+    # 保存主页 HTML
     os.makedirs(PUBLIC_DIR, exist_ok=True)
     output_path = os.path.join(PUBLIC_DIR, 'index.html')
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
+    print(f"Main page generated: {output_path}")
 
-    print(f"Dashboard generated: {output_path}")
+    # 获取历史统计数据
+    historical_stats = get_historical_stats()
+
+    # 生成图表 Dashboard 页面
+    dashboard_html = generate_dashboard_html(all_issues, current_stats, yesterday_stats, historical_stats, now)
+    dashboard_path = os.path.join(PUBLIC_DIR, 'dashboard.html')
+    with open(dashboard_path, 'w', encoding='utf-8') as f:
+        f.write(dashboard_html)
+    print(f"Dashboard page generated: {dashboard_path}")
+
     print(f"Total issues: {len(all_issues)}")
 
-    # 保存今天的快照
-    save_snapshot(all_issues, today_str)
+    # 根据运行模式保存数据
+    os.makedirs(DATA_DIR, exist_ok=True)
 
-    # 同时保存统计数据
-    stats_path = os.path.join(DATA_DIR, f'{today_str}_stats.json')
-    with open(stats_path, 'w', encoding='utf-8') as f:
-        json.dump(current_stats, f, ensure_ascii=False, indent=2)
+    if RUN_MODE == 'scheduled':
+        # 定时任务：保存为当天日期的快照（作为基准）
+        save_snapshot(all_issues, today_str)
+        stats_path = os.path.join(DATA_DIR, f'{today_str}_stats.json')
+        with open(stats_path, 'w', encoding='utf-8') as f:
+            json.dump(current_stats, f, ensure_ascii=False, indent=2)
+        print(f"Scheduled snapshot saved: {today_str}")
+    else:
+        # 手动更新：只保存 latest.json（不影响每日基准）
+        latest_path = os.path.join(DATA_DIR, 'latest.json')
+        with open(latest_path, 'w', encoding='utf-8') as f:
+            json.dump(all_issues, f, ensure_ascii=False, indent=2)
+        latest_stats_path = os.path.join(DATA_DIR, 'latest_stats.json')
+        with open(latest_stats_path, 'w', encoding='utf-8') as f:
+            json.dump(current_stats, f, ensure_ascii=False, indent=2)
+        print(f"Manual snapshot saved: latest.json")
 
 
 if __name__ == '__main__':

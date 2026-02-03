@@ -6,13 +6,17 @@ on:
   schedule:
     - cron: '0 23 * * *'
 
-  # 也可以手动触发
+  # 手动触发
   workflow_dispatch:
-
-  # 推送到 main 分支时也运行一次
-  push:
-    branches:
-      - main
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: false
+        default: 'manual'
+        type: choice
+        options:
+          - manual
+          - scheduled
 
 permissions:
   contents: write
@@ -30,16 +34,30 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Determine run mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "mode=scheduled" >> $GITHUB_OUTPUT
+          else
+            echo "mode=${{ inputs.mode || 'manual' }}" >> $GITHUB_OUTPUT
+          fi
+          echo "Run mode: ${{ github.event_name }}"
+
       - name: Generate Dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          python scripts/generate_dashboard.py
+          if [ "${{ steps.mode.outputs.mode }}" = "manual" ]; then
+            python scripts/generate_dashboard.py --manual
+          else
+            python scripts/generate_dashboard.py
+          fi
 
       - name: Commit and push if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add public/ data/
-          git diff --staged --quiet || git commit -m "Update dashboard $(date +'%Y-%m-%d %H:%M')"
+          git diff --staged --quiet || git commit -m "Update dashboard $(date +'%Y-%m-%d %H:%M') [${{ steps.mode.outputs.mode }}]"
           git push
