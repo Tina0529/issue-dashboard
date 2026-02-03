@@ -4635,6 +4635,38 @@
     "risk_summary": "3 天后截止"
   },
   {
+    "number": 1968,
+    "title": "【接口开发】删除特定用户的所有数据",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1968",
+    "state": "OPEN",
+    "created_at": "2026-02-03T04:51:53Z",
+    "updated_at": "2026-02-03T04:55:06Z",
+    "labels": [
+      "roadMap"
+    ],
+    "assignees": [
+      "ianhuangsp"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Agent in Progress",
+    "changes": [
+      "new"
+    ],
+    "days_until_deadline": null,
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
     "number": 1,
     "title": "webApp：AI录屏人的操作视频，自己生成操作手册，并且之后还可以维护这个手册。采用google build工具，antigravity（IDE），firebase（hosting，database，storage），react（开发语言）",
     "url": "https://github.com/sparticleinc/GBaseManual/issues/1",
