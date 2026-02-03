@@ -19,18 +19,18 @@
     "end_date": "2026-02-06",
     "start_date": "2025-12-12",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 0,
     "risk_score": 70,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1670,
@@ -51,18 +51,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 70,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1473,
@@ -85,10 +85,8 @@
     "end_date": "2026-03-31",
     "start_date": "2025-12-01",
     "status": "Agent review & test",
-    "days_until_deadline": 56,
-    "changes": [
-      "priority_down:P0→P1"
-    ],
+    "days_until_deadline": 55,
+    "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 81,
     "risk_score": 40,
@@ -120,16 +118,14 @@
     "end_date": "2026-03-31",
     "start_date": "2025-11-17",
     "status": "Agent review & test",
-    "days_until_deadline": 56,
-    "changes": [
-      "priority_down:P0→P1"
-    ],
+    "days_until_deadline": 55,
+    "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 53,
+    "days_stale": 54,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 53 天"
+      "停滞 54 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -154,11 +150,8 @@
     "end_date": "2026-02-27",
     "start_date": "2026-02-03",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 24,
-    "changes": [
-      "priority_up:P1→P0",
-      "deadline_changed"
-    ],
+    "days_until_deadline": 23,
+    "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 0,
     "risk_score": 40,
@@ -250,13 +243,13 @@
     "end_date": "2025-11-30",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": -65,
+    "days_until_deadline": -66,
     "changes": [],
     "end_date_formatted": "11/30",
     "days_stale": 80,
     "risk_score": 95,
     "risk_reasons": [
-      "已逾期 65 天",
+      "已逾期 66 天",
       "P0 最高优先级",
       "停滞 80 天"
     ],
@@ -264,7 +257,7 @@
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 65 天"
+    "risk_summary": "已逾期 66 天"
   },
   {
     "number": 1353,
@@ -286,7 +279,7 @@
     "end_date": "2026-03-31",
     "start_date": "2025-11-17",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 4,
@@ -317,7 +310,7 @@
     "end_date": "2026-02-27",
     "start_date": "2025-12-01",
     "status": "Human in Progress",
-    "days_until_deadline": 24,
+    "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 6,
@@ -349,20 +342,20 @@
     "end_date": "2026-01-28",
     "start_date": "2026-01-26",
     "status": "Human in Progress",
-    "days_until_deadline": -6,
+    "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "01/28",
     "days_stale": 4,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 6 天",
+      "已逾期 7 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 6 天"
+    "risk_summary": "已逾期 7 天"
   },
   {
     "number": 1505,
@@ -385,20 +378,20 @@
     "end_date": "2025-11-26",
     "start_date": "2025-11-19",
     "status": "Agent review & test",
-    "days_until_deadline": -69,
+    "days_until_deadline": -70,
     "changes": [],
     "end_date_formatted": "11/26",
     "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 69 天",
+      "已逾期 70 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 69 天"
+    "risk_summary": "已逾期 70 天"
   },
   {
     "number": 1491,
@@ -419,20 +412,20 @@
     "end_date": "2026-01-23",
     "start_date": "2025-12-01",
     "status": "Agent review & test",
-    "days_until_deadline": -11,
+    "days_until_deadline": -12,
     "changes": [],
     "end_date_formatted": "01/23",
     "days_stale": 6,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 11 天",
+      "已逾期 12 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 11 天"
+    "risk_summary": "已逾期 12 天"
   },
   {
     "number": 1908,
@@ -453,18 +446,18 @@
     "end_date": "2026-02-04",
     "start_date": "2026-01-28",
     "status": "Agent review & test",
-    "days_until_deadline": 1,
+    "days_until_deadline": 0,
     "changes": [],
     "end_date_formatted": "02/04",
     "days_stale": 6,
-    "risk_score": 70,
+    "risk_score": 75,
     "risk_reasons": [
-      "1 天后截止",
+      "今天截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
-    "risk_summary": "1 天后截止"
+    "risk_summary": "今天截止"
   },
   {
     "number": 1359,
@@ -488,11 +481,11 @@
     "status": "Human in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -517,20 +510,20 @@
     "end_date": "2026-01-16",
     "start_date": "2026-01-16",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -18,
+    "days_until_deadline": -19,
     "changes": [],
     "end_date_formatted": "01/16",
     "days_stale": 11,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 18 天",
+      "已逾期 19 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 18 天"
+    "risk_summary": "已逾期 19 天"
   },
   {
     "number": 1256,
@@ -552,14 +545,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -584,7 +577,7 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [
       "priority_down:P2→None",
       "new_assigned",
@@ -622,14 +615,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -656,14 +649,14 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 53,
+    "days_stale": 54,
     "risk_score": 55,
     "risk_reasons": [
       "P0 最高优先级",
-      "停滞 53 天"
+      "停滞 54 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -690,7 +683,7 @@
     "end_date": "2026-02-28",
     "start_date": "2025-12-01",
     "status": "Human in Progress",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 14,
@@ -721,11 +714,8 @@
     "end_date": "2026-02-28",
     "start_date": "2025-12-29",
     "status": "Human in Progress",
-    "days_until_deadline": 25,
-    "changes": [
-      "priority_up:P1→P0",
-      "deadline_changed"
-    ],
+    "days_until_deadline": 24,
+    "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 4,
     "risk_score": 40,
@@ -756,7 +746,7 @@
     "end_date": "2026-02-28",
     "start_date": "2026-01-05",
     "status": "Human in Progress",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [
       "deadline_changed"
     ],
@@ -789,14 +779,14 @@
     "end_date": "2026-02-28",
     "start_date": "2025-11-24",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -855,16 +845,16 @@
     "changes": [
       "priority_down:P1→None"
     ],
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1217,
@@ -885,10 +875,8 @@
     "end_date": "2026-02-27",
     "start_date": "2025-12-08",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 24,
-    "changes": [
-      "deadline_changed"
-    ],
+    "days_until_deadline": 23,
+    "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 0,
     "risk_score": 40,
@@ -920,16 +908,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1241,
@@ -1053,14 +1041,14 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1120,11 +1108,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1153,16 +1141,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1377,
@@ -1184,14 +1172,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1217,19 +1205,19 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1395,
@@ -1250,16 +1238,14 @@
     "end_date": "2026-04-30",
     "start_date": "2026-04-01",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 86,
-    "changes": [
-      "deadline_changed"
-    ],
+    "days_until_deadline": 85,
+    "changes": [],
     "end_date_formatted": "04/30",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1286,16 +1272,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 74,
+    "days_stale": 75,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 74 天"
+      "停滞 75 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 74 天"
+    "risk_summary": "停滞 75 天"
   },
   {
     "number": 1312,
@@ -1349,18 +1335,17 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed",
+      "priority_down:P1→P2",
       "deadline_changed"
     ],
     "end_date_formatted": "02/28",
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1424,11 +1409,11 @@
     "changes": [
       "priority_down:P1→None"
     ],
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1455,16 +1440,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 84,
+    "days_stale": 85,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 84 天"
+      "停滞 85 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 84 天"
+    "risk_summary": "停滞 85 天"
   },
   {
     "number": 1344,
@@ -1517,16 +1502,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 84,
+    "days_stale": 85,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 84 天"
+      "停滞 85 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 84 天"
+    "risk_summary": "停滞 85 天"
   },
   {
     "number": 1326,
@@ -1550,11 +1535,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 84,
+    "days_stale": 85,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 84 天"
+      "停滞 85 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1641,10 +1626,8 @@
     "end_date": "2026-04-30",
     "start_date": "2026-04-01",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 86,
-    "changes": [
-      "deadline_changed"
-    ],
+    "days_until_deadline": 85,
+    "changes": [],
     "end_date_formatted": "04/30",
     "days_stale": 82,
     "risk_score": 25,
@@ -1676,14 +1659,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 53,
+    "days_stale": 54,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 53 天"
+      "停滞 54 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1709,7 +1692,7 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 1,
@@ -1741,14 +1724,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 78,
+    "days_stale": 79,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 78 天"
+      "停滞 79 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1773,7 +1756,7 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 77,
@@ -1792,7 +1775,7 @@
     "url": "https://github.com/sparticleinc/gbase_onprem/issues/49",
     "state": "OPEN",
     "created_at": "2025-11-13T02:30:16Z",
-    "updated_at": "2026-02-02T04:36:49Z",
+    "updated_at": "2026-02-03T09:22:38Z",
     "labels": [
       "onPrem"
     ],
@@ -1806,20 +1789,20 @@
     "end_date": "2026-01-08",
     "start_date": "2026-02-02",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -26,
+    "days_until_deadline": -27,
     "changes": [],
     "end_date_formatted": "01/08",
-    "days_stale": 1,
+    "days_stale": 0,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 26 天",
+      "已逾期 27 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 26 天"
+    "risk_summary": "已逾期 27 天"
   },
   {
     "number": 1391,
@@ -1840,20 +1823,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-26",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
     "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 74,
@@ -1905,7 +1888,7 @@
     "end_date": "2026-02-27",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 24,
+    "days_until_deadline": 23,
     "changes": [
       "priority_up:None→P1",
       "deadline_changed"
@@ -2000,20 +1983,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-26",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
     "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 1572,
@@ -2064,13 +2047,13 @@
     "end_date": "2026-01-16",
     "start_date": "2026-01-12",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -18,
+    "days_until_deadline": -19,
     "changes": [],
     "end_date_formatted": "01/16",
     "days_stale": 64,
     "risk_score": 55,
     "risk_reasons": [
-      "已逾期 18 天",
+      "已逾期 19 天",
       "停滞 64 天"
     ],
     "risk_suggestions": [
@@ -2078,7 +2061,7 @@
       "立即处理或调整截止日期"
     ],
     "risk_level": "high",
-    "risk_summary": "已逾期 18 天"
+    "risk_summary": "已逾期 19 天"
   },
   {
     "number": 1599,
@@ -2098,7 +2081,7 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 57,
@@ -2132,14 +2115,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 62,
+    "days_stale": 63,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 62 天",
+      "停滞 63 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -2166,14 +2149,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 62,
+    "days_stale": 63,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 62 天",
+      "停滞 63 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -2200,14 +2183,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 62,
+    "days_stale": 63,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 62 天",
+      "停滞 63 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -2234,14 +2217,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 62,
+    "days_stale": 63,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 62 天",
+      "停滞 63 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -2271,19 +2254,19 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 60,
+    "days_stale": 61,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 60 天"
+      "停滞 61 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 60 天"
+    "risk_summary": "停滞 61 天"
   },
   {
     "number": 1615,
@@ -2335,7 +2318,7 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 56,
@@ -2489,7 +2472,7 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 54,
@@ -2521,20 +2504,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-26",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
     "days_stale": 8,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 1469,
@@ -2556,10 +2539,10 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -2587,20 +2570,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-26",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
     "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 1663,
@@ -2621,7 +2604,7 @@
     "end_date": "2026-02-27",
     "start_date": "2026-01-12",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 24,
+    "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 15,
@@ -2655,7 +2638,7 @@
     "end_date": "2026-02-13",
     "start_date": "2026-02-03",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/13",
     "days_stale": 1,
@@ -2687,14 +2670,14 @@
     "end_date": "2026-02-28",
     "start_date": "2025-12-29",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 42,
+    "days_stale": 43,
     "risk_score": 55,
     "risk_reasons": [
       "P0 最高优先级",
-      "停滞 42 天"
+      "停滞 43 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -2721,7 +2704,7 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 42,
@@ -2755,7 +2738,7 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 42,
@@ -2789,13 +2772,13 @@
     "end_date": "2026-01-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": -3,
+    "days_until_deadline": -4,
     "changes": [],
     "end_date_formatted": "01/31",
     "days_stale": 42,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 3 天",
+      "已逾期 4 天",
       "P1 高优先级",
       "停滞 42 天"
     ],
@@ -2803,7 +2786,7 @@
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 3 天"
+    "risk_summary": "已逾期 4 天"
   },
   {
     "number": 1735,
@@ -2885,14 +2868,14 @@
     "end_date": "2026-03-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 56,
+    "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 40,
+    "days_stale": 41,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 40 天"
+      "停滞 41 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -2918,7 +2901,7 @@
     "end_date": "2026-02-13",
     "start_date": "2026-02-09",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/13",
     "days_stale": 1,
@@ -2949,20 +2932,20 @@
     "end_date": "2026-01-28",
     "start_date": "2026-01-26",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -6,
+    "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "01/28",
     "days_stale": 5,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 6 天",
+      "已逾期 7 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 6 天"
+    "risk_summary": "已逾期 7 天"
   },
   {
     "number": 1552,
@@ -2983,18 +2966,18 @@
     "end_date": "2026-02-04",
     "start_date": "2026-01-31",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 1,
+    "days_until_deadline": 0,
     "changes": [],
     "end_date_formatted": "02/04",
     "days_stale": 8,
-    "risk_score": 55,
+    "risk_score": 60,
     "risk_reasons": [
-      "1 天后截止",
+      "今天截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "1 天后截止"
+    "risk_level": "critical",
+    "risk_summary": "今天截止"
   },
   {
     "number": 1553,
@@ -3015,20 +2998,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-28",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 1554,
@@ -3080,10 +3063,10 @@
     "end_date": "2026-02-28",
     "start_date": null,
     "status": "Agent review & test",
-    "days_until_deadline": 25,
+    "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3112,7 +3095,7 @@
     "end_date": "2026-02-06",
     "start_date": "2025-12-01",
     "status": "Agent review & test",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [
       "deadline_changed"
     ],
@@ -3120,13 +3103,13 @@
     "days_stale": 7,
     "risk_score": 30,
     "risk_reasons": [
-      "3 天后截止"
+      "2 天后截止"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "medium",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1934,
@@ -3148,18 +3131,18 @@
     "end_date": "2026-02-06",
     "start_date": "2026-02-02",
     "status": "Agent review & test",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 4,
     "risk_score": 70,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1825,
@@ -3296,18 +3279,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 4,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1626,
@@ -3418,7 +3401,7 @@
     "end_date": "2026-03-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 31,
+    "days_until_deadline": 30,
     "changes": [],
     "end_date_formatted": "03/06",
     "days_stale": 11,
@@ -3479,18 +3462,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 6,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1860,
@@ -3511,18 +3494,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 6,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1861,
@@ -3543,18 +3526,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 6,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1877,
@@ -3575,18 +3558,18 @@
     "end_date": "2026-02-04",
     "start_date": "2026-02-02",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 1,
+    "days_until_deadline": 0,
     "changes": [],
     "end_date_formatted": "02/04",
     "days_stale": 0,
-    "risk_score": 55,
+    "risk_score": 60,
     "risk_reasons": [
-      "1 天后截止",
+      "今天截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "1 天后截止"
+    "risk_level": "critical",
+    "risk_summary": "今天截止"
   },
   {
     "number": 1878,
@@ -3607,10 +3590,8 @@
     "end_date": "2026-02-27",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 24,
-    "changes": [
-      "priority_up:P2→P1"
-    ],
+    "days_until_deadline": 23,
+    "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 8,
     "risk_score": 25,
@@ -3641,20 +3622,20 @@
     "end_date": "2026-01-28",
     "start_date": "2026-01-28",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -6,
+    "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "01/28",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 6 天",
+      "已逾期 7 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 6 天"
+    "risk_summary": "已逾期 7 天"
   },
   {
     "number": 1682,
@@ -3675,18 +3656,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 1,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1226,
@@ -3707,7 +3688,7 @@
     "end_date": "2026-02-13",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/13",
     "days_stale": 4,
@@ -3739,13 +3720,13 @@
     "end_date": "2025-12-12",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": -53,
+    "days_until_deadline": -54,
     "changes": [],
     "end_date_formatted": "12/12",
     "days_stale": 81,
     "risk_score": 95,
     "risk_reasons": [
-      "已逾期 53 天",
+      "已逾期 54 天",
       "P0 最高优先级",
       "停滞 81 天"
     ],
@@ -3753,7 +3734,7 @@
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 53 天"
+    "risk_summary": "已逾期 54 天"
   },
   {
     "number": 1645,
@@ -3774,20 +3755,20 @@
     "end_date": "2026-01-29",
     "start_date": "2026-01-28",
     "status": "Agent in Progress",
-    "days_until_deadline": -5,
+    "days_until_deadline": -6,
     "changes": [],
     "end_date_formatted": "01/29",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 5 天",
+      "已逾期 6 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 5 天"
+    "risk_summary": "已逾期 6 天"
   },
   {
     "number": 1917,
@@ -3809,18 +3790,18 @@
     "end_date": "2026-02-04",
     "start_date": "2026-01-29",
     "status": "Agent in Progress",
-    "days_until_deadline": 1,
+    "days_until_deadline": 0,
     "changes": [],
     "end_date_formatted": "02/04",
     "days_stale": 5,
-    "risk_score": 55,
+    "risk_score": 60,
     "risk_reasons": [
-      "1 天后截止",
+      "今天截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "1 天后截止"
+    "risk_level": "critical",
+    "risk_summary": "今天截止"
   },
   {
     "number": 1918,
@@ -3841,18 +3822,18 @@
     "end_date": "2026-02-04",
     "start_date": "2026-01-29",
     "status": "Agent in Progress",
-    "days_until_deadline": 1,
+    "days_until_deadline": 0,
     "changes": [],
     "end_date_formatted": "02/04",
     "days_stale": 5,
-    "risk_score": 70,
+    "risk_score": 75,
     "risk_reasons": [
-      "1 天后截止",
+      "今天截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
-    "risk_summary": "1 天后截止"
+    "risk_summary": "今天截止"
   },
   {
     "number": 1919,
@@ -3873,18 +3854,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 1,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1931,
@@ -3905,18 +3886,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 4,
     "risk_score": 70,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1946,
@@ -3937,7 +3918,7 @@
     "end_date": "2026-02-13",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/13",
     "days_stale": 4,
@@ -3968,20 +3949,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-29",
     "status": "Agent in Progress",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 1653,
@@ -4003,9 +3984,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:None→P0"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
@@ -4034,18 +4013,18 @@
     "end_date": "2026-02-05",
     "start_date": null,
     "status": "Agent in Progress",
-    "days_until_deadline": 2,
+    "days_until_deadline": 1,
     "changes": [],
     "end_date_formatted": "02/05",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 55,
     "risk_reasons": [
-      "2 天后截止",
+      "1 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "2 天后截止"
+    "risk_summary": "1 天后截止"
   },
   {
     "number": 1929,
@@ -4066,7 +4045,7 @@
     "end_date": "2026-02-27",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 24,
+    "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 4,
@@ -4098,7 +4077,7 @@
     "end_date": "2026-03-07",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 32,
+    "days_until_deadline": 31,
     "changes": [
       "deadline_changed"
     ],
@@ -4131,20 +4110,20 @@
     "end_date": "2026-01-30",
     "start_date": "2026-01-30",
     "status": "Agent in Progress",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 1953,
@@ -4165,18 +4144,18 @@
     "end_date": "2026-02-05",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 2,
+    "days_until_deadline": 1,
     "changes": [],
     "end_date_formatted": "02/05",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 40,
     "risk_reasons": [
-      "2 天后截止",
+      "1 天后截止",
       "P2 一般优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "2 天后截止"
+    "risk_summary": "1 天后截止"
   },
   {
     "number": 1954,
@@ -4197,18 +4176,18 @@
     "end_date": "2026-02-06",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 3,
     "risk_score": 40,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P2 一般优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1958,
@@ -4259,18 +4238,18 @@
     "end_date": "2026-02-06",
     "start_date": "2026-02-02",
     "status": "Agent in Progress",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
     "days_stale": 1,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1959,
@@ -4291,10 +4270,10 @@
     "end_date": "2026-02-27",
     "start_date": "2026-02-02",
     "status": "Agent in Progress",
-    "days_until_deadline": 24,
+    "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4322,10 +4301,10 @@
     "end_date": "2026-02-13",
     "start_date": "2026-02-04",
     "status": "Agent in Progress",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/13",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4353,10 +4332,10 @@
     "end_date": "2026-02-14",
     "start_date": "2026-02-04",
     "status": "Agent in Progress",
-    "days_until_deadline": 11,
+    "days_until_deadline": 10,
     "changes": [],
     "end_date_formatted": "02/14",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4382,13 +4361,13 @@
     "end_date": "2026-02-13",
     "start_date": "2026-02-04",
     "status": "Agent in Progress",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [
       "priority_up:None→P0",
       "deadline_changed"
     ],
     "end_date_formatted": "02/13",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4396,38 +4375,6 @@
     "risk_suggestions": [],
     "risk_level": "high",
     "risk_summary": "P0 最高优先级"
-  },
-  {
-    "number": 1962,
-    "title": "热词中需要澄清和无法识别的内容 调查对应",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1962",
-    "state": "OPEN",
-    "created_at": "2026-02-02T14:47:51Z",
-    "updated_at": "2026-02-03T04:32:08Z",
-    "labels": [
-      "DRI"
-    ],
-    "assignees": [
-      "baoshi1970"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-02-03",
-    "start_date": "2026-02-03",
-    "status": "Agent in Progress",
-    "days_until_deadline": 0,
-    "changes": [],
-    "end_date_formatted": "02/03",
-    "days_stale": 0,
-    "risk_score": 75,
-    "risk_reasons": [
-      "今天截止",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "critical",
-    "risk_summary": "今天截止"
   },
   {
     "number": 1967,
@@ -4449,9 +4396,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4480,10 +4425,8 @@
     "end_date": "2026-02-27",
     "start_date": "2026-02-09",
     "status": "Agent in Progress",
-    "days_until_deadline": 24,
-    "changes": [
-      "new"
-    ],
+    "days_until_deadline": 23,
+    "changes": [],
     "end_date_formatted": "02/27",
     "days_stale": 0,
     "risk_score": 40,
@@ -4513,20 +4456,18 @@
     "end_date": "2026-02-04",
     "start_date": null,
     "status": "Human in Progress",
-    "days_until_deadline": 1,
-    "changes": [
-      "new"
-    ],
+    "days_until_deadline": 0,
+    "changes": [],
     "end_date_formatted": "02/04",
     "days_stale": 0,
-    "risk_score": 55,
+    "risk_score": 60,
     "risk_reasons": [
-      "1 天后截止",
+      "今天截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "1 天后截止"
+    "risk_level": "critical",
+    "risk_summary": "今天截止"
   },
   {
     "number": 1330,
@@ -4547,22 +4488,21 @@
     "end_date": "2026-02-06",
     "start_date": "2026-02-03",
     "status": "Human in Progress",
-    "days_until_deadline": 3,
+    "days_until_deadline": 2,
     "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed",
+      "priority_down:P1→P2",
       "deadline_changed"
     ],
     "end_date_formatted": "02/06",
     "days_stale": 0,
     "risk_score": 55,
     "risk_reasons": [
-      "3 天后截止",
+      "2 天后截止",
       "P1 高优先级"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "3 天后截止"
+    "risk_summary": "2 天后截止"
   },
   {
     "number": 1968,
@@ -4585,7 +4525,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:None→P1"
     ],
     "days_stale": 0,
     "risk_score": 25,
@@ -4595,6 +4535,40 @@
     "risk_suggestions": [],
     "risk_level": "medium",
     "risk_summary": "P1 高优先级"
+  },
+  {
+    "number": 1973,
+    "title": "opensearch在查询时报错，gbase-backend 后端也会自动重启",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1973",
+    "state": "OPEN",
+    "created_at": "2026-02-03T12:12:57Z",
+    "updated_at": "2026-02-03T12:12:57Z",
+    "labels": [
+      "bug"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-05",
+    "start_date": null,
+    "status": "Human in Progress",
+    "days_until_deadline": 1,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/05",
+    "days_stale": 0,
+    "risk_score": 55,
+    "risk_reasons": [
+      "1 天后截止",
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "1 天后截止"
   },
   {
     "number": 1,
@@ -4616,10 +4590,10 @@
       "priority_up:None→P0",
       "deadline_changed"
     ],
-    "days_stale": 54,
+    "days_stale": 55,
     "risk_score": 25,
     "risk_reasons": [
-      "停滞 54 天",
+      "停滞 55 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -4627,7 +4601,7 @@
       "分配负责人"
     ],
     "risk_level": "medium",
-    "risk_summary": "停滞 54 天"
+    "risk_summary": "停滞 55 天"
   },
   {
     "number": 1,
