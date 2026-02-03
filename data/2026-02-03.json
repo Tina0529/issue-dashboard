@@ -90,11 +90,11 @@
     ],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
-    "days_stale": 80,
+    "days_stale": 81,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 80 天"
+      "停滞 81 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -190,11 +190,11 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 73,
+    "days_stale": 74,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 73 天"
+      "停滞 74 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -253,12 +253,12 @@
     "changes": [],
     "days_until_deadline": -65,
     "end_date_formatted": "11/30",
-    "days_stale": 79,
+    "days_stale": 80,
     "risk_score": 95,
     "risk_reasons": [
       "已逾期 65 天",
       "P0 最高优先级",
-      "停滞 79 天"
+      "停滞 80 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -520,7 +520,7 @@
     "changes": [],
     "days_until_deadline": -18,
     "end_date_formatted": "01/16",
-    "days_stale": 10,
+    "days_stale": 11,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 18 天",
@@ -1020,11 +1020,11 @@
       "deadline_changed"
     ],
     "days_until_deadline": null,
-    "days_stale": 73,
+    "days_stale": 74,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 73 天",
+      "停滞 74 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -1843,7 +1843,7 @@
     "changes": [],
     "days_until_deadline": -4,
     "end_date_formatted": "01/30",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 4 天",
@@ -1941,7 +1941,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1972,7 +1972,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2003,7 +2003,7 @@
     "changes": [],
     "days_until_deadline": -4,
     "end_date_formatted": "01/30",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 4 天",
@@ -2338,16 +2338,16 @@
     "changes": [],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
-    "days_stale": 55,
+    "days_stale": 56,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 55 天"
+      "停滞 56 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 55 天"
+    "risk_summary": "停滞 56 天"
   },
   {
     "number": 1459,
@@ -2524,7 +2524,7 @@
     "changes": [],
     "days_until_deadline": -4,
     "end_date_formatted": "01/30",
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 4 天",
@@ -2590,7 +2590,7 @@
     "changes": [],
     "days_until_deadline": -4,
     "end_date_formatted": "01/30",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 4 天",
@@ -2724,11 +2724,11 @@
     "changes": [],
     "days_until_deadline": 56,
     "end_date_formatted": "03/31",
-    "days_stale": 41,
+    "days_stale": 42,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 41 天"
+      "停滞 42 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -2921,7 +2921,7 @@
     "changes": [],
     "days_until_deadline": 10,
     "end_date_formatted": "02/13",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -2986,7 +2986,7 @@
     "changes": [],
     "days_until_deadline": 1,
     "end_date_formatted": "02/04",
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 55,
     "risk_reasons": [
       "1 天后截止",
@@ -3051,7 +3051,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3210,7 +3210,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3299,7 +3299,7 @@
     "changes": [],
     "days_until_deadline": 3,
     "end_date_formatted": "02/06",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 55,
     "risk_reasons": [
       "3 天后截止",
@@ -3360,7 +3360,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3390,7 +3390,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3620,76 +3620,6 @@
     "risk_suggestions": [],
     "risk_level": "medium",
     "risk_summary": "P1 高优先级"
-  },
-  {
-    "number": 1879,
-    "title": "[Atrust] reranker更新",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1879",
-    "state": "OPEN",
-    "created_at": "2026-01-26T07:08:56Z",
-    "updated_at": "2026-01-26T07:10:34Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "shuiRong",
-      "huzhejie"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-01-30",
-    "start_date": "2026-01-26",
-    "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": -4,
-    "end_date_formatted": "01/30",
-    "days_stale": 7,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 4 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
-  },
-  {
-    "number": 87,
-    "title": "给所有当前Onprem的客户追加设置参数",
-    "url": "https://github.com/sparticleinc/gbase_onprem/issues/87",
-    "state": "OPEN",
-    "created_at": "2026-01-27T10:07:16Z",
-    "updated_at": "2026-02-02T09:03:04Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "shuiRong",
-      "huzhejie"
-    ],
-    "repo": "gbase_onprem",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-01-30",
-    "start_date": "2026-01-28",
-    "status": "Awaiting Human Review",
-    "changes": [],
-    "days_until_deadline": -4,
-    "end_date_formatted": "01/30",
-    "days_stale": 0,
-    "risk_score": 80,
-    "risk_reasons": [
-      "已逾期 4 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 4 天"
   },
   {
     "number": 1901,
