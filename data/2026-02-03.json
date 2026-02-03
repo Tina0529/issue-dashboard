@@ -422,7 +422,7 @@
     "changes": [],
     "days_until_deadline": -11,
     "end_date_formatted": "01/23",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 11 天",
@@ -1809,7 +1809,7 @@
     "changes": [],
     "days_until_deadline": -26,
     "end_date_formatted": "01/08",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 26 天",
@@ -3238,7 +3238,7 @@
     "status": "Awaiting Human Review",
     "changes": [],
     "days_until_deadline": null,
-    "days_stale": 18,
+    "days_stale": 19,
     "risk_score": 10,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3612,7 +3612,7 @@
     ],
     "days_until_deadline": 24,
     "end_date_formatted": "02/27",
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3812,12 +3812,12 @@
     "changes": [],
     "days_until_deadline": -53,
     "end_date_formatted": "12/12",
-    "days_stale": 80,
+    "days_stale": 81,
     "risk_score": 95,
     "risk_reasons": [
       "已逾期 53 天",
       "P0 最高优先级",
-      "停滞 80 天"
+      "停滞 81 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -4473,7 +4473,7 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1962",
     "state": "OPEN",
     "created_at": "2026-02-02T14:47:51Z",
-    "updated_at": "2026-02-02T14:48:50Z",
+    "updated_at": "2026-02-03T04:32:08Z",
     "labels": [
       "DRI"
     ],
@@ -4498,6 +4498,38 @@
     "risk_suggestions": [],
     "risk_level": "critical",
     "risk_summary": "今天截止"
+  },
+  {
+    "number": 1967,
+    "title": "朝日生命：数据和账号删除",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1967",
+    "state": "OPEN",
+    "created_at": "2026-02-03T04:29:33Z",
+    "updated_at": "2026-02-03T04:30:17Z",
+    "labels": [],
+    "assignees": [
+      "annSharon",
+      "Denya0529",
+      "lirhcoder"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Human in Progress",
+    "changes": [
+      "new"
+    ],
+    "days_until_deadline": null,
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
   },
   {
     "number": 1963,
