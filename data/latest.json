@@ -38,7 +38,7 @@
     "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1670",
     "state": "OPEN",
     "created_at": "2026-02-02T08:12:52Z",
-    "updated_at": "2026-02-02T09:05:15Z",
+    "updated_at": "2026-02-04T02:46:28Z",
     "labels": [
       "三菱電機"
     ],
@@ -54,7 +54,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 1,
+    "days_stale": 0,
     "risk_score": 70,
     "risk_reasons": [
       "2 天后截止",
@@ -153,7 +153,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -214,7 +214,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 12,
+    "days_stale": 13,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -282,7 +282,7 @@
     "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -415,7 +415,7 @@
     "days_until_deadline": -12,
     "changes": [],
     "end_date_formatted": "01/23",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 12 天",
@@ -686,8 +686,8 @@
     "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 14,
-    "risk_score": 40,
+    "days_stale": 15,
+    "risk_score": 50,
     "risk_reasons": [
       "P0 最高优先级"
     ],
@@ -717,7 +717,7 @@
     "days_until_deadline": 24,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -878,7 +878,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -941,16 +941,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1242,
@@ -974,16 +974,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1244,
@@ -1237,11 +1237,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 79,
+    "days_stale": 80,
     "risk_score": 55,
     "risk_reasons": [
       "P0 最高优先级",
-      "停滞 79 天"
+      "停滞 80 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1306,16 +1306,16 @@
     "changes": [
       "deadline_changed"
     ],
-    "days_stale": 81,
+    "days_stale": 82,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 81 天"
+      "停滞 82 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 81 天"
+    "risk_summary": "停滞 82 天"
   },
   {
     "number": 1263,
@@ -1404,7 +1404,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 12,
+    "days_stale": 13,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1498,7 +1498,7 @@
     "status": "Agent review & test",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1529,11 +1529,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 84,
+    "days_stale": 85,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 84 天"
+      "停滞 85 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1691,11 +1691,11 @@
     "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 77,
+    "days_stale": 78,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 77 天"
+      "停滞 78 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1826,7 +1826,7 @@
       "deadline_changed"
     ],
     "end_date_formatted": "02/27",
-    "days_stale": 8,
+    "days_stale": 9,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -1856,7 +1856,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1902,7 +1902,7 @@
     "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1403",
     "state": "OPEN",
     "created_at": "2025-11-26T07:26:44Z",
-    "updated_at": "2026-01-28T06:11:02Z",
+    "updated_at": "2026-02-04T02:40:37Z",
     "labels": [
       "onPrem"
     ],
@@ -1918,7 +1918,7 @@
     "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "01/30",
-    "days_stale": 6,
+    "days_stale": 0,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 5 天",
@@ -1936,29 +1936,32 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1572",
     "state": "OPEN",
     "created_at": "2025-11-27T07:12:07Z",
-    "updated_at": "2026-02-04T00:38:29Z",
-    "labels": [],
+    "updated_at": "2026-02-04T02:07:16Z",
+    "labels": [
+      "onPrem"
+    ],
     "assignees": [
-      "111559"
+      "peng-an"
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
-    "priority": null,
+    "priority": "P1",
     "end_date": null,
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
+      "priority_up:None→P1",
       "new_assigned"
     ],
     "days_stale": 0,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
     ],
-    "risk_level": "low",
-    "risk_summary": "正常"
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1592,
@@ -2253,16 +2256,16 @@
     "days_until_deadline": 55,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 56,
+    "days_stale": 57,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 56 天"
+      "停滞 57 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 56 天"
+    "risk_summary": "停滞 57 天"
   },
   {
     "number": 1459,
@@ -2539,7 +2542,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 15,
+    "days_stale": 16,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级"
@@ -3032,7 +3035,7 @@
       "deadline_changed"
     ],
     "end_date_formatted": "02/06",
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 30,
     "risk_reasons": [
       "2 天后截止"
@@ -3041,39 +3044,6 @@
       "建议设置优先级"
     ],
     "risk_level": "medium",
-    "risk_summary": "2 天后截止"
-  },
-  {
-    "number": 1934,
-    "title": "【skill】Onprem上封装skill 前端",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1934",
-    "state": "OPEN",
-    "created_at": "2026-01-30T02:38:57Z",
-    "updated_at": "2026-01-30T02:41:44Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "annSharon",
-      "peng-an"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-02-06",
-    "start_date": "2026-02-02",
-    "status": "Agent review & test",
-    "days_until_deadline": 2,
-    "changes": [],
-    "end_date_formatted": "02/06",
-    "days_stale": 4,
-    "risk_score": 70,
-    "risk_reasons": [
-      "2 天后截止",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "critical",
     "risk_summary": "2 天后截止"
   },
   {
@@ -3153,7 +3123,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 19,
+    "days_stale": 20,
     "risk_score": 10,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3525,7 +3495,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 8,
+    "days_stale": 9,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3591,7 +3561,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 55,
     "risk_reasons": [
       "2 天后截止",
@@ -3655,12 +3625,12 @@
     "days_until_deadline": -54,
     "changes": [],
     "end_date_formatted": "12/12",
-    "days_stale": 81,
+    "days_stale": 82,
     "risk_score": 95,
     "risk_reasons": [
       "已逾期 54 天",
       "P0 最高优先级",
-      "停滞 81 天"
+      "停滞 82 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -3821,7 +3791,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 70,
     "risk_reasons": [
       "2 天后截止",
@@ -4014,7 +3984,7 @@
       "deadline_changed"
     ],
     "end_date_formatted": "03/07",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4111,7 +4081,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 40,
     "risk_reasons": [
       "2 天后截止",
@@ -4329,7 +4299,7 @@
     "status": "Human in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4360,7 +4330,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4391,7 +4361,7 @@
     "days_until_deadline": 0,
     "changes": [],
     "end_date_formatted": "02/04",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 60,
     "risk_reasons": [
       "今天截止",
@@ -4426,7 +4396,7 @@
       "deadline_changed"
     ],
     "end_date_formatted": "02/06",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 55,
     "risk_reasons": [
       "2 天后截止",
@@ -4459,7 +4429,7 @@
     "changes": [
       "priority_up:None→P1"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4474,7 +4444,7 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1973",
     "state": "OPEN",
     "created_at": "2026-02-03T12:12:57Z",
-    "updated_at": "2026-02-03T12:12:57Z",
+    "updated_at": "2026-02-04T02:35:46Z",
     "labels": [
       "bug"
     ],
@@ -4483,7 +4453,7 @@
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
-    "priority": "P1",
+    "priority": "P0",
     "end_date": "2026-02-05",
     "start_date": null,
     "status": "Human in Progress",
@@ -4493,13 +4463,13 @@
     ],
     "end_date_formatted": "02/05",
     "days_stale": 0,
-    "risk_score": 55,
+    "risk_score": 70,
     "risk_reasons": [
       "1 天后截止",
-      "P1 高优先级"
+      "P0 最高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "high",
+    "risk_level": "critical",
     "risk_summary": "1 天后截止"
   },
   {
@@ -4542,7 +4512,7 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1977",
     "state": "OPEN",
     "created_at": "2026-02-04T00:58:01Z",
-    "updated_at": "2026-02-04T01:03:46Z",
+    "updated_at": "2026-02-04T01:53:18Z",
     "labels": [
       "测试自动化"
     ],
@@ -4569,6 +4539,176 @@
     "risk_suggestions": [],
     "risk_level": "critical",
     "risk_summary": "P0 最高优先级"
+  },
+  {
+    "number": 1979,
+    "title": "Opensearch的分词器从代码到数据库都没有正常生效",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1979",
+    "state": "OPEN",
+    "created_at": "2026-02-04T02:13:14Z",
+    "updated_at": "2026-02-04T02:13:38Z",
+    "labels": [
+      "bug",
+      "enhancement",
+      "精度与infra"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-15",
+    "start_date": "2026-02-13",
+    "status": "Awaiting Human Review",
+    "days_until_deadline": 11,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/15",
+    "days_stale": 0,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
+  },
+  {
+    "number": 1980,
+    "title": "测试环境、生产环境、staging环境的opensearch reindex",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1980",
+    "state": "OPEN",
+    "created_at": "2026-02-04T02:15:49Z",
+    "updated_at": "2026-02-04T02:15:49Z",
+    "labels": [
+      "enhancement",
+      "速度与性能"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-15",
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": 11,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/15",
+    "days_stale": 0,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
+  },
+  {
+    "number": 1982,
+    "title": "【测试】Staging测试作业",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1982",
+    "state": "OPEN",
+    "created_at": "2026-02-04T02:40:24Z",
+    "updated_at": "2026-02-04T02:44:52Z",
+    "labels": [
+      "SaaS staging"
+    ],
+    "assignees": [
+      "baoshi1970"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P0",
+    "end_date": "2026-02-13",
+    "start_date": "2026-02-04",
+    "status": "Agent in Progress",
+    "days_until_deadline": 9,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/13",
+    "days_stale": 0,
+    "risk_score": 40,
+    "risk_reasons": [
+      "P0 最高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
+  },
+  {
+    "number": 1983,
+    "title": "办公室机器部署融合后的代码，做为onprem的Staging环境",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1983",
+    "state": "OPEN",
+    "created_at": "2026-02-04T02:45:31Z",
+    "updated_at": "2026-02-04T02:45:31Z",
+    "labels": [
+      "精度与infra"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P0",
+    "end_date": "2026-02-09",
+    "start_date": "2026-02-04",
+    "status": "Awaiting Human Review",
+    "days_until_deadline": 5,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/09",
+    "days_stale": 0,
+    "risk_score": 60,
+    "risk_reasons": [
+      "P0 最高优先级",
+      "5 天后截止"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "critical",
+    "risk_summary": "P0 最高优先级"
+  },
+  {
+    "number": 1985,
+    "title": "GBase support侧聊天回答内容支持A2UI协议，展示出图形页面",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1985",
+    "state": "OPEN",
+    "created_at": "2026-02-04T04:28:56Z",
+    "updated_at": "2026-02-04T04:31:50Z",
+    "labels": [
+      "Skill"
+    ],
+    "assignees": [
+      "annSharon",
+      "baoshi1970"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-28",
+    "start_date": "2026-02-05",
+    "status": "Agent in Progress",
+    "days_until_deadline": 24,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/28",
+    "days_stale": 0,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1,
