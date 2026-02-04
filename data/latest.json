@@ -345,7 +345,7 @@
     "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "01/28",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 7 天",
@@ -584,16 +584,16 @@
       "deadline_changed"
     ],
     "end_date_formatted": "02/28",
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1269,
@@ -984,40 +984,6 @@
     ],
     "risk_level": "low",
     "risk_summary": "停滞 90 天"
-  },
-  {
-    "number": 1249,
-    "title": "RAG优化：重新看看query rewrite有没有速度优化空间",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1249",
-    "state": "OPEN",
-    "created_at": "2025-10-01T04:01:35Z",
-    "updated_at": "2026-02-04T00:35:28Z",
-    "labels": [
-      "roadMap"
-    ],
-    "assignees": [
-      "shuiRong"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P2",
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [
-      "priority_down:P2→None",
-      "new_assigned",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
-    "risk_score": 10,
-    "risk_reasons": [
-      "P2 一般优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "low",
-    "risk_summary": "P2 一般优先级"
   },
   {
     "number": 1244,
