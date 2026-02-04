@@ -459,6 +459,8 @@ def generate_html(all_issues, changes, yesterday_stats):
         'p1': len(p1_issues),
         'p2': len(p2_issues),
         'unassigned': len(unassigned),
+        'new_count': len(changes.get('new_issues', [])),
+        'closed_count': len(changes.get('closed_issues', [])),
     }
 
     # 生成趋势 HTML
@@ -1833,6 +1835,8 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
     trend_total = [s.get('total', 0) for s in historical_stats[-14:]]
     trend_overdue = [s.get('overdue', 0) for s in historical_stats[-14:]]
     trend_p0 = [s.get('p0', 0) for s in historical_stats[-14:]]
+    trend_new = [s.get('new_count', 0) for s in historical_stats[-14:]]
+    trend_closed = [s.get('closed_count', 0) for s in historical_stats[-14:]]
 
     html = '''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -2234,7 +2238,27 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             </div>
         </div>
 
-        <!-- 第三行：标签分布 + 负责人分布 -->
+        <!-- 第三行：新增/关闭趋势 -->
+        <div class="grid grid-2" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">✅</span>每日完成趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="closedChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🆕</span>每日新增趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="newChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四行：标签分布 + 负责人分布 -->
         <div class="grid grid-2">
             <div class="card">
                 <div class="card-header">
@@ -2416,6 +2440,64 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                 scales: {
                     x: { stacked: true, grid: { display: false } },
                     y: { stacked: true, grid: { color: '#334155' } }
+                }
+            }
+        });
+
+        // 每日完成趋势 (折线图)
+        new Chart(document.getElementById('closedChart'), {
+            type: 'line',
+            data: {
+                labels: ''' + json.dumps(trend_dates) + ''',
+                datasets: [{
+                    label: '完成数',
+                    data: ''' + json.dumps(trend_closed) + ''',
+                    borderColor: '#22C55E',
+                    backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#22C55E',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 每日新增趋势 (折线图)
+        new Chart(document.getElementById('newChart'), {
+            type: 'line',
+            data: {
+                labels: ''' + json.dumps(trend_dates) + ''',
+                datasets: [{
+                    label: '新增数',
+                    data: ''' + json.dumps(trend_new) + ''',
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#3B82F6',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    x: { grid: { display: false } }
                 }
             }
         });
