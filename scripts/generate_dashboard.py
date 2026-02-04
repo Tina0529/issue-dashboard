@@ -2327,7 +2327,7 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
         for i, (assignee, issues) in enumerate(sorted_closed_by_assignee[:10]):
             rank_class = 'success' if i < 3 else ''
             count = len(issues)
-            issue_links = ', '.join([f'<a href="{iss["url"]}" target="_blank">#{iss["number"]}</a>' for iss in issues[:5]])
+            issue_links = ', '.join([f'<a href="{iss["url"]}" target="_blank" style="color:var(--text-muted)">#{iss["number"]}</a>' for iss in issues[:5]])
             if len(issues) > 5:
                 issue_links += f' +{len(issues) - 5}'
             html += f'''
@@ -2587,7 +2587,7 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                     legend: { display: false }
                 },
                 scales: {
-                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    y: { beginAtZero: true, grid: { color: '#334155' }, ticks: { stepSize: 1, precision: 0 } },
                     x: { grid: { display: false } }
                 }
             }
@@ -2616,7 +2616,7 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                     legend: { display: false }
                 },
                 scales: {
-                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    y: { beginAtZero: true, grid: { color: '#334155' }, ticks: { stepSize: 1, precision: 0 } },
                     x: { grid: { display: false } }
                 }
             }
