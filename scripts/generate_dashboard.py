@@ -1765,9 +1765,26 @@ def get_historical_stats():
     return sorted(stats_files, key=lambda x: x['date'])
 
 
-def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historical_stats, now):
+def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historical_stats, now, yesterday_issues=None):
     """生成图表 Dashboard 页面"""
     today = now.date()
+
+    # 计算昨日完成（按负责人统计）
+    closed_by_assignee = defaultdict(list)
+    if yesterday_issues:
+        today_numbers = {i['number'] for i in all_issues}
+        for issue in yesterday_issues:
+            if issue['number'] not in today_numbers:
+                # 这个 issue 被关闭了
+                assignees = issue.get('assignees', [])
+                if assignees:
+                    for assignee in assignees:
+                        closed_by_assignee[assignee].append(issue)
+                else:
+                    closed_by_assignee['未分配'].append(issue)
+
+    # 按完成数量排序
+    sorted_closed_by_assignee = sorted(closed_by_assignee.items(), key=lambda x: -len(x[1]))
 
     # 标签统计
     label_stats = defaultdict(lambda: {'count': 0, 'p0': 0, 'p1': 0, 'p2': 0, 'overdue': 0})
@@ -2045,6 +2062,8 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             margin-right: 12px;
         }
         .top-rank.danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .top-rank.success { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+        .top-value.success { color: var(--success); }
         .top-content { flex: 1; min-width: 0; }
         .top-title {
             font-size: 12px;
@@ -2198,8 +2217,8 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             </div>
         </div>
 
-        <!-- 第二行：趋势图 -->
-        <div class="grid grid-2" style="margin-bottom: 20px;">
+        <!-- 第二行：趋势图 + Top列表 -->
+        <div class="grid grid-3" style="margin-bottom: 20px;">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title"><span class="icon purple">📈</span>Issue 趋势 (近14天)</div>
@@ -2232,6 +2251,37 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
 
     if not overdue_issues:
         html += '                    <div style="text-align:center;padding:40px;color:var(--text-muted)">🎉 没有逾期 Issue</div>'
+
+    html += '''
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">🏆</span>昨日完成排行</div>
+                </div>
+                <div class="top-list">
+'''
+
+    # 添加昨日完成排行
+    if sorted_closed_by_assignee:
+        for i, (assignee, issues) in enumerate(sorted_closed_by_assignee[:10]):
+            rank_class = 'success' if i < 3 else ''
+            count = len(issues)
+            issue_links = ', '.join([f'<a href="{iss["url"]}" target="_blank">#{iss["number"]}</a>' for iss in issues[:5]])
+            if len(issues) > 5:
+                issue_links += f' +{len(issues) - 5}'
+            html += f'''
+                    <div class="top-item">
+                        <div class="top-rank {rank_class}">{i + 1}</div>
+                        <div class="top-content">
+                            <div class="top-title">👤 {assignee}</div>
+                            <div class="top-meta">{issue_links}</div>
+                        </div>
+                        <div class="top-value success">+{count}</div>
+                    </div>
+'''
+    else:
+        html += '                    <div style="text-align:center;padding:40px;color:var(--text-muted)">暂无昨日完成数据</div>'
 
     html += '''
                 </div>
@@ -2398,12 +2448,22 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                 indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: { left: 10 }
+                },
                 plugins: {
                     legend: { position: 'top' }
                 },
                 scales: {
                     x: { stacked: true, grid: { color: '#334155' } },
-                    y: { stacked: true, grid: { display: false } }
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: {
+                            autoSkip: false,
+                            font: { size: 11 }
+                        }
+                    }
                 }
             }
         });
@@ -2582,7 +2642,7 @@ def main():
     historical_stats = get_historical_stats()
 
     # 生成图表 Dashboard 页面
-    dashboard_html = generate_dashboard_html(all_issues, current_stats, yesterday_stats, historical_stats, now)
+    dashboard_html = generate_dashboard_html(all_issues, current_stats, yesterday_stats, historical_stats, now, yesterday_issues)
     dashboard_path = os.path.join(PUBLIC_DIR, 'dashboard.html')
     with open(dashboard_path, 'w', encoding='utf-8') as f:
         f.write(dashboard_html)
