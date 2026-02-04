@@ -274,7 +274,7 @@
             <a href="index.html#assignees" class="nav-item">
                 <span class="dot" style="background: var(--text-muted)"></span>
                 未分配
-                <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">14</span>
+                <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">4</span>
             </a>
         </nav>
     </aside>
@@ -282,7 +282,7 @@
     <main class="main-content">
         <div class="page-header">
             <div class="page-title">📊 Dashboard</div>
-            <div class="timestamp">更新: 2026-02-04 08:06</div>
+            <div class="timestamp">更新: 2026-02-04 09:46</div>
         </div>
 
         <!-- 统计卡片 -->
@@ -298,9 +298,9 @@
                 <div class="stat-card-change down">↓ 1</div>
             </div>
             <div class="stat-card info">
-                <div class="stat-card-value">149</div>
+                <div class="stat-card-value">147</div>
                 <div class="stat-card-label">📋 总计</div>
-                <div class="stat-card-change">- 无变化</div>
+                <div class="stat-card-change down">↓ 2</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -324,11 +324,11 @@
                             <div class="health-detail-label">逾期率</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--warning)">19%</div>
+                            <div class="health-detail-value" style="color: var(--warning)">20%</div>
                             <div class="health-detail-label">P0占比</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--text-muted)">9%</div>
+                            <div class="health-detail-value" style="color: var(--text-muted)">3%</div>
                             <div class="health-detail-label">未分配率</div>
                         </div>
                     </div>
@@ -462,7 +462,27 @@
             </div>
         </div>
 
-        <!-- 第三行：标签分布 + 负责人分布 -->
+        <!-- 第三行：新增/关闭趋势 -->
+        <div class="grid grid-2" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">✅</span>每日完成趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="closedChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🆕</span>每日新增趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="newChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四行：标签分布 + 负责人分布 -->
         <div class="grid grid-2">
             <div class="card">
                 <div class="card-header">
@@ -494,7 +514,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [29, 55, 20, 45],
+                    data: [29, 56, 20, 42],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -515,7 +535,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [19, 23, 32, 21, 54],
+                    data: [19, 23, 33, 21, 51],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -534,11 +554,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "latest"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [152, 149, 149],
+                        data: [152, 149, 149, 149],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -546,7 +566,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [23, 19, 19],
+                        data: [23, 19, 19, 19],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -554,7 +574,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [30, 30, 29],
+                        data: [30, 30, 29, 29],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -579,21 +599,21 @@
         new Chart(document.getElementById('labelChart'), {
             type: 'bar',
             data: {
-                labels: ["onPrem", "roadMap", "\u7cbe\u5ea6\u4e0einfra", "\u30ea\u30be\u30fc\u30e0", "AI Inside", "BREXA-NEXT", "SaaS staging", "Novare", "Parser", "\u795e\u7530\u901a\u4fe1\u6a5f", "bug", "enhancement", "\u4e09\u83f1\u96fb\u6a5f", "\u52a0\u8d3a\u7535\u5b50", "GTM"],
+                labels: ["onPrem", "roadMap", "\u7cbe\u5ea6\u4e0einfra", "\u30ea\u30be\u30fc\u30e0", "AI Inside", "BREXA-NEXT", "SaaS staging", "Novare", "Parser", "\u795e\u7530\u901a\u4fe1\u6a5f", "enhancement", "bug", "Skill", "\u4e09\u83f1\u96fb\u6a5f", "\u52a0\u8d3a\u7535\u5b50"],
                 datasets: [
                     {
                         label: 'P0',
-                        data: [11, 5, 0, 2, 2, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+                        data: [11, 5, 0, 2, 2, 0, 1, 1, 1, 0, 0, 0, 2, 1, 0],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P1',
-                        data: [14, 14, 5, 1, 2, 4, 5, 4, 2, 0, 2, 0, 0, 2, 0],
+                        data: [15, 14, 5, 1, 2, 4, 5, 4, 2, 0, 0, 2, 1, 0, 2],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: 'P2',
-                        data: [6, 4, 3, 0, 2, 1, 0, 0, 0, 5, 0, 4, 0, 0, 1],
+                        data: [6, 4, 3, 0, 2, 1, 0, 0, 0, 5, 4, 0, 0, 0, 0],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -616,21 +636,21 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["Denya0529", "shuiRong", "annSharon", "ianhuangsp", "baoshi1970", "qq98982", "chenbug2", "vincentdotli", "zhuchaowe", "lirhcoder", "peng-an", "beehoo"],
+                labels: ["Denya0529", "shuiRong", "annSharon", "ianhuangsp", "baoshi1970", "qq98982", "chenbug2", "lirhcoder", "vincentdotli", "zhuchaowe", "peng-an", "beehoo"],
                 datasets: [
                     {
                         label: '逾期',
-                        data: [3, 9, 0, 0, 0, 0, 4, 2, 0, 1, 2, 4],
+                        data: [3, 9, 0, 0, 0, 0, 4, 1, 2, 0, 2, 4],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P0',
-                        data: [6, 6, 4, 7, 4, 0, 4, 1, 3, 2, 3, 1],
+                        data: [6, 6, 4, 7, 4, 0, 4, 2, 1, 3, 3, 1],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [29, 11, 20, 15, 9, 12, 3, 5, 4, 4, 2, 2],
+                        data: [29, 12, 20, 15, 10, 12, 3, 5, 5, 4, 2, 2],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -644,6 +664,64 @@
                 scales: {
                     x: { stacked: true, grid: { display: false } },
                     y: { stacked: true, grid: { color: '#334155' } }
+                }
+            }
+        });
+
+        // 每日完成趋势 (折线图)
+        new Chart(document.getElementById('closedChart'), {
+            type: 'line',
+            data: {
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "latest"],
+                datasets: [{
+                    label: '完成数',
+                    data: [0, 0, 0, 0],
+                    borderColor: '#22C55E',
+                    backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#22C55E',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 每日新增趋势 (折线图)
+        new Chart(document.getElementById('newChart'), {
+            type: 'line',
+            data: {
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "latest"],
+                datasets: [{
+                    label: '新增数',
+                    data: [0, 0, 0, 0],
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#3B82F6',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    x: { grid: { display: false } }
                 }
             }
         });

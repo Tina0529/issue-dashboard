@@ -313,7 +313,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -381,7 +381,7 @@
     "days_until_deadline": -70,
     "changes": [],
     "end_date_formatted": "11/26",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 70 天",
@@ -751,7 +751,7 @@
       "deadline_changed"
     ],
     "end_date_formatted": "02/28",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -813,7 +813,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -991,11 +991,13 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1249",
     "state": "OPEN",
     "created_at": "2025-10-01T04:01:35Z",
-    "updated_at": "2025-11-21T05:20:41Z",
+    "updated_at": "2026-02-04T00:35:28Z",
     "labels": [
       "roadMap"
     ],
-    "assignees": [],
+    "assignees": [
+      "shuiRong"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
@@ -1008,17 +1010,13 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 74,
-    "risk_score": 35,
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "P2 一般优先级",
-      "停滞 74 天",
-      "无负责人"
+      "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "分配负责人"
-    ],
-    "risk_level": "medium",
+    "risk_suggestions": [],
+    "risk_level": "low",
     "risk_summary": "P2 一般优先级"
   },
   {
@@ -1053,38 +1051,6 @@
     "risk_suggestions": [],
     "risk_level": "medium",
     "risk_summary": "P2 一般优先级"
-  },
-  {
-    "number": 39,
-    "title": "调查：地图标注不正确原因调查",
-    "url": "https://github.com/sparticleinc/gbase-canvas-tool-server/issues/39",
-    "state": "OPEN",
-    "created_at": "2025-10-28T03:29:41Z",
-    "updated_at": "2025-12-15T08:27:47Z",
-    "labels": [
-      "bug"
-    ],
-    "assignees": [],
-    "repo": "gbase-canvas-tool-server",
-    "project": "Support应用&功能",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 50,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 50 天",
-      "无负责人"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
-    ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 50 天"
   },
   {
     "number": 1260,
@@ -1629,11 +1595,11 @@
     "days_until_deadline": 85,
     "changes": [],
     "end_date_formatted": "04/30",
-    "days_stale": 82,
+    "days_stale": 83,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 82 天"
+      "停滞 83 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -2004,9 +1970,11 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1572",
     "state": "OPEN",
     "created_at": "2025-11-27T07:12:07Z",
-    "updated_at": "2025-11-27T07:18:04Z",
+    "updated_at": "2026-02-04T00:38:29Z",
     "labels": [],
-    "assignees": [],
+    "assignees": [
+      "111559"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": null,
@@ -2014,19 +1982,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 68,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 68 天",
-      "无负责人"
+    "changes": [
+      "new_assigned"
     ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
     "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
+      "建议设置优先级"
     ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 68 天"
+    "risk_level": "low",
+    "risk_summary": "正常"
   },
   {
     "number": 1592,
@@ -2069,12 +2035,14 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1599",
     "state": "OPEN",
     "created_at": "2025-12-02T08:02:25Z",
-    "updated_at": "2025-12-08T03:18:33Z",
+    "updated_at": "2026-02-04T00:36:25Z",
     "labels": [
       "onPrem",
       "神田通信機"
     ],
-    "assignees": [],
+    "assignees": [
+      "huzhejie"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
@@ -2082,19 +2050,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": 55,
-    "changes": [],
+    "changes": [
+      "new_assigned"
+    ],
     "end_date_formatted": "03/31",
-    "days_stale": 57,
-    "risk_score": 35,
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "P2 一般优先级",
-      "停滞 57 天",
-      "无负责人"
+      "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "分配负责人"
-    ],
-    "risk_level": "medium",
+    "risk_suggestions": [],
+    "risk_level": "low",
     "risk_summary": "P2 一般优先级"
   },
   {
@@ -2103,12 +2069,14 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1600",
     "state": "OPEN",
     "created_at": "2025-12-02T08:03:58Z",
-    "updated_at": "2025-12-02T11:18:26Z",
+    "updated_at": "2026-02-04T00:36:38Z",
     "labels": [
       "onPrem",
       "神田通信機"
     ],
-    "assignees": [],
+    "assignees": [
+      "huzhejie"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
@@ -2116,19 +2084,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": 55,
-    "changes": [],
+    "changes": [
+      "new_assigned"
+    ],
     "end_date_formatted": "03/31",
-    "days_stale": 63,
-    "risk_score": 35,
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "P2 一般优先级",
-      "停滞 63 天",
-      "无负责人"
+      "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "分配负责人"
-    ],
-    "risk_level": "medium",
+    "risk_suggestions": [],
+    "risk_level": "low",
     "risk_summary": "P2 一般优先级"
   },
   {
@@ -2171,12 +2137,14 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1602",
     "state": "OPEN",
     "created_at": "2025-12-02T08:13:33Z",
-    "updated_at": "2025-12-02T11:19:09Z",
+    "updated_at": "2026-02-04T00:36:55Z",
     "labels": [
       "onPrem",
       "神田通信機"
     ],
-    "assignees": [],
+    "assignees": [
+      "huzhejie"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
@@ -2184,19 +2152,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": 55,
-    "changes": [],
+    "changes": [
+      "new_assigned"
+    ],
     "end_date_formatted": "03/31",
-    "days_stale": 63,
-    "risk_score": 35,
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "P2 一般优先级",
-      "停滞 63 天",
-      "无负责人"
+      "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "分配负责人"
-    ],
-    "risk_level": "medium",
+    "risk_suggestions": [],
+    "risk_level": "low",
     "risk_summary": "P2 一般优先级"
   },
   {
@@ -2205,12 +2171,14 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1603",
     "state": "OPEN",
     "created_at": "2025-12-02T08:14:27Z",
-    "updated_at": "2025-12-02T11:19:33Z",
+    "updated_at": "2026-02-04T00:37:08Z",
     "labels": [
       "onPrem",
       "神田通信機"
     ],
-    "assignees": [],
+    "assignees": [
+      "huzhejie"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
@@ -2218,19 +2186,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": 55,
-    "changes": [],
+    "changes": [
+      "new_assigned"
+    ],
     "end_date_formatted": "03/31",
-    "days_stale": 63,
-    "risk_score": 35,
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "P2 一般优先级",
-      "停滞 63 天",
-      "无负责人"
+      "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "分配负责人"
-    ],
-    "risk_level": "medium",
+    "risk_suggestions": [],
+    "risk_level": "low",
     "risk_summary": "P2 一般优先级"
   },
   {
@@ -3691,7 +3657,7 @@
     "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/13",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4048,7 +4014,7 @@
     "days_until_deadline": 23,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4571,14 +4537,50 @@
     "risk_summary": "1 天后截止"
   },
   {
+    "number": 1976,
+    "title": "宫崎县文档生成skill MVP开发",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1976",
+    "state": "OPEN",
+    "created_at": "2026-02-04T00:36:07Z",
+    "updated_at": "2026-02-04T00:41:13Z",
+    "labels": [
+      "onPrem",
+      "Skill"
+    ],
+    "assignees": [
+      "baoshi1970"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": "2026-02-27",
+    "start_date": "2026-02-09",
+    "status": "Agent in Progress",
+    "days_until_deadline": 23,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/27",
+    "days_stale": 0,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
+  },
+  {
     "number": 1,
     "title": "webApp：AI录屏人的操作视频，自己生成操作手册，并且之后还可以维护这个手册。采用google build工具，antigravity（IDE），firebase（hosting，database，storage），react（开发语言）",
     "url": "https://github.com/sparticleinc/GBaseManual/issues/1",
     "state": "OPEN",
     "created_at": "2025-12-10T10:16:31Z",
-    "updated_at": "2025-12-10T10:16:31Z",
+    "updated_at": "2026-02-04T00:45:29Z",
     "labels": [],
-    "assignees": [],
+    "assignees": [
+      "lirhcoder"
+    ],
     "repo": "GBaseManual",
     "project": "GBaseApp",
     "priority": null,
@@ -4590,18 +4592,14 @@
       "priority_up:None→P0",
       "deadline_changed"
     ],
-    "days_stale": 55,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 55 天",
-      "无负责人"
-    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
     "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
+      "建议设置优先级"
     ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 55 天"
+    "risk_level": "low",
+    "risk_summary": "正常"
   },
   {
     "number": 1,
@@ -4625,16 +4623,16 @@
       "priority_up:None→P0",
       "deadline_changed"
     ],
-    "days_stale": 102,
+    "days_stale": 103,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 102 天"
+      "停滞 103 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 102 天"
+    "risk_summary": "停滞 103 天"
   },
   {
     "number": 3,
@@ -4653,10 +4651,10 @@
     "status": "In Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 102,
+    "days_stale": 103,
     "risk_score": 25,
     "risk_reasons": [
-      "停滞 102 天",
+      "停滞 103 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -4664,7 +4662,7 @@
       "分配负责人"
     ],
     "risk_level": "medium",
-    "risk_summary": "停滞 102 天"
+    "risk_summary": "停滞 103 天"
   },
   {
     "number": 4,
@@ -4685,16 +4683,16 @@
     "status": "In Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 102,
+    "days_stale": 103,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 102 天"
+      "停滞 103 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 102 天"
+    "risk_summary": "停滞 103 天"
   },
   {
     "number": 8,
@@ -4713,10 +4711,10 @@
     "status": "Todo",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 99,
+    "days_stale": 100,
     "risk_score": 25,
     "risk_reasons": [
-      "停滞 99 天",
+      "停滞 100 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -4724,37 +4722,7 @@
       "分配负责人"
     ],
     "risk_level": "medium",
-    "risk_summary": "停滞 99 天"
-  },
-  {
-    "number": 9,
-    "title": "导购Agent产品设计思路",
-    "url": "https://github.com/sparticleinc/ShoppingGuide-Agent/issues/9",
-    "state": "OPEN",
-    "created_at": "2025-10-26T23:51:32Z",
-    "updated_at": "2025-10-26T23:51:32Z",
-    "labels": [],
-    "assignees": [],
-    "repo": "ShoppingGuide-Agent",
-    "project": "Support产品预研",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Todo",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 99,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 99 天",
-      "无负责人"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
-    ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 99 天"
+    "risk_summary": "停滞 100 天"
   },
   {
     "number": 10,
@@ -4773,10 +4741,10 @@
     "status": "In Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 98,
+    "days_stale": 99,
     "risk_score": 25,
     "risk_reasons": [
-      "停滞 98 天",
+      "停滞 99 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -4784,36 +4752,6 @@
       "分配负责人"
     ],
     "risk_level": "medium",
-    "risk_summary": "停滞 98 天"
-  },
-  {
-    "number": 11,
-    "title": "预设问题互动流程重构",
-    "url": "https://github.com/sparticleinc/ShoppingGuide-Agent/issues/11",
-    "state": "OPEN",
-    "created_at": "2025-10-28T00:09:39Z",
-    "updated_at": "2025-10-28T00:09:39Z",
-    "labels": [],
-    "assignees": [],
-    "repo": "ShoppingGuide-Agent",
-    "project": "Support产品预研",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "In Progress",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 98,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 98 天",
-      "无负责人"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
-    ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 98 天"
+    "risk_summary": "停滞 99 天"
   }
 ]
