@@ -2135,6 +2135,60 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             to { transform: rotate(360deg); }
         }
 
+        /* 更新状态弹窗 */
+        .refresh-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .refresh-modal.active { display: flex; }
+        .refresh-modal-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 32px 48px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .refresh-modal-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+        .refresh-modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .refresh-modal-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .refresh-modal-progress {
+            width: 200px;
+            height: 4px;
+            background: var(--bg-card-hover);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .refresh-modal-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--purple));
+            width: 0%;
+            transition: width 0.5s ease-out;
+        }
+
         @media (max-width: 900px) {
             :root { --sidebar-width: 0px; }
             .sidebar { display: none; }
@@ -2625,6 +2679,10 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
         // 手动刷新功能
         async function triggerRefresh() {
             const btn = document.getElementById('refreshBtn');
+            const modal = document.getElementById('refreshModal');
+            const progressBar = document.getElementById('progressBar');
+            const statusText = document.getElementById('refreshStatus');
+
             btn.disabled = true;
             btn.classList.add('loading');
             btn.querySelector('.refresh-text').textContent = '触发中...';
@@ -2637,9 +2695,39 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                 const result = await response.json();
 
                 if (response.ok && result.success) {
+                    // 显示进度弹窗
+                    modal.classList.add('active');
                     btn.querySelector('.refresh-text').textContent = '更新中...';
-                    // 90秒后自动刷新页面
-                    setTimeout(() => { window.location.reload(); }, 90000);
+
+                    // 模拟进度条 (90秒)
+                    const totalTime = 90000;
+                    const interval = 500;
+                    let elapsed = 0;
+
+                    const progressInterval = setInterval(() => {
+                        elapsed += interval;
+                        const progress = Math.min((elapsed / totalTime) * 100, 95);
+                        progressBar.style.width = progress + '%';
+
+                        if (elapsed < 10000) {
+                            statusText.textContent = '正在触发 GitHub Actions...';
+                        } else if (elapsed < 30000) {
+                            statusText.textContent = '正在获取最新 Issue 数据...';
+                        } else if (elapsed < 60000) {
+                            statusText.textContent = '正在生成 Dashboard...';
+                        } else if (elapsed < 80000) {
+                            statusText.textContent = '正在部署到 Netlify...';
+                        } else {
+                            statusText.textContent = '即将完成，准备刷新页面...';
+                        }
+
+                        if (elapsed >= totalTime) {
+                            clearInterval(progressInterval);
+                            progressBar.style.width = '100%';
+                            statusText.textContent = '更新完成！正在刷新...';
+                            setTimeout(() => { window.location.reload(); }, 1000);
+                        }
+                    }, interval);
                 } else {
                     alert('触发失败: ' + (result.error || '未知错误'));
                     btn.disabled = false;
@@ -2654,6 +2742,18 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             }
         }
     </script>
+
+    <!-- 刷新进度弹窗 -->
+    <div class="refresh-modal" id="refreshModal">
+        <div class="refresh-modal-content">
+            <div class="refresh-modal-icon">🔄</div>
+            <div class="refresh-modal-title">正在更新数据</div>
+            <div class="refresh-modal-text" id="refreshStatus">正在触发 GitHub Actions...</div>
+            <div class="refresh-modal-progress">
+                <div class="refresh-modal-progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 '''
