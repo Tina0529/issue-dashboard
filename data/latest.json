@@ -22,7 +22,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 70,
     "risk_reasons": [
       "2 天后截止",
@@ -2103,12 +2103,14 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1601",
     "state": "OPEN",
     "created_at": "2025-12-02T08:05:40Z",
-    "updated_at": "2025-12-02T11:18:53Z",
+    "updated_at": "2026-02-04T00:48:31Z",
     "labels": [
       "onPrem",
       "神田通信機"
     ],
-    "assignees": [],
+    "assignees": [
+      "huzhejie"
+    ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
     "priority": "P2",
@@ -2116,19 +2118,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": 55,
-    "changes": [],
+    "changes": [
+      "new_assigned"
+    ],
     "end_date_formatted": "03/31",
-    "days_stale": 63,
-    "risk_score": 35,
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "P2 一般优先级",
-      "停滞 63 天",
-      "无负责人"
+      "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "分配负责人"
-    ],
-    "risk_level": "medium",
+    "risk_suggestions": [],
+    "risk_level": "low",
     "risk_summary": "P2 一般优先级"
   },
   {
@@ -2256,11 +2256,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 60,
+    "days_stale": 61,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 60 天"
+      "停滞 61 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -3431,7 +3431,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 55,
     "risk_reasons": [
       "2 天后截止",
@@ -3463,7 +3463,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 55,
     "risk_reasons": [
       "2 天后截止",
@@ -3495,7 +3495,7 @@
     "days_until_deadline": 2,
     "changes": [],
     "end_date_formatted": "02/06",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 55,
     "risk_reasons": [
       "2 天后截止",
@@ -4571,6 +4571,40 @@
     "risk_summary": "P1 高优先级"
   },
   {
+    "number": 1977,
+    "title": " 【测试自动化】创建GBase Support 自动化UI 测试用例脚本底座",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1977",
+    "state": "OPEN",
+    "created_at": "2026-02-04T00:58:01Z",
+    "updated_at": "2026-02-04T01:03:46Z",
+    "labels": [
+      "测试自动化"
+    ],
+    "assignees": [
+      "baoshi1970"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": "P0",
+    "end_date": "2026-02-08",
+    "start_date": "2026-02-04",
+    "status": "Agent in Progress",
+    "days_until_deadline": 4,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/08",
+    "days_stale": 0,
+    "risk_score": 60,
+    "risk_reasons": [
+      "P0 最高优先级",
+      "4 天后截止"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "critical",
+    "risk_summary": "P0 最高优先级"
+  },
+  {
     "number": 1,
     "title": "webApp：AI录屏人的操作视频，自己生成操作手册，并且之后还可以维护这个手册。采用google build工具，antigravity（IDE），firebase（hosting，database，storage），react（开发语言）",
     "url": "https://github.com/sparticleinc/GBaseManual/issues/1",
@@ -4600,39 +4634,6 @@
     ],
     "risk_level": "low",
     "risk_summary": "正常"
-  },
-  {
-    "number": 1,
-    "title": "商品导购系统预研",
-    "url": "https://github.com/sparticleinc/ShoppingGuide-Agent/issues/1",
-    "state": "OPEN",
-    "created_at": "2025-10-24T00:28:22Z",
-    "updated_at": "2025-10-24T00:31:38Z",
-    "labels": [],
-    "assignees": [
-      "baoshi1970"
-    ],
-    "repo": "ShoppingGuide-Agent",
-    "project": "Support产品预研",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Todo",
-    "days_until_deadline": null,
-    "changes": [
-      "priority_up:None→P0",
-      "deadline_changed"
-    ],
-    "days_stale": 103,
-    "risk_score": 15,
-    "risk_reasons": [
-      "停滞 103 天"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级"
-    ],
-    "risk_level": "low",
-    "risk_summary": "停滞 103 天"
   },
   {
     "number": 3,
@@ -4693,65 +4694,5 @@
     ],
     "risk_level": "low",
     "risk_summary": "停滞 103 天"
-  },
-  {
-    "number": 8,
-    "title": "导购agent要做一个独立的产品页落地页",
-    "url": "https://github.com/sparticleinc/ShoppingGuide-Agent/issues/8",
-    "state": "OPEN",
-    "created_at": "2025-10-26T23:44:31Z",
-    "updated_at": "2025-10-26T23:44:31Z",
-    "labels": [],
-    "assignees": [],
-    "repo": "ShoppingGuide-Agent",
-    "project": "Support产品预研",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Todo",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 100,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 100 天",
-      "无负责人"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
-    ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 100 天"
-  },
-  {
-    "number": 10,
-    "title": "聊天界面用户体验优化",
-    "url": "https://github.com/sparticleinc/ShoppingGuide-Agent/issues/10",
-    "state": "OPEN",
-    "created_at": "2025-10-28T00:08:32Z",
-    "updated_at": "2025-10-28T00:08:32Z",
-    "labels": [],
-    "assignees": [],
-    "repo": "ShoppingGuide-Agent",
-    "project": "Support产品预研",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "In Progress",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 99,
-    "risk_score": 25,
-    "risk_reasons": [
-      "停滞 99 天",
-      "无负责人"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "分配负责人"
-    ],
-    "risk_level": "medium",
-    "risk_summary": "停滞 99 天"
   }
 ]
