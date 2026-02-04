@@ -727,6 +727,69 @@ def generate_html_template(**kwargs):
         }
         .nav-item.active .badge { background: rgba(59, 130, 246, 0.3); }
 
+        /* Sidebar Footer */
+        .sidebar-footer {
+            padding: 16px;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+        .sidebar-search {
+            position: relative;
+            margin-bottom: 12px;
+        }
+        .sidebar-search input {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px 10px 36px;
+            color: var(--text-primary);
+            font-size: 13px;
+            outline: none;
+        }
+        .sidebar-search input:focus { border-color: var(--primary); }
+        .sidebar-search input::placeholder { color: var(--text-muted); }
+        .sidebar-search .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .sidebar-timestamp {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .sidebar-refresh-btn {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: var(--text-primary);
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .sidebar-refresh-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary);
+        }
+        .sidebar-refresh-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .sidebar-refresh-btn.loading .refresh-icon {
+            animation: spin 1s linear infinite;
+        }
+
         .top-header {
             position: fixed;
             top: 0;
@@ -744,31 +807,8 @@ def generate_html_template(**kwargs):
         .header-row {
             display: flex;
             align-items: center;
-            justify-content: space-between;
         }
         .header-title { font-size: 18px; font-weight: 600; color: white; }
-        .header-actions { display: flex; align-items: center; gap: 16px; }
-        .search-box { position: relative; width: 240px; }
-        .search-box input {
-            width: 100%;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 8px 12px 8px 36px;
-            color: var(--text-primary);
-            font-size: 13px;
-            outline: none;
-        }
-        .search-box input:focus { border-color: var(--primary); }
-        .search-box input::placeholder { color: var(--text-muted); }
-        .search-icon {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
-        .timestamp { font-size: 12px; color: var(--text-muted); }
 
         .stats-filter-row {
             display: flex;
@@ -1017,39 +1057,10 @@ def generate_html_template(**kwargs):
             .stat-box .value { font-size: 16px; }
         }
 
-        /* 刷新按钮 */
-        .refresh-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--purple) 100%);
-            border: none;
-            border-radius: 8px;
-            padding: 8px 14px;
-            color: white;
-            font-size: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .refresh-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-        }
-        .refresh-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-        .refresh-btn.loading .refresh-icon {
-            animation: spin 1s linear infinite;
-        }
+        /* 刷新动画 */
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
-        }
-        .refresh-btn .refresh-icon {
-            display: inline-block;
         }
 
         /* 更新状态弹窗 */
@@ -1158,22 +1169,22 @@ def generate_html_template(**kwargs):
                 <span class="badge">''' + str(len(unassigned)) + '''</span>
             </div>
         </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-search">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="搜索 Issue..." id="searchInput" onkeyup="searchIssues()">
+            </div>
+            <div class="sidebar-timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
+            <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
+                <span class="refresh-icon">🔄</span>
+                <span class="refresh-text">更新数据</span>
+            </button>
+        </div>
     </aside>
 
     <header class="top-header">
         <div class="header-row">
             <div class="header-title" id="currentTabTitle">总览</div>
-            <div class="header-actions">
-                <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="搜索 Issue..." id="searchInput" onkeyup="searchIssues()">
-                </div>
-                <div class="timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
-                <button class="refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
-                    <span class="refresh-icon">🔄</span>
-                    <span class="refresh-text">更新</span>
-                </button>
-            </div>
         </div>
         ''' + changes_summary_html + '''
         <div class="stats-filter-row">
@@ -2081,6 +2092,49 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
             margin-left: 12px;
         }
 
+        /* Sidebar Footer */
+        .sidebar-footer {
+            padding: 16px;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+        .sidebar-timestamp {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .sidebar-refresh-btn {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: var(--text-primary);
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .sidebar-refresh-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary);
+        }
+        .sidebar-refresh-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .sidebar-refresh-btn.loading .refresh-icon {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         @media (max-width: 900px) {
             :root { --sidebar-width: 0px; }
             .sidebar { display: none; }
@@ -2136,12 +2190,18 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                 <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">''' + str(current_stats.get('unassigned', 0)) + '''</span>
             </a>
         </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
+            <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
+                <span class="refresh-icon">🔄</span>
+                <span class="refresh-text">更新数据</span>
+            </button>
+        </div>
     </aside>
 
     <main class="main-content">
         <div class="page-header">
             <div class="page-title">📊 Dashboard</div>
-            <div class="timestamp">更新: ''' + now.strftime('%Y-%m-%d %H:%M') + '''</div>
         </div>
 
         <!-- 统计卡片 -->
@@ -2561,6 +2621,38 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                 }
             }
         });
+
+        // 手动刷新功能
+        async function triggerRefresh() {
+            const btn = document.getElementById('refreshBtn');
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.querySelector('.refresh-text').textContent = '触发中...';
+
+            try {
+                const response = await fetch('/.netlify/functions/trigger-update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    btn.querySelector('.refresh-text').textContent = '更新中...';
+                    // 90秒后自动刷新页面
+                    setTimeout(() => { window.location.reload(); }, 90000);
+                } else {
+                    alert('触发失败: ' + (result.error || '未知错误'));
+                    btn.disabled = false;
+                    btn.classList.remove('loading');
+                    btn.querySelector('.refresh-text').textContent = '更新数据';
+                }
+            } catch (error) {
+                alert('请求失败: ' + error.message);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.querySelector('.refresh-text').textContent = '更新数据';
+            }
+        }
     </script>
 </body>
 </html>
