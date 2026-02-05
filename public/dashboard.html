@@ -377,7 +377,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-02-05 08:04</div>
+            <div class="sidebar-timestamp">更新: 2026-02-05 11:50</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -403,9 +403,9 @@
                 <div class="stat-card-change up">↑ 5</div>
             </div>
             <div class="stat-card info">
-                <div class="stat-card-value">152</div>
+                <div class="stat-card-value">150</div>
                 <div class="stat-card-label">📋 总计</div>
-                <div class="stat-card-change up">↑ 3</div>
+                <div class="stat-card-change up">↑ 1</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -429,7 +429,7 @@
                             <div class="health-detail-label">逾期率</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--warning)">22%</div>
+                            <div class="health-detail-value" style="color: var(--warning)">23%</div>
                             <div class="health-detail-label">P0占比</div>
                         </div>
                         <div class="health-detail">
@@ -583,6 +583,15 @@
                     <div class="top-item">
                         <div class="top-rank success">2</div>
                         <div class="top-content">
+                            <div class="top-title">👤 chenbug2</div>
+                            <div class="top-meta"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1736" target="_blank" style="color:var(--text-muted)">#1736</a>, <a href="https://github.com/sparticleinc/felo-mygpt/issues/1828" target="_blank" style="color:var(--text-muted)">#1828</a></div>
+                        </div>
+                        <div class="top-value success">+2</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank success">3</div>
+                        <div class="top-content">
                             <div class="top-title">👤 annSharon</div>
                             <div class="top-meta"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1934" target="_blank" style="color:var(--text-muted)">#1934</a></div>
                         </div>
@@ -590,7 +599,7 @@
                     </div>
 
                     <div class="top-item">
-                        <div class="top-rank success">3</div>
+                        <div class="top-rank ">4</div>
                         <div class="top-content">
                             <div class="top-title">👤 peng-an</div>
                             <div class="top-meta"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1934" target="_blank" style="color:var(--text-muted)">#1934</a></div>
@@ -654,7 +663,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [34, 61, 19, 38],
+                    data: [34, 61, 19, 36],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -675,7 +684,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [26, 20, 38, 20, 48],
+                    data: [26, 20, 38, 20, 46],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -694,11 +703,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "latest"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [152, 149, 149, 148],
+                        data: [152, 149, 149, 152, 148],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -706,7 +715,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [23, 19, 19, 19],
+                        data: [23, 19, 19, 26, 19],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -714,7 +723,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [30, 30, 29, 32],
+                        data: [30, 30, 29, 34, 32],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -800,7 +809,7 @@
                     },
                     {
                         label: '其他',
-                        data: [29, 6, 21, 15, 13, 10, 2, 5, 5, 4, 2, 2],
+                        data: [29, 6, 21, 15, 13, 9, 0, 5, 5, 4, 2, 2],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -822,10 +831,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "latest"],
                 datasets: [{
                     label: '完成数',
-                    data: [0, 0, 0, 7],
+                    data: [0, 0, 0, 6, 7],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -851,10 +860,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "latest"],
                 datasets: [{
                     label: '新增数',
-                    data: [0, 0, 0, 8],
+                    data: [0, 0, 0, 11, 8],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
