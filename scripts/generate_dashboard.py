@@ -403,7 +403,7 @@ def get_change_badge(issue):
     return ' '.join(badges)
 
 
-def generate_html(all_issues, changes, yesterday_stats):
+def generate_html(all_issues, changes, yesterday_stats, yesterday_issues=None):
     """生成 HTML Dashboard"""
     now = datetime.now(JST)
     today = now.date()
@@ -436,7 +436,7 @@ def generate_html(all_issues, changes, yesterday_stats):
                 label_stats[label]['overdue'] += 1
 
     # 负责人统计
-    assignee_stats = defaultdict(lambda: {'total': 0, 'p0': 0, 'p1': 0, 'overdue': 0, 'issues': []})
+    assignee_stats = defaultdict(lambda: {'total': 0, 'p0': 0, 'p1': 0, 'overdue': 0, 'issues': [], 'closed_yesterday': 0})
     for issue in all_issues:
         for assignee in issue.get('assignees', []):
             assignee_stats[assignee]['total'] += 1
@@ -445,6 +445,14 @@ def generate_html(all_issues, changes, yesterday_stats):
             elif issue.get('priority') == 'P1': assignee_stats[assignee]['p1'] += 1
             if issue.get('days_until_deadline') is not None and issue['days_until_deadline'] < 0:
                 assignee_stats[assignee]['overdue'] += 1
+
+    # 计算每个负责人昨天关闭的件数
+    if yesterday_issues:
+        today_numbers = {i['number'] for i in all_issues}
+        for issue in yesterday_issues:
+            if issue['number'] not in today_numbers:
+                for assignee in issue.get('assignees', []):
+                    assignee_stats[assignee]['closed_yesterday'] += 1
 
     unassigned = [i for i in all_issues if not i.get('assignees')]
     sorted_labels = sorted(label_stats.items(), key=lambda x: -(x[1]['overdue'] * 10 + x[1]['p0'] * 5 + x[1]['count']))
@@ -1219,6 +1227,20 @@ def generate_html_template(**kwargs):
                 </div>
             </div>
             <div class="customer-filter">
+                <span class="filter-label">负责人:</span>
+                <select class="customer-select" id="assigneeFilterSelect" onchange="filterByAssignee(this.value)">
+                    <option value="">全部</option>
+                    <option value="__unassigned__">⚠️ 未分配 (''' + str(len(unassigned)) + ''')</option>
+'''
+
+    for name, stats in sorted_assignees:
+        indicator = "🔴 " if stats['overdue'] > 0 else "🟠 " if stats['p0'] > 0 else ""
+        html += f'                    <option value="{name}">{indicator}{name} ({stats["total"]})</option>\n'
+
+    html += '''
+                </select>
+            </div>
+            <div class="customer-filter">
                 <span class="filter-label">客户:</span>
                 <select class="customer-select" id="customerSelect" onchange="filterByCustomer(this.value)">
                     <option value="">全部 (''' + str(len(all_issues)) + ''')</option>
@@ -1517,16 +1539,6 @@ def generate_html_template(**kwargs):
             <div class="content-section">
                 <div class="section-header" id="assigneeHeader">
                     <div class="section-title" id="assigneeTitle"><span class="icon info">👥</span>按负责人分类</div>
-                    <select class="assignee-select" id="assigneeSelect" onchange="filterByAssignee(this.value)">
-                        <option value="">-- 全部负责人 --</option>
-                        <option value="__unassigned__">⚠️ 未分配 (''' + str(len(unassigned)) + ''')</option>
-'''
-
-    for name, stats in sorted_assignees:
-        html += f'                        <option value="{name}">{name} ({stats["total"]})</option>\n'
-
-    html += '''
-                    </select>
                 </div>
                 <div class="card-grid" id="assigneeCards">
 '''
@@ -1546,6 +1558,8 @@ def generate_html_template(**kwargs):
             html += f'                            <span class="badge danger">{stats["p0"]} P0</span>\n'
         if stats['p1'] > 0:
             html += f'                            <span class="badge warning">{stats["p1"]} P1</span>\n'
+        if stats.get('closed_yesterday', 0) > 0:
+            html += f'                            <span class="badge success">✅ {stats["closed_yesterday"]}</span>\n'
         html += '''
                         </div>
                     </div>
@@ -1642,7 +1656,17 @@ def generate_html_template(**kwargs):
         }
 
         function renderIssueList(containerId, title, issues) {
-            issues.sort((a, b) => b.risk_score - a.risk_score);
+            // 按紧急度和优先级排序：逾期 > P0 > P1 > P2 > 其他
+            issues.sort((a, b) => {
+                const priorityOrder = {'P0': 3, 'P1': 2, 'P2': 1};
+                const aPriority = priorityOrder[a.priority] || 0;
+                const bPriority = priorityOrder[b.priority] || 0;
+                const aOverdue = (a.days_until_deadline !== null && a.days_until_deadline < 0) ? 1 : 0;
+                const bOverdue = (b.days_until_deadline !== null && b.days_until_deadline < 0) ? 1 : 0;
+                if (bOverdue !== aOverdue) return bOverdue - aOverdue;
+                if (bPriority !== aPriority) return bPriority - aPriority;
+                return (a.days_until_deadline || 999) - (b.days_until_deadline || 999);
+            });
             let html = '<div class="section-header"><div class="section-title"><span class="icon info">📋</span>' + title + '</div><span class="section-count">' + issues.length + '</span></div>';
             issues.forEach(issue => {
                 const priority = issue.priority || '-';
@@ -2821,7 +2845,7 @@ def main():
             issue['days_until_deadline'] = None
 
     # 生成主页 HTML
-    html, current_stats = generate_html(all_issues, changes, yesterday_stats)
+    html, current_stats = generate_html(all_issues, changes, yesterday_stats, yesterday_issues)
 
     # 保存主页 HTML
     os.makedirs(PUBLIC_DIR, exist_ok=True)
