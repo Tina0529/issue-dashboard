@@ -1612,8 +1612,10 @@ def generate_html_template(**kwargs):
 
         function filterByCustomer(label) {
             if (!label) {
+                // 选择"全部"：恢复所有卡片显示，清空详细列表
                 document.querySelectorAll('.risk-item').forEach(item => item.style.display = '');
                 document.querySelectorAll('.card-item').forEach(item => item.style.display = '');
+                document.getElementById('labelIssueList').innerHTML = '';
                 return;
             }
             document.querySelectorAll('.risk-item').forEach(item => {
@@ -1644,9 +1646,11 @@ def generate_html_template(**kwargs):
                 if (titleSection) titleSection.style.display = 'none';
                 showTab('assignees');
             } else if (!assignee) {
+                // 选择"全部"：恢复所有卡片显示，清空详细列表
                 document.getElementById('assigneeIssueList').innerHTML = '';
                 if (cardsSection) cardsSection.style.display = '';
                 if (titleSection) titleSection.style.display = '';
+                document.querySelectorAll('#assigneeCards .card-item').forEach(item => item.style.display = '');
                 return;
             } else {
                 issues = allIssues.filter(i => i.assignees && i.assignees.includes(assignee));
