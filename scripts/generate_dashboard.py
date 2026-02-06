@@ -1631,7 +1631,8 @@ def generate_html_template(**kwargs):
         }
 
         function filterByAssignee(assignee) {
-            document.getElementById('assigneeSelect').value = assignee;
+            const selectEl = document.getElementById('assigneeFilterSelect');
+            if (selectEl) selectEl.value = assignee;
             const cardsSection = document.getElementById('assigneeCards');
             const titleSection = document.getElementById('assigneeTitle');
 
@@ -1641,6 +1642,7 @@ def generate_html_template(**kwargs):
                 title = '未分配';
                 if (cardsSection) cardsSection.style.display = 'none';
                 if (titleSection) titleSection.style.display = 'none';
+                showTab('assignees');
             } else if (!assignee) {
                 document.getElementById('assigneeIssueList').innerHTML = '';
                 if (cardsSection) cardsSection.style.display = '';
@@ -1651,6 +1653,7 @@ def generate_html_template(**kwargs):
                 title = assignee;
                 if (cardsSection) cardsSection.style.display = '';
                 if (titleSection) titleSection.style.display = '';
+                showTab('assignees');
             }
             renderIssueList('assigneeIssueList', title, issues);
         }
