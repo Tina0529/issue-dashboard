@@ -377,7 +377,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-02-06 08:04</div>
+            <div class="sidebar-timestamp">更新: 2026-02-06 10:13</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -712,11 +712,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "latest"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [152, 149, 149, 152, 150],
+                        data: [152, 149, 149, 152, 153, 150],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -724,7 +724,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [23, 19, 19, 26, 26],
+                        data: [23, 19, 19, 26, 28, 26],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -732,7 +732,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [30, 30, 29, 34, 34],
+                        data: [30, 30, 29, 34, 35, 34],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -840,10 +840,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "latest"],
                 datasets: [{
                     label: '完成数',
-                    data: [0, 0, 0, 6, 8],
+                    data: [0, 0, 0, 6, 10, 8],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -869,10 +869,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "latest"],
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "latest"],
                 datasets: [{
                     label: '新增数',
-                    data: [0, 0, 0, 11, 11],
+                    data: [0, 0, 0, 11, 12, 11],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
