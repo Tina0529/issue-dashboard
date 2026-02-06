@@ -2473,40 +2473,6 @@
     "risk_summary": "P0 最高优先级"
   },
   {
-    "number": 1329,
-    "title": "创建Q&A时的导入文件弹窗，支持拖拽文件",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1329",
-    "state": "OPEN",
-    "created_at": "2025-11-10T03:06:55Z",
-    "updated_at": "2026-01-28T05:59:27Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "beehoo"
-    ],
-    "repo": "mygpt-frontend",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-01-30",
-    "start_date": "2026-01-26",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": -7,
-    "changes": [],
-    "end_date_formatted": "01/30",
-    "days_stale": 9,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 7 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 7 天"
-  },
-  {
     "number": 1663,
     "title": "关于创建bot流程优化（案）",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1663",
@@ -2663,11 +2629,11 @@
     "days_until_deadline": 53,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 44,
+    "days_stale": 45,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 44 天"
+      "停滞 45 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -2989,7 +2955,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 22,
+    "days_stale": 23,
     "risk_score": 10,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2997,36 +2963,6 @@
     ],
     "risk_level": "low",
     "risk_summary": "正常"
-  },
-  {
-    "number": 1826,
-    "title": "导入失败的提示语不对，实际上是导入了公司所有者才导致导不进去的",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1826",
-    "state": "OPEN",
-    "created_at": "2026-01-14T09:47:28Z",
-    "updated_at": "2026-01-26T05:33:34Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "chenbug2"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 11,
-    "risk_score": 25,
-    "risk_reasons": [
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "medium",
-    "risk_summary": "P1 高优先级"
   },
   {
     "number": 1832,
@@ -3089,36 +3025,6 @@
     "risk_summary": "正常"
   },
   {
-    "number": 1852,
-    "title": "excel导入组织和成员时，若姓名为空导致导入失败，应给予用户友好提示“姓名不能为空”",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1852",
-    "state": "OPEN",
-    "created_at": "2026-01-21T07:48:16Z",
-    "updated_at": "2026-01-26T05:34:55Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "chenbug2"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 11,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
-    ],
-    "risk_level": "low",
-    "risk_summary": "正常"
-  },
-  {
     "number": 1854,
     "title": "excel模版导入组织和成员时，增加对邮箱格式的校验，如果邮箱格式不对则不能导入成功，并且提示“邮箱格式不对”",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1854",
@@ -3170,7 +3076,7 @@
     "days_until_deadline": 28,
     "changes": [],
     "end_date_formatted": "03/06",
-    "days_stale": 13,
+    "days_stale": 14,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3738,40 +3644,6 @@
     "risk_summary": "P1 高优先级"
   },
   {
-    "number": 1664,
-    "title": "增加多语言翻译",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1664",
-    "state": "OPEN",
-    "created_at": "2026-01-30T09:28:35Z",
-    "updated_at": "2026-01-30T09:31:46Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "beehoo"
-    ],
-    "repo": "mygpt-frontend",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-01-30",
-    "start_date": "2026-01-30",
-    "status": "Agent in Progress",
-    "days_until_deadline": -7,
-    "changes": [],
-    "end_date_formatted": "01/30",
-    "days_stale": 6,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 7 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 7 天"
-  },
-  {
     "number": 1953,
     "title": "为 gbase 实现文件上传 skill",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1953",
@@ -4121,40 +3993,6 @@
     "risk_summary": "P1 高优先级"
   },
   {
-    "number": 1973,
-    "title": "opensearch在查询时报错，gbase-backend 后端也会自动重启",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1973",
-    "state": "OPEN",
-    "created_at": "2026-02-03T12:12:57Z",
-    "updated_at": "2026-02-04T02:35:46Z",
-    "labels": [
-      "bug"
-    ],
-    "assignees": [
-      "qq98982"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-02-05",
-    "start_date": null,
-    "status": "Human in Progress",
-    "days_until_deadline": -1,
-    "changes": [],
-    "end_date_formatted": "02/05",
-    "days_stale": 2,
-    "risk_score": 80,
-    "risk_reasons": [
-      "已逾期 1 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 1 天"
-  },
-  {
     "number": 1976,
     "title": "宫崎县文档生成skill MVP开发",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1976",
@@ -4379,40 +4217,6 @@
     "risk_summary": "P1 高优先级"
   },
   {
-    "number": 1681,
-    "title": "组织权限模版导入失败一览数字调整",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1681",
-    "state": "OPEN",
-    "created_at": "2026-02-04T07:23:07Z",
-    "updated_at": "2026-02-04T07:26:48Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "shuiRong"
-    ],
-    "repo": "mygpt-frontend",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": "2026-02-04",
-    "start_date": "2026-02-04",
-    "status": "Agent in Progress",
-    "days_until_deadline": -2,
-    "changes": [],
-    "end_date_formatted": "02/04",
-    "days_stale": 1,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 2 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 2 天"
-  },
-  {
     "number": 1987,
     "title": "公司管理员被禁用后身份就变成了查看着",
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1987",
@@ -4424,40 +4228,6 @@
     ],
     "assignees": [
       "shuiRong"
-    ],
-    "repo": "felo-mygpt",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": "2026-02-05",
-    "start_date": "2026-02-04",
-    "status": "Agent in Progress",
-    "days_until_deadline": -1,
-    "changes": [],
-    "end_date_formatted": "02/05",
-    "days_stale": 1,
-    "risk_score": 80,
-    "risk_reasons": [
-      "已逾期 1 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 1 天"
-  },
-  {
-    "number": 1988,
-    "title": "公司已经存在了公司管理员，再次导入公司管理员会一直弹如图所示的问题",
-    "url": "https://github.com/sparticleinc/felo-mygpt/issues/1988",
-    "state": "OPEN",
-    "created_at": "2026-02-04T08:23:39Z",
-    "updated_at": "2026-02-04T08:29:17Z",
-    "labels": [
-      "onPrem"
-    ],
-    "assignees": [
-      "chenbug2"
     ],
     "repo": "felo-mygpt",
     "project": "Support应用&功能",
@@ -4567,7 +4337,7 @@
       "new"
     ],
     "end_date_formatted": "02/06",
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 75,
     "risk_reasons": [
       "今天截止",
@@ -4854,7 +4624,7 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/2007",
     "state": "OPEN",
     "created_at": "2026-02-06T04:07:59Z",
-    "updated_at": "2026-02-06T04:12:25Z",
+    "updated_at": "2026-02-06T07:12:31Z",
     "labels": [
       "onPrem"
     ],
@@ -5049,6 +4819,39 @@
     ],
     "risk_level": "low",
     "risk_summary": "无负责人"
+  },
+  {
+    "number": 1702,
+    "title": "全选框显示状态问题",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1702",
+    "state": "OPEN",
+    "created_at": "2026-02-06T07:02:04Z",
+    "updated_at": "2026-02-06T07:05:26Z",
+    "labels": [],
+    "assignees": [
+      "shuiRong"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": "2026-02-06",
+    "start_date": "2026-02-06",
+    "status": "Agent in Progress",
+    "days_until_deadline": 0,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/06",
+    "days_stale": 0,
+    "risk_score": 35,
+    "risk_reasons": [
+      "今天截止"
+    ],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "medium",
+    "risk_summary": "今天截止"
   },
   {
     "number": 1,
