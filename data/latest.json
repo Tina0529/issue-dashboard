@@ -1,44 +1,11 @@
 [
   {
-    "number": 1764,
-    "title": "bug：知识库的网页学习结果页面的换页功能，虽然换页了，但是始终显示是第一页。",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1764",
+    "number": 1766,
+    "title": "改善：网页学习时候的一次任务的最大值是1800个网页，但是如果超过这个值，哪些学了，哪些没学又不好区分。给我一个解决方案。",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1766",
     "state": "OPEN",
-    "created_at": "2026-02-19T08:45:35Z",
-    "updated_at": "2026-02-19T11:50:00Z",
-    "labels": [
-      "AI Inside",
-      "AutoBee"
-    ],
-    "assignees": [
-      "annSharon"
-    ],
-    "repo": "mygpt-frontend",
-    "project": "Support应用&功能",
-    "priority": "P1",
-    "end_date": null,
-    "start_date": null,
-    "status": "Backlog",
-    "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 0,
-    "risk_score": 25,
-    "risk_reasons": [
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "medium",
-    "risk_summary": "P1 高优先级"
-  },
-  {
-    "number": 1765,
-    "title": "改善：客户希望在前端用户看到的出错信息，统一改为“現在、AIチャットを一時的にご利用いただけません。 時間をおいて再度お試しください。”",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1765",
-    "state": "OPEN",
-    "created_at": "2026-02-19T09:02:33Z",
-    "updated_at": "2026-02-19T11:49:20Z",
+    "created_at": "2026-02-19T09:21:39Z",
+    "updated_at": "2026-02-19T12:33:17Z",
     "labels": [
       "AI Inside",
       "AutoBee"
@@ -66,12 +33,12 @@
     "risk_summary": "P1 高优先级"
   },
   {
-    "number": 1766,
-    "title": "改善：网页学习时候的一次任务的最大值是1800个网页，但是如果超过这个值，哪些学了，哪些没学又不好区分。给我一个解决方案。",
-    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1766",
+    "number": 1765,
+    "title": "改善：客户希望在前端用户看到的出错信息，统一改为“現在、AIチャットを一時的にご利用いただけません。 時間をおいて再度お試しください。”",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1765",
     "state": "OPEN",
-    "created_at": "2026-02-19T09:21:39Z",
-    "updated_at": "2026-02-19T11:23:30Z",
+    "created_at": "2026-02-19T09:02:33Z",
+    "updated_at": "2026-02-19T11:49:20Z",
     "labels": [
       "AI Inside",
       "AutoBee"
@@ -153,7 +120,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -203,7 +170,7 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/1377",
     "state": "OPEN",
     "created_at": "2025-10-28T16:49:22Z",
-    "updated_at": "2026-02-18T14:25:36Z",
+    "updated_at": "2026-02-19T12:56:24Z",
     "labels": [
       "BREXA-NEXT",
       "AutoBee"
@@ -254,7 +221,7 @@
     "days_until_deadline": -10,
     "changes": [],
     "end_date_formatted": "02/09",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 10 天",
@@ -289,7 +256,7 @@
     "days_until_deadline": 8,
     "changes": [],
     "end_date_formatted": "02/27",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -321,7 +288,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -388,7 +355,7 @@
     "days_until_deadline": -20,
     "changes": [],
     "end_date_formatted": "01/30",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 20 天",
@@ -461,7 +428,7 @@
     "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -524,7 +491,7 @@
     "days_until_deadline": 36,
     "changes": [],
     "end_date_formatted": "03/27",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -880,7 +847,7 @@
     "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "02/12",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 7 天",
@@ -915,7 +882,7 @@
     "days_until_deadline": -27,
     "changes": [],
     "end_date_formatted": "01/23",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 27 天",
@@ -959,6 +926,39 @@
     "risk_suggestions": [],
     "risk_level": "critical",
     "risk_summary": "1 天后截止"
+  },
+  {
+    "number": 1764,
+    "title": "bug：知识库的网页学习结果页面的换页功能，虽然换页了，但是始终显示是第一页。",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1764",
+    "state": "OPEN",
+    "created_at": "2026-02-19T08:45:35Z",
+    "updated_at": "2026-02-19T12:17:42Z",
+    "labels": [
+      "AI Inside",
+      "AutoBee"
+    ],
+    "assignees": [
+      "annSharon"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": null,
+    "start_date": null,
+    "status": "Agent review & test",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 85,
@@ -1083,7 +1083,7 @@
     "days_until_deadline": 40,
     "changes": [],
     "end_date_formatted": "03/31",
-    "days_stale": 9,
+    "days_stale": 10,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -1434,11 +1434,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 94,
+    "days_stale": 95,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 94 天"
+      "停滞 95 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1565,16 +1565,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 90,
+    "days_stale": 91,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 90 天"
+      "停滞 91 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 90 天"
+    "risk_summary": "停滞 91 天"
   },
   {
     "number": 1330,
@@ -1599,11 +1599,11 @@
     "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 94,
+    "days_stale": 95,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 94 天"
+      "停滞 95 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1665,11 +1665,11 @@
     "changes": [
       "priority_down:P1→P2"
     ],
-    "days_stale": 94,
+    "days_stale": 95,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 94 天"
+      "停滞 95 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -1792,7 +1792,7 @@
     "days_until_deadline": 15,
     "changes": [],
     "end_date_formatted": "03/06",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -2138,7 +2138,7 @@
     "days_until_deadline": 22,
     "changes": [],
     "end_date_formatted": "03/13",
-    "days_stale": 9,
+    "days_stale": 10,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2585,11 +2585,11 @@
       "deadline_changed"
     ],
     "end_date_formatted": "03/31",
-    "days_stale": 56,
+    "days_stale": 57,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 56 天"
+      "停滞 57 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -2682,7 +2682,7 @@
     "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 9,
+    "days_stale": 10,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2747,7 +2747,7 @@
     "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "02/14",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 5 天",
@@ -3364,7 +3364,7 @@
     "days_until_deadline": -6,
     "changes": [],
     "end_date_formatted": "02/13",
-    "days_stale": 16,
+    "days_stale": 17,
     "risk_score": 75,
     "risk_reasons": [
       "已逾期 6 天",
@@ -3398,7 +3398,7 @@
     "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "02/14",
-    "days_stale": 16,
+    "days_stale": 17,
     "risk_score": 90,
     "risk_reasons": [
       "已逾期 5 天",
@@ -3684,7 +3684,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4040,7 +4040,7 @@
     "days_until_deadline": -6,
     "changes": [],
     "end_date_formatted": "02/13",
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 6 天",
@@ -4536,6 +4536,173 @@
       "new"
     ],
     "days_stale": 1,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
+    "number": 1771,
+    "title": "bug：同样的网址建立多个网页学习记录的时候，手动同期其中一个，也会同时触发其他记录的的重学。",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1771",
+    "state": "OPEN",
+    "created_at": "2026-02-19T12:49:47Z",
+    "updated_at": "2026-02-19T13:27:50Z",
+    "labels": [
+      "bug",
+      "AI Inside",
+      "AutoBee"
+    ],
+    "assignees": [
+      "annSharon"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": "P1",
+    "end_date": null,
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 25,
+    "risk_reasons": [
+      "P1 高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
+  },
+  {
+    "number": 1772,
+    "title": "【ニュウマン高輪】ローソン・LiSH のCanvas地図が誤表示される問題の修正",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1772",
+    "state": "OPEN",
+    "created_at": "2026-02-19T13:31:04Z",
+    "updated_at": "2026-02-19T13:37:32Z",
+    "labels": [
+      "bug",
+      "Lumine"
+    ],
+    "assignees": [
+      "annSharon"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": "P0",
+    "end_date": "2026-02-27",
+    "start_date": null,
+    "status": "Backlog",
+    "days_until_deadline": 8,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "02/27",
+    "days_stale": 0,
+    "risk_score": 40,
+    "risk_reasons": [
+      "P0 最高优先级"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
+  },
+  {
+    "number": 1773,
+    "title": "在消息树编辑页面追加对所有阶层的一键展开一键折叠功能",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1773",
+    "state": "OPEN",
+    "created_at": "2026-02-19T13:39:38Z",
+    "updated_at": "2026-02-19T13:58:17Z",
+    "labels": [
+      "BREXA-NEXT",
+      "AutoBee"
+    ],
+    "assignees": [
+      "annSharon"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Agent review & test",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
+    "number": 1774,
+    "title": "追加知识库名称检索功能",
+    "url": "https://github.com/sparticleinc/mygpt-frontend/issues/1774",
+    "state": "OPEN",
+    "created_at": "2026-02-19T13:48:39Z",
+    "updated_at": "2026-02-19T14:30:51Z",
+    "labels": [
+      "新功能",
+      "AutoBee"
+    ],
+    "assignees": [
+      "annSharon"
+    ],
+    "repo": "mygpt-frontend",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Agent review & test",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
+    "number": 2119,
+    "title": "【bug】用消息树导出功能导出的json格式的文件，再导入到知识库时，没有进行多语言翻译",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/2119",
+    "state": "OPEN",
+    "created_at": "2026-02-19T13:52:49Z",
+    "updated_at": "2026-02-19T14:08:08Z",
+    "labels": [
+      "bug",
+      "AutoBee"
+    ],
+    "assignees": [
+      "ianhuangsp"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
