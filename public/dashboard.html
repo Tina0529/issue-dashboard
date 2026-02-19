@@ -377,7 +377,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-02-19 08:06</div>
+            <div class="sidebar-timestamp">更新: 2026-02-19 20:59</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -403,9 +403,9 @@
                 <div class="stat-card-change up">↑ 2</div>
             </div>
             <div class="stat-card info">
-                <div class="stat-card-value">139</div>
+                <div class="stat-card-value">142</div>
                 <div class="stat-card-label">📋 总计</div>
-                <div class="stat-card-change up">↑ 3</div>
+                <div class="stat-card-change up">↑ 6</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -425,11 +425,11 @@
                     <div class="health-label">健康评分 (满分100)</div>
                     <div class="health-details">
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--danger)">28%</div>
+                            <div class="health-detail-value" style="color: var(--danger)">27%</div>
                             <div class="health-detail-label">逾期率</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--warning)">33%</div>
+                            <div class="health-detail-value" style="color: var(--warning)">32%</div>
                             <div class="health-detail-label">P0占比</div>
                         </div>
                         <div class="health-detail">
@@ -654,7 +654,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [46, 45, 20, 28],
+                    data: [46, 48, 20, 28],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -675,7 +675,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [39, 4, 32, 17, 47],
+                    data: [39, 4, 32, 17, 50],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -694,11 +694,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "latest"],
+                labels: ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [153, 146, 147, 150, 157, 155, 152, 154, 139, 137, 135, 136, 136, 151],
+                        data: [153, 146, 147, 150, 157, 155, 152, 154, 139, 137, 135, 136, 136, 139],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -706,7 +706,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [28, 27, 28, 29, 32, 33, 32, 29, 35, 37, 39, 39, 39, 21],
+                        data: [28, 27, 28, 29, 32, 33, 32, 29, 35, 37, 39, 39, 39, 39],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -714,7 +714,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [35, 38, 39, 40, 47, 48, 48, 51, 46, 45, 43, 44, 44, 39],
+                        data: [35, 38, 39, 40, 47, 48, 48, 51, 46, 45, 43, 44, 44, 46],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -748,7 +748,7 @@
                     },
                     {
                         label: 'P1',
-                        data: [10, 8, 4, 1, 2, 2, 2, 1, 2, 4, 3, 4, 1, 3, 0],
+                        data: [10, 8, 7, 1, 5, 2, 2, 1, 2, 4, 3, 4, 1, 3, 0],
                         backgroundColor: '#EAB308'
                     },
                     {
@@ -786,7 +786,7 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["annSharon", "Denya0529", "ianhuangsp", "qq98982", "shuiRong", "baoshi1970", "peng-an", "vincentdotli", "zhuchaowe", "lirhcoder", "chenbug2", "beehoo"],
+                labels: ["annSharon", "Denya0529", "ianhuangsp", "shuiRong", "qq98982", "baoshi1970", "peng-an", "vincentdotli", "zhuchaowe", "lirhcoder", "chenbug2", "beehoo"],
                 datasets: [
                     {
                         label: '逾期',
@@ -795,12 +795,12 @@
                     },
                     {
                         label: 'P0',
-                        data: [11, 3, 7, 5, 7, 7, 8, 3, 5, 2, 3, 1],
+                        data: [11, 3, 7, 7, 5, 7, 8, 3, 5, 2, 3, 1],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [15, 21, 14, 5, 3, 2, 1, 5, -2, 6, -2, 2],
+                        data: [18, 21, 14, 3, 5, 2, 1, 5, -2, 6, -2, 2],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -822,10 +822,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "latest"],
+                labels: ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19"],
                 datasets: [{
                     label: '完成数',
-                    data: [10, 19, 0, 0, 6, 7, 6, 6, 22, 5, 3, 0, 0, 19],
+                    data: [10, 19, 0, 0, 6, 7, 6, 6, 22, 5, 3, 0, 0, 1],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -851,10 +851,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "latest"],
+                labels: ["2026-02-06", "2026-02-07", "2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19"],
                 datasets: [{
                     label: '新增数',
-                    data: [12, 12, 1, 3, 14, 5, 3, 9, 7, 3, 1, 1, 0, 19],
+                    data: [12, 12, 1, 3, 14, 5, 3, 9, 7, 3, 1, 1, 0, 3],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
