@@ -1794,7 +1794,7 @@ def get_historical_stats():
     stats_files = []
     if os.path.exists(DATA_DIR):
         for f in os.listdir(DATA_DIR):
-            if f.endswith('_stats.json'):
+            if f.endswith('_stats.json') and f != 'latest_stats.json':
                 date_str = f.replace('_stats.json', '')
                 filepath = os.path.join(DATA_DIR, f)
                 try:
