@@ -368,7 +368,7 @@
             <a href="index.html#priority" class="nav-item">
                 <span class="dot" style="background: #EF4444"></span>
                 P0 紧急
-                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">48</span>
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">47</span>
             </a>
             <a href="index.html#assignees" class="nav-item">
                 <span class="dot" style="background: var(--text-muted)"></span>
@@ -377,7 +377,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-02-22 08:03</div>
+            <div class="sidebar-timestamp">更新: 2026-02-22 14:26</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -398,14 +398,14 @@
                 <div class="stat-card-change down">↓ 1</div>
             </div>
             <div class="stat-card warning">
-                <div class="stat-card-value">48</div>
+                <div class="stat-card-value">47</div>
                 <div class="stat-card-label">🔴 P0 紧急</div>
-                <div class="stat-card-change down">↓ 1</div>
+                <div class="stat-card-change down">↓ 2</div>
             </div>
             <div class="stat-card info">
-                <div class="stat-card-value">145</div>
+                <div class="stat-card-value">144</div>
                 <div class="stat-card-label">📋 总计</div>
-                <div class="stat-card-change up">↑ 1</div>
+                <div class="stat-card-change">- 无变化</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -580,6 +580,15 @@
                         <div class="top-value success">+2</div>
                     </div>
 
+                    <div class="top-item">
+                        <div class="top-rank success">2</div>
+                        <div class="top-content">
+                            <div class="top-title">👤 Denya0529</div>
+                            <div class="top-meta"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1779" target="_blank" style="color:var(--text-muted)">#1779</a></div>
+                        </div>
+                        <div class="top-value success">+1</div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -636,7 +645,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [48, 47, 21, 29],
+                    data: [47, 47, 21, 29],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -657,7 +666,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [40, 34, 4, 14, 53],
+                    data: [40, 33, 4, 14, 53],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -676,11 +685,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21"],
+                labels: ["2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [147, 150, 157, 155, 152, 154, 139, 137, 135, 136, 136, 139, 147, 144],
+                        data: [150, 157, 155, 152, 154, 139, 137, 135, 136, 136, 139, 147, 144, 145],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -688,7 +697,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [28, 29, 32, 33, 32, 29, 35, 37, 39, 39, 39, 39, 39, 41],
+                        data: [29, 32, 33, 32, 29, 35, 37, 39, 39, 39, 39, 39, 41, 40],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -696,7 +705,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [39, 40, 47, 48, 48, 51, 46, 45, 43, 44, 44, 46, 47, 49],
+                        data: [40, 47, 48, 48, 51, 46, 45, 43, 44, 44, 46, 47, 49, 48],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -721,21 +730,21 @@
         new Chart(document.getElementById('labelChart'), {
             type: 'bar',
             data: {
-                labels: ["AutoBee", "onPrem", "roadMap", "\u7cbe\u5ea6\u4e0einfra", "AI Inside", "SaaS staging", "bug", "enhancement", "\u30ea\u30be\u30fc\u30e0", "Parser", "saas staging", "Skill", "Novare", "BREXA-NEXT", "Lumine"],
+                labels: ["onPrem", "AutoBee", "roadMap", "\u7cbe\u5ea6\u4e0einfra", "AI Inside", "SaaS staging", "bug", "enhancement", "\u30ea\u30be\u30fc\u30e0", "Parser", "saas staging", "Skill", "BREXA-NEXT", "Lumine", "\u52a0\u8d3a\u7535\u5b50"],
                 datasets: [
                     {
                         label: 'P0',
-                        data: [15, 13, 4, 3, 3, 5, 1, 0, 2, 1, 2, 3, 2, 0, 2],
+                        data: [13, 14, 4, 3, 3, 5, 1, 0, 2, 1, 2, 3, 0, 2, 0],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P1',
-                        data: [10, 10, 8, 3, 6, 2, 5, 2, 1, 2, 3, 1, 1, 2, 0],
+                        data: [10, 10, 8, 3, 6, 2, 5, 2, 1, 2, 3, 1, 2, 0, 2],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: 'P2',
-                        data: [2, 3, 8, 4, 2, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0],
+                        data: [3, 2, 8, 4, 2, 0, 0, 4, 0, 1, 0, 0, 0, 0, 0],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -768,21 +777,21 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["annSharon", "Denya0529", "ianhuangsp", "shuiRong", "qq98982", "peng-an", "baoshi1970", "vincentdotli", "zhuchaowe", "lirhcoder", "chenbug2", "beehoo"],
+                labels: ["annSharon", "ianhuangsp", "Denya0529", "shuiRong", "qq98982", "peng-an", "baoshi1970", "vincentdotli", "zhuchaowe", "lirhcoder", "chenbug2", "beehoo"],
                 datasets: [
                     {
                         label: '逾期',
-                        data: [6, 0, 2, 5, 5, 4, 4, 3, 7, 0, 4, 2],
+                        data: [6, 2, 0, 5, 5, 4, 4, 3, 7, 0, 4, 2],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P0',
-                        data: [11, 4, 7, 7, 5, 8, 7, 3, 6, 2, 3, 1],
+                        data: [11, 7, 3, 7, 5, 8, 7, 3, 6, 2, 3, 1],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [18, 18, 12, 3, 5, 2, 2, 5, -2, 7, -2, 2],
+                        data: [18, 12, 18, 3, 5, 2, 2, 5, -2, 7, -2, 2],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -804,10 +813,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21"],
+                labels: ["2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22"],
                 datasets: [{
                     label: '完成数',
-                    data: [0, 0, 6, 7, 6, 6, 22, 5, 3, 0, 0, 1, 0, 5],
+                    data: [0, 6, 7, 6, 6, 22, 5, 3, 0, 0, 1, 0, 5, 2],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -833,10 +842,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-02-08", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21"],
+                labels: ["2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22"],
                 datasets: [{
                     label: '新增数',
-                    data: [1, 3, 14, 5, 3, 9, 7, 3, 1, 1, 0, 3, 8, 2],
+                    data: [3, 14, 5, 3, 9, 7, 3, 1, 1, 0, 3, 8, 2, 3],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
