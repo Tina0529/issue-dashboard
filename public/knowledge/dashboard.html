@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Dashboard - Charts</title>
+    <title>GBase Knowledge Dashboard - Charts</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -330,8 +330,9 @@
 <body>
     <aside class="sidebar">
         <div class="sidebar-header">
-            <div class="logo-text">PM Dashboard</div>
+            <div class="logo-text">GBase Knowledge</div>
             <div class="logo-subtitle">Issue Monitor</div>
+            <a href="/" style="display:block;margin-top:8px;font-size:11px;color:var(--text-muted);text-decoration:none;">← 切换产线</a>
         </div>
         <nav class="sidebar-nav">
             <div class="nav-section-title">导航</div>
@@ -363,21 +364,21 @@
             <a href="index.html#deadline" class="nav-item">
                 <span class="dot" style="background: #EF4444"></span>
                 已逾期
-                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">39</span>
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">51</span>
             </a>
             <a href="index.html#priority" class="nav-item">
                 <span class="dot" style="background: #EF4444"></span>
                 P0 紧急
-                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">26</span>
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">28</span>
             </a>
             <a href="index.html#assignees" class="nav-item">
                 <span class="dot" style="background: var(--text-muted)"></span>
                 未分配
-                <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">8</span>
+                <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">20</span>
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-07-07 08:57</div>
+            <div class="sidebar-timestamp">更新: 2026-07-07 17:24</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -393,19 +394,19 @@
         <!-- 统计卡片 -->
         <div class="stat-cards">
             <div class="stat-card danger">
-                <div class="stat-card-value">39</div>
+                <div class="stat-card-value">51</div>
                 <div class="stat-card-label">🚨 已逾期</div>
-                <div class="stat-card-change up">↑ 1</div>
+                <div class="stat-card-change">- 无变化</div>
             </div>
             <div class="stat-card warning">
-                <div class="stat-card-value">26</div>
+                <div class="stat-card-value">28</div>
                 <div class="stat-card-label">🔴 P0 紧急</div>
                 <div class="stat-card-change">- 无变化</div>
             </div>
             <div class="stat-card info">
-                <div class="stat-card-value">284</div>
+                <div class="stat-card-value">111</div>
                 <div class="stat-card-label">📋 总计</div>
-                <div class="stat-card-change up">↑ 4</div>
+                <div class="stat-card-change">- 无变化</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -425,15 +426,15 @@
                     <div class="health-label">健康评分 (满分100)</div>
                     <div class="health-details">
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--danger)">14%</div>
+                            <div class="health-detail-value" style="color: var(--danger)">46%</div>
                             <div class="health-detail-label">逾期率</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--warning)">9%</div>
+                            <div class="health-detail-value" style="color: var(--warning)">25%</div>
                             <div class="health-detail-label">P0占比</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--text-muted)">3%</div>
+                            <div class="health-detail-value" style="color: var(--text-muted)">18%</div>
                             <div class="health-detail-label">未分配率</div>
                         </div>
                     </div>
@@ -476,91 +477,91 @@
                     <div class="top-item">
                         <div class="top-rank danger">1</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1403" target="_blank">#1403 如图所示标签筛选框组件布局有点问题</a></div>
-                            <div class="top-meta">👤 111559</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase_ai_slides_backend/issues/174" target="_blank">#174 [CBP][Bug] フェーズ2 で 1時間以上ハングして PPT が生成されな...</a></div>
+                            <div class="top-meta">👤 alex-712, fufengkai</div>
                         </div>
-                        <div class="top-value">-158天</div>
+                        <div class="top-value">-64天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank danger">2</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1983" target="_blank">#1983 办公室机器部署融合后的代码，做为onprem的Staging环境</a></div>
-                            <div class="top-meta">👤 qq98982</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase_ai_slides_backend/issues/215" target="_blank">#215 【CBP】支持将心仪的幻灯片进行置顶固定。</a></div>
+                            <div class="top-meta">👤 GeminiMing, alex-712, fufengkai</div>
                         </div>
-                        <div class="top-value">-148天</div>
+                        <div class="top-value">-53天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank danger">3</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/2022" target="_blank">#2022 组织权限更新使用者资料当用户名为空时预期不能导入并提供错误弹框支持下载</a></div>
-                            <div class="top-meta">👤 chenbug2</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/49" target="_blank">#49 [CBP][测定] 统计・监控基础设施精细化（北极星指标）</a></div>
+                            <div class="top-meta">👤 alex-712</div>
                         </div>
-                        <div class="top-value">-147天</div>
+                        <div class="top-value">-46天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">4</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1226" target="_blank">#1226 内部-011 支持单个大文件上传的分片功能 @shuirong   10/15</a></div>
-                            <div class="top-meta">👤 111559</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/61" target="_blank">#61 【回归测试】 GBaseKnowleadge产品线 自动化回归测试推进计划</a></div>
+                            <div class="top-meta">👤 derrick1xin</div>
                         </div>
-                        <div class="top-value">-144天</div>
+                        <div class="top-value">-39天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">5</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/2144" target="_blank">#2144 点击【分享设定】面板页面加载不出来</a></div>
-                            <div class="top-meta">👤 chenbug2</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/81" target="_blank">#81 【会议转录】出错时的error信息提示</a></div>
+                            <div class="top-meta">👤 GeminiMing</div>
                         </div>
-                        <div class="top-value">-131天</div>
+                        <div class="top-value">-39天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">6</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1249" target="_blank">#1249 数字人bug：第一遍点击说话按钮，语音识别几乎无响应（没有文字出现），再说一遍就...</a></div>
-                            <div class="top-meta">👤 annSharon</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-bops-front/issues/8" target="_blank">#8 bops 后台支持按每个组织查看活跃用户数、PPT 创建数、agent问答数等活...</a></div>
+                            <div class="top-meta">👤 fufengkai</div>
                         </div>
-                        <div class="top-value">-129天</div>
+                        <div class="top-value">-37天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">7</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1272" target="_blank">#1272 SEO确认：之后能确认一下来源于hismobile的访问量下降是否是小部件的流量...</a></div>
-                            <div class="top-meta">👤 annSharon, lirhcoder</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/79" target="_blank">#79 【会议记录APP】目前状况是启动会议后自动开始，会议结束后却没有自动结束。</a></div>
+                            <div class="top-meta">👤 derrick1xin</div>
                         </div>
-                        <div class="top-value">-129天</div>
+                        <div class="top-value">-33天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">8</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1465" target="_blank">#1465 发送一条新消息时文字没有被置顶</a></div>
-                            <div class="top-meta">👤 annSharon</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/84" target="_blank">#84 bug：会议的计数写死1000了。</a></div>
+                            <div class="top-meta">👤 GeminiMing</div>
                         </div>
-                        <div class="top-value">-129天</div>
+                        <div class="top-value">-33天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">9</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1807" target="_blank">#1807 将support的TTS接口换成Gemini模型</a></div>
-                            <div class="top-meta">👤 annSharon</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/60" target="_blank">#60 改善Knowledge 的文件学习进度状态显示问题</a></div>
+                            <div class="top-meta">👤 fufengkai, Denya0529</div>
                         </div>
-                        <div class="top-value">-129天</div>
+                        <div class="top-value">-33天</div>
                     </div>
 
                     <div class="top-item">
                         <div class="top-rank ">10</div>
                         <div class="top-content">
-                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1985" target="_blank">#1985 GBase support侧聊天回答内容支持A2UI协议，展示出图形页面</a></div>
-                            <div class="top-meta">👤 annSharon</div>
+                            <div class="top-title"><a href="https://github.com/sparticleinc/gbase-knowledge/issues/85" target="_blank">#85 积分页面通过点击可以跳转到详细对话页面</a></div>
+                            <div class="top-meta">👤 GeminiMing, fufengkai</div>
                         </div>
-                        <div class="top-value">-129天</div>
+                        <div class="top-value">-32天</div>
                     </div>
 
                 </div>
@@ -570,25 +571,7 @@
                     <div class="card-title"><span class="icon green">🏆</span>昨日完成排行</div>
                 </div>
                 <div class="top-list">
-
-                    <div class="top-item">
-                        <div class="top-rank success">1</div>
-                        <div class="top-content">
-                            <div class="top-title">👤 beehoo</div>
-                            <div class="top-meta"><a href="https://github.com/sparticleinc/nssol-baddi/issues/226" target="_blank" style="color:var(--text-muted)">#226</a>, <a href="https://github.com/sparticleinc/nssol-baddi/issues/227" target="_blank" style="color:var(--text-muted)">#227</a>, <a href="https://github.com/sparticleinc/nssol-baddi/issues/228" target="_blank" style="color:var(--text-muted)">#228</a>, <a href="https://github.com/sparticleinc/nssol-baddi/issues/229" target="_blank" style="color:var(--text-muted)">#229</a></div>
-                        </div>
-                        <div class="top-value success">+4</div>
-                    </div>
-
-                    <div class="top-item">
-                        <div class="top-rank success">2</div>
-                        <div class="top-content">
-                            <div class="top-title">👤 shuiRong</div>
-                            <div class="top-meta"><a href="https://github.com/sparticleinc/gbase-frontend-onprem/issues/163" target="_blank" style="color:var(--text-muted)">#163</a></div>
-                        </div>
-                        <div class="top-value success">+1</div>
-                    </div>
-
+                    <div style="text-align:center;padding:40px;color:var(--text-muted)">暂无昨日完成数据</div>
                 </div>
             </div>
         </div>
@@ -645,7 +628,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [26, 66, 69, 123],
+                    data: [28, 19, 25, 39],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -666,7 +649,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [39, 2, 4, 3, 236],
+                    data: [51, 2, 5, 0, 53],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -685,11 +668,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06"],
+                labels: [],
                 datasets: [
                     {
                         label: '总数',
-                        data: [187, 193, 199, 192, 191, 201, 214, 233, 235, 236, 234, 236, 256, 280],
+                        data: [],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -697,7 +680,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [54, 44, 43, 42, 43, 43, 41, 42, 45, 42, 38, 39, 39, 38],
+                        data: [],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -705,7 +688,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [37, 32, 32, 30, 29, 29, 28, 30, 28, 23, 25, 26, 26, 26],
+                        data: [],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -730,21 +713,21 @@
         new Chart(document.getElementById('labelChart'), {
             type: 'bar',
             data: {
-                labels: ["AutoBee", "bug", "autobee-impl", "onPrem", "\u7cbe\u5ea6\u4e0einfra", "Novare", "roadMap", "\u30ea\u30be\u30fc\u30e0", "enhancement", "\u901f\u5ea6\u4e0e\u6027\u80fd", "saas staging", "BADDI", "product", "DevAgent", "SaaS staging"],
+                labels: ["CBP", "bug", "enhancement", "\u4f1a\u8bae\u8f6c\u5f55", "VOC", "AutoBee", "roadmap"],
                 datasets: [
                     {
                         label: 'P0',
-                        data: [19, 1, 3, 8, 0, 2, 3, 3, 0, 0, 0, 0, 0, 2, 0],
+                        data: [10, 3, 3, 6, 1, 0, 1],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P1',
-                        data: [40, 22, 2, 5, 1, 1, 2, 1, 5, 1, 2, 4, 3, 1, 0],
+                        data: [10, 3, 4, 2, 0, 0, 0],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: 'P2',
-                        data: [57, 51, 7, 0, 4, 1, 2, 0, 1, 0, 2, 0, 0, 0, 2],
+                        data: [8, 16, 0, 0, 0, 1, 0],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -777,21 +760,21 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["annSharon", "qq98982", "shuiRong", "fufengkai", "ianhuangsp", "lirhcoder", "csh28", "qianlir", "zhuchaowe", "vincentdotli", "Denya0529", "chenbug2"],
+                labels: ["GeminiMing", "fufengkai", "alex-712", "derrick1xin", "Denya0529", "justzero"],
                 datasets: [
                     {
                         label: '逾期',
-                        data: [9, 2, 5, 2, 6, 6, 0, 3, 1, 1, 4, 2],
+                        data: [23, 22, 15, 5, 3, 2],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P0',
-                        data: [2, 0, 4, 2, 4, 4, 0, 5, 2, 0, 3, 2],
+                        data: [19, 9, 6, 2, 3, 1],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [62, 43, 34, 34, 23, 10, 15, 2, 6, 7, 0, 2],
+                        data: [9, 0, 1, -1, -3, -1],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -813,10 +796,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06"],
+                labels: [],
                 datasets: [{
                     label: '完成数',
-                    data: [13, 17, 3, 19, 9, 0, 4, 5, 9, 12, 12, 12, 1, 5],
+                    data: [],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -842,10 +825,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06"],
+                labels: [],
                 datasets: [{
                     label: '新增数',
-                    data: [2, 21, 9, 11, 9, 10, 16, 24, 12, 14, 8, 14, 20, 29],
+                    data: [],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,

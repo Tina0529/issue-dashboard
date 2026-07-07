@@ -44,7 +44,7 @@ jobs:
           fi
           echo "Run mode: ${{ github.event_name }}"
 
-      - name: Generate Dashboard
+      - name: Generate GBaseSupport Dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
@@ -52,6 +52,16 @@ jobs:
             python scripts/generate_dashboard.py --manual
           else
             python scripts/generate_dashboard.py
+          fi
+
+      - name: Generate GBase Knowledge Dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = "manual" ]; then
+            python scripts/generate_knowledge_dashboard.py --manual
+          else
+            python scripts/generate_knowledge_dashboard.py
           fi
 
       - name: Commit and push if changed

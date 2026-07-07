@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-PM Dashboard Generator
-自动从 GitHub Projects 获取 Issue 数据并生成 HTML 报告
+GBase Knowledge Dashboard Generator
+自动从 sparticleinc org project 33 (GBase Knowledge应用&功能) 获取 Issue 数据并生成 HTML 报告
 支持与昨天数据对比，显示变化
 """
 
@@ -21,20 +21,16 @@ RUN_MODE = 'manual' if '--manual' in sys.argv else 'scheduled'
 # 从环境变量获取 Token (GitHub Actions 中配置)
 TOKEN = os.environ.get('GITHUB_TOKEN', '')
 
-# 要监控的 GitHub Projects
+# 要监控的 GitHub Projects (GBase Knowledge 产线，独立于 GBaseSupport)
 PROJECTS = [
-    ("PVT_kwDOBO9uks4BDgXM", "Support应用&功能"),
-    ("PVT_kwDOBO9uks4BHLOl", "Knowledge应用&功能"),
-    ("PVT_kwDOBO9uks4BHLSj", "BREAX-NEXT"),
-    ("PVT_kwDOBO9uks4BKSLM", "GBaseApp"),
-    ("PVT_kwDOBO9uks4BGOWp", "Support产品预研"),
+    ("PVT_kwDOBO9uks4BRaR2", "GBase Knowledge应用&功能"),
 ]
 
 # 获取项目根目录
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
-DATA_DIR = os.path.join(PROJECT_DIR, 'data')
-PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public', 'support')
+DATA_DIR = os.path.join(PROJECT_DIR, 'data', 'knowledge')
+PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public', 'knowledge')
 
 
 def fetch_project_items(project_id, cursor=None):
@@ -562,7 +558,7 @@ def generate_html_template(**kwargs):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Dashboard - Issue Monitor</title>
+    <title>GBase Knowledge Dashboard - Issue Monitor</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -1129,7 +1125,7 @@ def generate_html_template(**kwargs):
 <body>
     <aside class="sidebar">
         <div class="sidebar-header">
-            <div class="logo-text">PM Dashboard</div>
+            <div class="logo-text">GBase Knowledge</div>
             <div class="logo-subtitle">Issue Monitor</div>
             <a href="/" style="display:block;margin-top:8px;font-size:11px;color:var(--text-muted);text-decoration:none;">← 切换产线</a>
         </div>
@@ -1795,7 +1791,7 @@ def get_historical_stats():
     stats_files = []
     if os.path.exists(DATA_DIR):
         for f in os.listdir(DATA_DIR):
-            if f.endswith('_stats.json') and f != 'latest_stats.json':
+            if f.endswith('_stats.json'):
                 date_str = f.replace('_stats.json', '')
                 filepath = os.path.join(DATA_DIR, f)
                 try:
@@ -1903,7 +1899,7 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PM Dashboard - Charts</title>
+    <title>GBase Knowledge Dashboard - Charts</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -2230,7 +2226,7 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
 <body>
     <aside class="sidebar">
         <div class="sidebar-header">
-            <div class="logo-text">PM Dashboard</div>
+            <div class="logo-text">GBase Knowledge</div>
             <div class="logo-subtitle">Issue Monitor</div>
             <a href="/" style="display:block;margin-top:8px;font-size:11px;color:var(--text-muted);text-decoration:none;">← 切换产线</a>
         </div>

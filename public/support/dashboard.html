@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Dashboard - Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0F172A;
+            --bg-card: #1E293B;
+            --bg-card-hover: #334155;
+            --text-primary: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+            --primary: #3B82F6;
+            --purple: #A855F7;
+            --success: #22C55E;
+            --warning: #EAB308;
+            --danger: #EF4444;
+            --sidebar-width: 220px;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg-card);
+            border-right: 1px solid var(--border-color);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .logo-text { font-size: 18px; font-weight: 700; color: white; }
+        .logo-subtitle { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        .sidebar-nav {
+            flex: 1;
+            padding: 16px 12px;
+            overflow-y: auto;
+        }
+        .nav-section-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding: 8px 12px;
+            margin-top: 8px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .nav-item:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+        .nav-item.active { background: rgba(59, 130, 246, 0.15); color: var(--primary); }
+        .nav-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 24px;
+        }
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        .page-title { font-size: 24px; font-weight: 700; }
+        .timestamp { font-size: 12px; color: var(--text-muted); }
+
+        .grid { display: grid; gap: 20px; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1400px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 900px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-title .icon {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .card-title .icon.blue { background: rgba(59, 130, 246, 0.2); }
+        .card-title .icon.red { background: rgba(239, 68, 68, 0.2); }
+        .card-title .icon.yellow { background: rgba(234, 179, 8, 0.2); }
+        .card-title .icon.green { background: rgba(34, 197, 94, 0.2); }
+        .card-title .icon.purple { background: rgba(168, 85, 247, 0.2); }
+
+        .chart-container { position: relative; height: 250px; }
+        .chart-container.large { height: 300px; }
+        .chart-container.small { height: 200px; }
+
+        /* 健康度仪表盘 */
+        .health-gauge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+        .health-score {
+            font-size: 64px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--success), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .health-score.warning {
+            background: linear-gradient(135deg, var(--warning), var(--danger));
+            -webkit-background-clip: text;
+        }
+        .health-label { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+        .health-details {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .health-detail {
+            text-align: center;
+        }
+        .health-detail-value { font-size: 18px; font-weight: 600; }
+        .health-detail-label { font-size: 11px; color: var(--text-muted); }
+
+        /* 统计卡片 */
+        .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .stat-card-value { font-size: 28px; font-weight: 700; }
+        .stat-card-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .stat-card-change { font-size: 11px; margin-top: 8px; }
+        .stat-card-change.up { color: var(--danger); }
+        .stat-card-change.down { color: var(--success); }
+        .stat-card.danger .stat-card-value { color: var(--danger); }
+        .stat-card.warning .stat-card-value { color: var(--warning); }
+        .stat-card.info .stat-card-value { color: var(--primary); }
+        .stat-card.success .stat-card-value { color: var(--success); }
+        @media (max-width: 900px) { .stat-cards { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Top 10 列表 */
+        .top-list { max-height: 300px; overflow-y: auto; }
+        .top-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .top-item:last-child { border-bottom: none; }
+        .top-rank {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--bg-card-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 12px;
+        }
+        .top-rank.danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .top-rank.success { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+        .top-value.success { color: var(--success); }
+        .top-content { flex: 1; min-width: 0; }
+        .top-title {
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .top-title a { color: var(--text-primary); text-decoration: none; }
+        .top-title a:hover { color: var(--primary); }
+        .top-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+        .top-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--danger);
+            margin-left: 12px;
+        }
+
+        /* Sidebar Footer */
+        .sidebar-footer {
+            padding: 16px;
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+        .sidebar-timestamp {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .sidebar-refresh-btn {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: var(--text-primary);
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .sidebar-refresh-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--primary);
+        }
+        .sidebar-refresh-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .sidebar-refresh-btn.loading .refresh-icon {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 更新状态弹窗 */
+        .refresh-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .refresh-modal.active { display: flex; }
+        .refresh-modal-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 32px 48px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .refresh-modal-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+        .refresh-modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .refresh-modal-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .refresh-modal-progress {
+            width: 200px;
+            height: 4px;
+            background: var(--bg-card-hover);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .refresh-modal-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--purple));
+            width: 0%;
+            transition: width 0.5s ease-out;
+        }
+
+        @media (max-width: 900px) {
+            :root { --sidebar-width: 0px; }
+            .sidebar { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-text">PM Dashboard</div>
+            <div class="logo-subtitle">Issue Monitor</div>
+            <a href="/" style="display:block;margin-top:8px;font-size:11px;color:var(--text-muted);text-decoration:none;">← 切换产线</a>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section-title">导航</div>
+            <a href="dashboard.html" class="nav-item active">
+                <span class="dot" style="background: var(--purple)"></span>
+                Dashboard
+            </a>
+            <a href="index.html" class="nav-item">
+                <span class="dot" style="background: var(--primary)"></span>
+                总览
+            </a>
+            <a href="index.html#deadline" class="nav-item">
+                <span class="dot" style="background: #EF4444"></span>
+                截止日期
+            </a>
+            <a href="index.html#priority" class="nav-item">
+                <span class="dot" style="background: #EAB308"></span>
+                优先级
+            </a>
+            <a href="index.html#customers" class="nav-item">
+                <span class="dot" style="background: #A855F7"></span>
+                客户/标签
+            </a>
+            <a href="index.html#assignees" class="nav-item">
+                <span class="dot" style="background: #FB923C"></span>
+                负责人
+            </a>
+            <div class="nav-section-title">快速跳转</div>
+            <a href="index.html#deadline" class="nav-item">
+                <span class="dot" style="background: #EF4444"></span>
+                已逾期
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">39</span>
+            </a>
+            <a href="index.html#priority" class="nav-item">
+                <span class="dot" style="background: #EF4444"></span>
+                P0 紧急
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">28</span>
+            </a>
+            <a href="index.html#assignees" class="nav-item">
+                <span class="dot" style="background: var(--text-muted)"></span>
+                未分配
+                <span style="margin-left:auto;background:var(--bg-card-hover);padding:2px 8px;border-radius:10px;font-size:11px;">8</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-timestamp">更新: 2026-07-07 17:23</div>
+            <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
+                <span class="refresh-icon">🔄</span>
+                <span class="refresh-text">更新数据</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div class="page-title">📊 Dashboard</div>
+        </div>
+
+        <!-- 统计卡片 -->
+        <div class="stat-cards">
+            <div class="stat-card danger">
+                <div class="stat-card-value">39</div>
+                <div class="stat-card-label">🚨 已逾期</div>
+                <div class="stat-card-change">- 无变化</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-card-value">28</div>
+                <div class="stat-card-label">🔴 P0 紧急</div>
+                <div class="stat-card-change">- 无变化</div>
+            </div>
+            <div class="stat-card info">
+                <div class="stat-card-value">292</div>
+                <div class="stat-card-label">📋 总计</div>
+                <div class="stat-card-change">- 无变化</div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-card-value">0</div>
+                <div class="stat-card-label">💚 健康度</div>
+                <div class="stat-card-change">基于逾期率、P0占比</div>
+            </div>
+        </div>
+
+        <!-- 第一行：健康度 + 优先级 + 截止日期 -->
+        <div class="grid grid-3" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">💚</span>项目健康度</div>
+                </div>
+                <div class="health-gauge">
+                    <div class="health-score warning">0</div>
+                    <div class="health-label">健康评分 (满分100)</div>
+                    <div class="health-details">
+                        <div class="health-detail">
+                            <div class="health-detail-value" style="color: var(--danger)">13%</div>
+                            <div class="health-detail-label">逾期率</div>
+                        </div>
+                        <div class="health-detail">
+                            <div class="health-detail-value" style="color: var(--warning)">10%</div>
+                            <div class="health-detail-label">P0占比</div>
+                        </div>
+                        <div class="health-detail">
+                            <div class="health-detail-value" style="color: var(--text-muted)">3%</div>
+                            <div class="health-detail-label">未分配率</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🎯</span>优先级分布</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="priorityChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon yellow">⏰</span>截止日期分布</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="deadlineChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二行：趋势图 + Top列表 -->
+        <div class="grid grid-3" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon purple">📈</span>Issue 趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon red">🔥</span>逾期最久 Top 10</div>
+                </div>
+                <div class="top-list">
+
+                    <div class="top-item">
+                        <div class="top-rank danger">1</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1403" target="_blank">#1403 如图所示标签筛选框组件布局有点问题</a></div>
+                            <div class="top-meta">👤 111559</div>
+                        </div>
+                        <div class="top-value">-158天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank danger">2</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1983" target="_blank">#1983 办公室机器部署融合后的代码，做为onprem的Staging环境</a></div>
+                            <div class="top-meta">👤 qq98982</div>
+                        </div>
+                        <div class="top-value">-148天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank danger">3</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/2022" target="_blank">#2022 组织权限更新使用者资料当用户名为空时预期不能导入并提供错误弹框支持下载</a></div>
+                            <div class="top-meta">👤 chenbug2</div>
+                        </div>
+                        <div class="top-value">-147天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">4</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1226" target="_blank">#1226 内部-011 支持单个大文件上传的分片功能 @shuirong   10/15</a></div>
+                            <div class="top-meta">👤 111559</div>
+                        </div>
+                        <div class="top-value">-144天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">5</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/2144" target="_blank">#2144 点击【分享设定】面板页面加载不出来</a></div>
+                            <div class="top-meta">👤 chenbug2</div>
+                        </div>
+                        <div class="top-value">-131天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">6</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1249" target="_blank">#1249 数字人bug：第一遍点击说话按钮，语音识别几乎无响应（没有文字出现），再说一遍就...</a></div>
+                            <div class="top-meta">👤 annSharon</div>
+                        </div>
+                        <div class="top-value">-129天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">7</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1272" target="_blank">#1272 SEO确认：之后能确认一下来源于hismobile的访问量下降是否是小部件的流量...</a></div>
+                            <div class="top-meta">👤 annSharon, lirhcoder</div>
+                        </div>
+                        <div class="top-value">-129天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">8</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/mygpt-frontend/issues/1465" target="_blank">#1465 发送一条新消息时文字没有被置顶</a></div>
+                            <div class="top-meta">👤 annSharon</div>
+                        </div>
+                        <div class="top-value">-129天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">9</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1807" target="_blank">#1807 将support的TTS接口换成Gemini模型</a></div>
+                            <div class="top-meta">👤 annSharon</div>
+                        </div>
+                        <div class="top-value">-129天</div>
+                    </div>
+
+                    <div class="top-item">
+                        <div class="top-rank ">10</div>
+                        <div class="top-content">
+                            <div class="top-title"><a href="https://github.com/sparticleinc/felo-mygpt/issues/1985" target="_blank">#1985 GBase support侧聊天回答内容支持A2UI协议，展示出图形页面</a></div>
+                            <div class="top-meta">👤 annSharon</div>
+                        </div>
+                        <div class="top-value">-129天</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">🏆</span>昨日完成排行</div>
+                </div>
+                <div class="top-list">
+                    <div style="text-align:center;padding:40px;color:var(--text-muted)">暂无昨日完成数据</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第三行：新增/关闭趋势 -->
+        <div class="grid grid-2" style="margin-bottom: 20px;">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon green">✅</span>每日完成趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="closedChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🆕</span>每日新增趋势 (近14天)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="newChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四行：标签分布 + 负责人分布 -->
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon blue">🏷️</span>客户/标签分布 (Top 15)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="labelChart"></canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><span class="icon purple">👥</span>负责人工作量 (Top 12)</div>
+                </div>
+                <div class="chart-container large">
+                    <canvas id="assigneeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Chart.js 配置
+        Chart.defaults.color = '#94A3B8';
+        Chart.defaults.borderColor = '#334155';
+
+        // 优先级分布 (环形图)
+        new Chart(document.getElementById('priorityChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['P0', 'P1', 'P2', '未设置'],
+                datasets: [{
+                    data: [28, 67, 70, 127],
+                    backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { padding: 16 } }
+                },
+                cutout: '60%'
+            }
+        });
+
+        // 截止日期分布 (环形图)
+        new Chart(document.getElementById('deadlineChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
+                datasets: [{
+                    data: [39, 2, 4, 3, 244],
+                    backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { padding: 16 } }
+                },
+                cutout: '60%'
+            }
+        });
+
+        // 趋势图 (折线图)
+        new Chart(document.getElementById('trendChart'), {
+            type: 'line',
+            data: {
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "latest"],
+                datasets: [
+                    {
+                        label: '总数',
+                        data: [152, 149, 149, 152, 153, 157],
+                        borderColor: '#3B82F6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: '逾期',
+                        data: [23, 19, 19, 26, 28, 26],
+                        borderColor: '#EF4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    },
+                    {
+                        label: 'P0',
+                        data: [30, 30, 29, 34, 35, 41],
+                        borderColor: '#EAB308',
+                        backgroundColor: 'rgba(234, 179, 8, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 标签分布 (横向柱状图)
+        new Chart(document.getElementById('labelChart'), {
+            type: 'bar',
+            data: {
+                labels: ["AutoBee", "bug", "autobee-impl", "onPrem", "\u7cbe\u5ea6\u4e0einfra", "Novare", "roadMap", "BADDI", "\u30ea\u30be\u30fc\u30e0", "enhancement", "\u901f\u5ea6\u4e0e\u6027\u80fd", "product", "saas staging", "DevAgent", "SaaS staging"],
+                datasets: [
+                    {
+                        label: 'P0',
+                        data: [21, 1, 4, 8, 0, 2, 3, 1, 3, 0, 0, 1, 0, 2, 0],
+                        backgroundColor: '#EF4444'
+                    },
+                    {
+                        label: 'P1',
+                        data: [41, 22, 2, 5, 1, 1, 2, 4, 1, 5, 1, 3, 2, 1, 0],
+                        backgroundColor: '#EAB308'
+                    },
+                    {
+                        label: 'P2',
+                        data: [57, 52, 7, 0, 4, 1, 2, 0, 0, 1, 0, 0, 2, 0, 2],
+                        backgroundColor: '#3B82F6'
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: { left: 10 }
+                },
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { stacked: true, grid: { color: '#334155' } },
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: {
+                            autoSkip: false,
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 负责人工作量 (柱状图)
+        new Chart(document.getElementById('assigneeChart'), {
+            type: 'bar',
+            data: {
+                labels: ["annSharon", "qq98982", "shuiRong", "fufengkai", "ianhuangsp", "lirhcoder", "csh28", "zhuchaowe", "qianlir", "vincentdotli", "baoshi1970", "Denya0529"],
+                datasets: [
+                    {
+                        label: '逾期',
+                        data: [9, 2, 5, 2, 6, 6, 0, 1, 3, 1, 1, 4],
+                        backgroundColor: '#EF4444'
+                    },
+                    {
+                        label: 'P0',
+                        data: [2, 0, 4, 2, 4, 4, 0, 3, 5, 0, 1, 3],
+                        backgroundColor: '#EAB308'
+                    },
+                    {
+                        label: '其他',
+                        data: [62, 45, 34, 34, 24, 10, 16, 7, 2, 7, 6, 0],
+                        backgroundColor: '#3B82F6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, grid: { color: '#334155' } }
+                }
+            }
+        });
+
+        // 每日完成趋势 (折线图)
+        new Chart(document.getElementById('closedChart'), {
+            type: 'line',
+            data: {
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "latest"],
+                datasets: [{
+                    label: '完成数',
+                    data: [0, 0, 0, 6, 10, 12],
+                    borderColor: '#22C55E',
+                    backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#22C55E',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' }, ticks: { stepSize: 1, precision: 0 } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 每日新增趋势 (折线图)
+        new Chart(document.getElementById('newChart'), {
+            type: 'line',
+            data: {
+                labels: ["2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "latest"],
+                datasets: [{
+                    label: '新增数',
+                    data: [0, 0, 0, 11, 12, 18],
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#3B82F6',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#334155' }, ticks: { stepSize: 1, precision: 0 } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 手动刷新功能
+        async function triggerRefresh() {
+            const btn = document.getElementById('refreshBtn');
+            const modal = document.getElementById('refreshModal');
+            const progressBar = document.getElementById('progressBar');
+            const statusText = document.getElementById('refreshStatus');
+
+            btn.disabled = true;
+            btn.classList.add('loading');
+            btn.querySelector('.refresh-text').textContent = '触发中...';
+
+            try {
+                const response = await fetch('/.netlify/functions/trigger-update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // 显示进度弹窗
+                    modal.classList.add('active');
+                    btn.querySelector('.refresh-text').textContent = '更新中...';
+
+                    // 模拟进度条 (90秒)
+                    const totalTime = 90000;
+                    const interval = 500;
+                    let elapsed = 0;
+
+                    const progressInterval = setInterval(() => {
+                        elapsed += interval;
+                        const progress = Math.min((elapsed / totalTime) * 100, 95);
+                        progressBar.style.width = progress + '%';
+
+                        if (elapsed < 10000) {
+                            statusText.textContent = '正在触发 GitHub Actions...';
+                        } else if (elapsed < 30000) {
+                            statusText.textContent = '正在获取最新 Issue 数据...';
+                        } else if (elapsed < 60000) {
+                            statusText.textContent = '正在生成 Dashboard...';
+                        } else if (elapsed < 80000) {
+                            statusText.textContent = '正在部署到 Netlify...';
+                        } else {
+                            statusText.textContent = '即将完成，准备刷新页面...';
+                        }
+
+                        if (elapsed >= totalTime) {
+                            clearInterval(progressInterval);
+                            progressBar.style.width = '100%';
+                            statusText.textContent = '更新完成！正在刷新...';
+                            setTimeout(() => { window.location.reload(); }, 1000);
+                        }
+                    }, interval);
+                } else {
+                    alert('触发失败: ' + (result.error || '未知错误'));
+                    btn.disabled = false;
+                    btn.classList.remove('loading');
+                    btn.querySelector('.refresh-text').textContent = '更新数据';
+                }
+            } catch (error) {
+                alert('请求失败: ' + error.message);
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                btn.querySelector('.refresh-text').textContent = '更新数据';
+            }
+        }
+    </script>
+
+    <!-- 刷新进度弹窗 -->
+    <div class="refresh-modal" id="refreshModal">
+        <div class="refresh-modal-content">
+            <div class="refresh-modal-icon">🔄</div>
+            <div class="refresh-modal-title">正在更新数据</div>
+            <div class="refresh-modal-text" id="refreshStatus">正在触发 GitHub Actions...</div>
+            <div class="refresh-modal-progress">
+                <div class="refresh-modal-progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
