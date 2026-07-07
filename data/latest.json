@@ -19,9 +19,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 40,
     "risk_reasons": [
@@ -53,10 +51,8 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 7,
+    "changes": [],
+    "days_stale": 8,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -87,9 +83,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -120,9 +114,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -155,9 +147,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -188,9 +178,7 @@
     "start_date": "2026-03-04",
     "status": "Awaiting Human Review",
     "days_until_deadline": -116,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/13",
     "days_stale": 102,
     "risk_score": 65,
@@ -226,9 +214,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 55,
     "risk_score": 40,
     "risk_reasons": [
@@ -259,9 +245,7 @@
     "start_date": "2026-05-25",
     "status": "Ready to test",
     "days_until_deadline": -39,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "05/29",
     "days_stale": 48,
     "risk_score": 80,
@@ -298,9 +282,7 @@
     "start_date": "2026-02-24",
     "status": "Ready to test",
     "days_until_deadline": -116,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/13",
     "days_stale": 34,
     "risk_score": 95,
@@ -335,14 +317,12 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 103,
+    "changes": [],
+    "days_stale": 104,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 103 天"
+      "停滞 104 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -366,9 +346,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 81,
     "risk_score": 25,
     "risk_reasons": [
@@ -402,9 +380,7 @@
     "start_date": "2026-02-05",
     "status": "Ready to test",
     "days_until_deadline": -148,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/09",
     "days_stale": 153,
     "risk_score": 65,
@@ -441,9 +417,7 @@
     "start_date": "2026-03-03",
     "status": "Awaiting Human Review",
     "days_until_deadline": -119,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/10",
     "days_stale": 34,
     "risk_score": 95,
@@ -476,9 +450,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 81,
     "risk_score": 35,
     "risk_reasons": [
@@ -513,9 +485,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": -131,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/26",
     "days_stale": 132,
     "risk_score": 95,
@@ -550,9 +520,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 228,
     "risk_score": 40,
     "risk_reasons": [
@@ -583,9 +551,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 166,
     "risk_score": 40,
     "risk_reasons": [
@@ -616,9 +582,7 @@
     "start_date": "2025-11-15",
     "status": "Awaiting Human Review",
     "days_until_deadline": -54,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "05/14",
     "days_stale": 20,
     "risk_score": 75,
@@ -652,9 +616,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": -129,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 244,
     "risk_score": 55,
@@ -690,7 +652,7 @@
     "status": "Human in Progress",
     "days_until_deadline": -97,
     "changes": [
-      "new"
+      "deadline_changed"
     ],
     "end_date_formatted": "04/01",
     "days_stale": 90,
@@ -725,9 +687,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 42,
     "risk_score": 15,
     "risk_reasons": [
@@ -757,9 +717,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 7,
     "risk_score": 10,
     "risk_reasons": [
@@ -790,9 +748,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 232,
     "risk_score": 40,
     "risk_reasons": [
@@ -824,9 +780,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": -129,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 244,
     "risk_score": 55,
@@ -861,9 +815,7 @@
     "start_date": "2026-04-01",
     "status": "Awaiting Human Review",
     "days_until_deadline": -68,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "04/30",
     "days_stale": 244,
     "risk_score": 65,
@@ -899,9 +851,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 232,
     "risk_score": 40,
     "risk_reasons": [
@@ -932,9 +882,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 238,
     "risk_score": 15,
     "risk_reasons": [
@@ -967,9 +915,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 238,
     "risk_score": 25,
     "risk_reasons": [
@@ -1000,9 +946,7 @@
     "start_date": "2026-01-26",
     "status": "Awaiting Human Review",
     "days_until_deadline": -158,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "01/30",
     "days_stale": 153,
     "risk_score": 80,
@@ -1035,9 +979,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": -98,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/31",
     "days_stale": 210,
     "risk_score": 80,
@@ -1072,19 +1014,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 154,
+    "changes": [],
+    "days_stale": 155,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 154 天"
+      "停滞 155 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 154 天"
+    "risk_summary": "停滞 155 天"
   },
   {
     "number": 1641,
@@ -1106,19 +1046,17 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 154,
+    "changes": [],
+    "days_stale": 155,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 154 天"
+      "停滞 155 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 154 天"
+    "risk_summary": "停滞 155 天"
   },
   {
     "number": 1465,
@@ -1138,16 +1076,14 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": -129,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/28",
-    "days_stale": 207,
+    "days_stale": 208,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 129 天",
       "P2 一般优先级",
-      "停滞 207 天"
+      "停滞 208 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -1175,9 +1111,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": -129,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 68,
     "risk_score": 65,
@@ -1210,9 +1144,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 174,
     "risk_score": 15,
     "risk_reasons": [
@@ -1244,9 +1176,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": -144,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/13",
     "days_stale": 151,
     "risk_score": 80,
@@ -1281,9 +1211,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 155,
     "risk_score": 15,
     "risk_reasons": [
@@ -1315,9 +1243,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 154,
     "risk_score": 25,
     "risk_reasons": [
@@ -1349,9 +1275,7 @@
     "start_date": "2026-03-06",
     "status": "Awaiting Human Review",
     "days_until_deadline": -54,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "05/14",
     "days_stale": 78,
     "risk_score": 55,
@@ -1386,9 +1310,7 @@
     "start_date": "2026-02-05",
     "status": "Agent in Progress",
     "days_until_deadline": -129,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/28",
     "days_stale": 153,
     "risk_score": 80,
@@ -1423,9 +1345,7 @@
     "start_date": "2026-02-09",
     "status": "Agent in Progress",
     "days_until_deadline": -147,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "02/10",
     "days_stale": 148,
     "risk_score": 80,
@@ -1461,9 +1381,7 @@
     "start_date": "2026-03-03",
     "status": "Awaiting Human Review",
     "days_until_deadline": -119,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/10",
     "days_stale": 126,
     "risk_score": 95,
@@ -1500,9 +1418,7 @@
     "start_date": "2026-03-03",
     "status": "Awaiting Human Review",
     "days_until_deadline": -119,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/10",
     "days_stale": 126,
     "risk_score": 95,
@@ -1537,9 +1453,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 76,
     "risk_score": 40,
     "risk_reasons": [
@@ -1570,7 +1484,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_down:P1→None"
     ],
     "days_stale": 97,
     "risk_score": 25,
@@ -1601,9 +1515,7 @@
     "start_date": "2026-03-12",
     "status": "Awaiting Human Review",
     "days_until_deadline": -109,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "03/20",
     "days_stale": 81,
     "risk_score": 100,
@@ -1638,9 +1550,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 116,
     "risk_score": 40,
     "risk_reasons": [
@@ -1672,9 +1582,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 15,
     "risk_score": 20,
     "risk_reasons": [
@@ -1706,9 +1614,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 34,
     "risk_score": 15,
     "risk_reasons": [
@@ -1739,9 +1645,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 106,
     "risk_score": 25,
     "risk_reasons": [
@@ -1776,9 +1680,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 105,
     "risk_score": 25,
     "risk_reasons": [
@@ -1811,9 +1713,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 34,
     "risk_score": 25,
     "risk_reasons": [
@@ -1848,7 +1748,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_down:P1→None"
     ],
     "days_stale": 34,
     "risk_score": 40,
@@ -1880,9 +1780,7 @@
     "start_date": "2026-04-02",
     "status": "Awaiting Human Review",
     "days_until_deadline": -54,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "05/14",
     "days_stale": 96,
     "risk_score": 65,
@@ -1915,9 +1813,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 88,
     "risk_score": 25,
     "risk_reasons": [
@@ -1952,9 +1848,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 83,
     "risk_score": 15,
     "risk_reasons": [
@@ -1988,9 +1882,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 34,
     "risk_score": 15,
     "risk_reasons": [
@@ -2020,9 +1912,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 75,
     "risk_score": 40,
     "risk_reasons": [
@@ -2054,9 +1944,7 @@
     "start_date": "2026-06-23",
     "status": "Awaiting Human Review",
     "days_until_deadline": 24,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/31",
     "days_stale": 77,
     "risk_score": 55,
@@ -2089,9 +1977,7 @@
     "start_date": "2026-04-22",
     "status": "Ready to test",
     "days_until_deadline": -74,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "04/24",
     "days_stale": 34,
     "risk_score": 95,
@@ -2128,7 +2014,8 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": -53,
     "changes": [
-      "new"
+      "priority_up:None→P0",
+      "deadline_changed"
     ],
     "end_date_formatted": "05/15",
     "days_stale": 75,
@@ -2166,9 +2053,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 74,
     "risk_score": 15,
     "risk_reasons": [
@@ -2198,9 +2083,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 61,
     "risk_score": 15,
     "risk_reasons": [
@@ -2232,9 +2115,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 71,
     "risk_score": 15,
     "risk_reasons": [
@@ -2266,9 +2147,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 71,
     "risk_score": 15,
     "risk_reasons": [
@@ -2300,9 +2179,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 20,
     "risk_score": 10,
     "risk_reasons": [],
@@ -2332,9 +2209,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 71,
     "risk_score": 15,
     "risk_reasons": [
@@ -2367,9 +2242,7 @@
     "start_date": "2026-05-01",
     "status": "Agent in Progress",
     "days_until_deadline": -37,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "05/31",
     "days_stale": 61,
     "risk_score": 95,
@@ -2406,7 +2279,8 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": -37,
     "changes": [
-      "new"
+      "priority_up:P2→P0",
+      "deadline_changed"
     ],
     "end_date_formatted": "05/31",
     "days_stale": 57,
@@ -2444,7 +2318,8 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": -54,
     "changes": [
-      "new"
+      "priority_up:None→P0",
+      "deadline_changed"
     ],
     "end_date_formatted": "05/14",
     "days_stale": 61,
@@ -2480,9 +2355,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -2514,9 +2387,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": -54,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "05/14",
     "days_stale": 34,
     "risk_score": 80,
@@ -2551,9 +2422,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 49,
     "risk_score": 55,
     "risk_reasons": [
@@ -2586,9 +2455,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 48,
     "risk_score": 40,
     "risk_reasons": [
@@ -2620,9 +2487,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 42,
     "risk_score": 15,
     "risk_reasons": [
@@ -2656,9 +2521,7 @@
     "start_date": "2026-05-26",
     "status": "Human in Progress",
     "days_until_deadline": 85,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "09/30",
     "days_stale": 14,
     "risk_score": 25,
@@ -2691,9 +2554,7 @@
     "start_date": "2026-06-08",
     "status": "Human in Progress",
     "days_until_deadline": 85,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "09/30",
     "days_stale": 18,
     "risk_score": 35,
@@ -2726,9 +2587,7 @@
     "start_date": "2026-05-26",
     "status": "Human in Progress",
     "days_until_deadline": 24,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/31",
     "days_stale": 4,
     "risk_score": 25,
@@ -2760,9 +2619,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 42,
     "risk_score": 40,
     "risk_reasons": [
@@ -2794,14 +2651,12 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 41,
+    "changes": [],
+    "days_stale": 42,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 41 天"
+      "停滞 42 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -2828,9 +2683,7 @@
     "start_date": "2026-06-01",
     "status": "Awaiting Human Review",
     "days_until_deadline": -7,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "06/30",
     "days_stale": 34,
     "risk_score": 95,
@@ -2866,9 +2719,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 35,
     "risk_score": 15,
     "risk_reasons": [
@@ -2900,9 +2751,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 31,
     "risk_score": 40,
     "risk_reasons": [
@@ -2935,9 +2784,7 @@
     "start_date": "2026-06-03",
     "status": "Human in Progress",
     "days_until_deadline": 85,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "09/30",
     "days_stale": 3,
     "risk_score": 25,
@@ -2969,9 +2816,7 @@
     "start_date": "2026-06-04",
     "status": "Human in Progress",
     "days_until_deadline": 3,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/10",
     "days_stale": 22,
     "risk_score": 65,
@@ -3004,9 +2849,7 @@
     "start_date": "2026-06-23",
     "status": "Awaiting Human Review",
     "days_until_deadline": 10,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/17",
     "days_stale": 14,
     "risk_score": 40,
@@ -3038,7 +2881,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P0"
     ],
     "days_stale": 4,
     "risk_score": 40,
@@ -3072,9 +2915,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 32,
     "risk_score": 15,
     "risk_reasons": [
@@ -3104,9 +2945,7 @@
     "start_date": null,
     "status": "Backlog",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 32,
     "risk_score": 25,
     "risk_reasons": [
@@ -3135,9 +2974,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 27,
     "risk_score": 35,
     "risk_reasons": [
@@ -3167,9 +3004,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 29,
     "risk_score": 10,
     "risk_reasons": [],
@@ -3200,9 +3035,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 28,
     "risk_score": 20,
     "risk_reasons": [
@@ -3230,9 +3063,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 28,
     "risk_score": 10,
     "risk_reasons": [],
@@ -3262,9 +3093,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 28,
     "risk_score": 35,
     "risk_reasons": [
@@ -3294,9 +3123,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 28,
     "risk_score": 20,
     "risk_reasons": [
@@ -3326,9 +3153,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 28,
     "risk_score": 20,
     "risk_reasons": [
@@ -3358,9 +3183,7 @@
     "start_date": null,
     "status": "Ready to deply",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 27,
     "risk_score": 35,
     "risk_reasons": [
@@ -3391,9 +3214,7 @@
     "start_date": "2026-06-09",
     "status": "Awaiting Human Review",
     "days_until_deadline": -21,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "06/16",
     "days_stale": 27,
     "risk_score": 90,
@@ -3428,9 +3249,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -3463,7 +3282,8 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:None→P0",
+      "deadline_changed"
     ],
     "days_stale": 24,
     "risk_score": 10,
@@ -3494,9 +3314,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": 10,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/17",
     "days_stale": 24,
     "risk_score": 35,
@@ -3529,9 +3347,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -3562,9 +3378,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -3595,9 +3409,7 @@
     "start_date": "2026-06-16",
     "status": "Agent in Progress",
     "days_until_deadline": -18,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "06/19",
     "days_stale": 21,
     "risk_score": 75,
@@ -3632,7 +3444,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P1"
     ],
     "days_stale": 4,
     "risk_score": 25,
@@ -3664,7 +3476,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P1"
     ],
     "days_stale": 4,
     "risk_score": 25,
@@ -3694,7 +3506,7 @@
     "status": "Ready to deply",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P0"
     ],
     "days_stale": 19,
     "risk_score": 50,
@@ -3726,9 +3538,7 @@
     "start_date": "2026-06-18",
     "status": "Awaiting Human Review",
     "days_until_deadline": -7,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "06/30",
     "days_stale": 19,
     "risk_score": 75,
@@ -3763,7 +3573,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P1"
     ],
     "days_stale": 4,
     "risk_score": 25,
@@ -3795,9 +3605,7 @@
     "start_date": "2026-06-18",
     "status": "Agent in Progress",
     "days_until_deadline": -15,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "06/22",
     "days_stale": 19,
     "risk_score": 90,
@@ -3831,9 +3639,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 18,
     "risk_score": 50,
     "risk_reasons": [
@@ -3864,9 +3670,7 @@
     "start_date": "2026-06-19",
     "status": "Awaiting Human Review",
     "days_until_deadline": -18,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "06/19",
     "days_stale": 18,
     "risk_score": 90,
@@ -3900,9 +3704,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
@@ -3933,10 +3735,8 @@
     "start_date": null,
     "status": "Ready to deply",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 7,
+    "changes": [],
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3966,10 +3766,8 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 15,
+    "changes": [],
+    "days_stale": 16,
     "risk_score": 10,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4000,9 +3798,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 14,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4033,9 +3829,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4066,9 +3860,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 40,
     "risk_reasons": [
@@ -4099,9 +3891,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
@@ -4132,9 +3922,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
@@ -4165,9 +3953,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -4198,9 +3984,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -4231,9 +4015,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -4264,9 +4046,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -4298,9 +4078,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -4332,7 +4110,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P0"
     ],
     "days_stale": 4,
     "risk_score": 10,
@@ -4364,9 +4142,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4398,9 +4174,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4431,9 +4205,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4463,9 +4235,7 @@
     "start_date": null,
     "status": "Ready to deply",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 11,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4495,9 +4265,7 @@
     "start_date": null,
     "status": "Ready to deply",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 11,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4527,9 +4295,7 @@
     "start_date": null,
     "status": "Ready to deply",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 11,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4560,9 +4326,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4595,9 +4359,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4628,9 +4390,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4661,9 +4421,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 7,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4694,9 +4452,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4728,9 +4484,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4762,9 +4516,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4795,9 +4547,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4828,9 +4578,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4861,9 +4609,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 10,
     "risk_score": 25,
     "risk_reasons": [
@@ -4894,9 +4640,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4929,10 +4673,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 7,
+    "changes": [],
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4962,9 +4704,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -4995,9 +4735,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5029,9 +4767,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5064,10 +4800,8 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 7,
+    "changes": [],
+    "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -5098,9 +4832,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5131,9 +4863,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 10,
     "risk_reasons": [
@@ -5164,9 +4894,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 10,
     "risk_reasons": [
@@ -5198,9 +4926,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -5231,9 +4957,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 10,
     "risk_reasons": [
@@ -5265,9 +4989,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 10,
     "risk_reasons": [
@@ -5299,9 +5021,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -5333,9 +5053,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 10,
     "risk_reasons": [
@@ -5367,7 +5085,8 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P0",
+      "deadline_changed"
     ],
     "days_stale": 8,
     "risk_score": 10,
@@ -5399,9 +5118,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -5432,9 +5149,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 10,
     "risk_reasons": [
@@ -5464,9 +5179,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
@@ -5496,9 +5209,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 7,
     "risk_score": 25,
     "risk_reasons": [
@@ -5530,9 +5241,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5563,9 +5272,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5596,9 +5303,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5629,9 +5334,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5663,9 +5366,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5697,9 +5398,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5730,9 +5429,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5764,9 +5461,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5797,9 +5492,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 8,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5830,9 +5523,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5864,9 +5555,7 @@
     "start_date": "2026-06-29",
     "status": "Awaiting Human Review",
     "days_until_deadline": -5,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/02",
     "days_stale": 7,
     "risk_score": 80,
@@ -5901,9 +5590,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -5934,9 +5621,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -5967,9 +5652,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -6000,9 +5683,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6030,9 +5711,7 @@
     "start_date": null,
     "status": "Ready to deply",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 7,
     "risk_score": 25,
     "risk_reasons": [
@@ -6063,9 +5742,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6096,9 +5773,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -6129,9 +5804,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
@@ -6162,9 +5835,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6195,9 +5866,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6229,9 +5898,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6262,9 +5929,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6295,9 +5960,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6328,9 +5991,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": -6,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/01",
     "days_stale": 6,
     "risk_score": 65,
@@ -6365,9 +6026,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 6,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6398,9 +6057,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6431,9 +6088,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 6,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6464,9 +6119,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6497,9 +6150,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6530,9 +6181,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6563,9 +6212,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6596,9 +6243,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -6629,9 +6274,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6664,7 +6307,8 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:None→P0",
+      "deadline_changed"
     ],
     "days_stale": 0,
     "risk_score": 0,
@@ -6696,9 +6340,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -6730,9 +6372,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6762,9 +6402,7 @@
     "start_date": "2026-07-03",
     "status": "Human in Progress",
     "days_until_deadline": -1,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/06",
     "days_stale": 5,
     "risk_score": 80,
@@ -6798,9 +6436,7 @@
     "start_date": "2026-07-03",
     "status": "Human in Progress",
     "days_until_deadline": -2,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/05",
     "days_stale": 5,
     "risk_score": 80,
@@ -6835,9 +6471,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 10,
     "risk_reasons": [
@@ -6869,9 +6503,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
@@ -6902,9 +6534,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
@@ -6936,9 +6566,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -6969,9 +6597,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7003,9 +6629,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7036,9 +6660,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7069,9 +6691,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7102,9 +6722,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7134,9 +6752,7 @@
     "start_date": null,
     "status": "Human in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7168,9 +6784,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7201,9 +6815,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7234,9 +6846,7 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7264,9 +6874,7 @@
     "start_date": null,
     "status": "Ready to test",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 4,
     "risk_score": 25,
     "risk_reasons": [
@@ -7296,9 +6904,7 @@
     "start_date": null,
     "status": "Backlog",
     "days_until_deadline": 0,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "end_date_formatted": "07/07",
     "days_stale": 4,
     "risk_score": 35,
@@ -7332,7 +6938,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P1"
     ],
     "days_stale": 3,
     "risk_score": 10,
@@ -7365,9 +6971,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7398,9 +7002,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7433,7 +7035,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P1"
     ],
     "days_stale": 2,
     "risk_score": 10,
@@ -7465,9 +7067,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7499,7 +7099,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P0"
     ],
     "days_stale": 3,
     "risk_score": 10,
@@ -7531,9 +7131,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 10,
     "risk_reasons": [
@@ -7564,9 +7162,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 10,
     "risk_reasons": [
@@ -7598,7 +7194,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "priority_up:P2→P1"
     ],
     "days_stale": 3,
     "risk_score": 10,
@@ -7632,9 +7228,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7665,9 +7259,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7698,9 +7290,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7731,9 +7321,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
@@ -7764,9 +7352,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -7797,9 +7383,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
@@ -7829,9 +7413,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7861,9 +7443,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7893,9 +7473,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7926,9 +7504,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
@@ -7958,9 +7534,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -7991,9 +7565,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -8024,9 +7596,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8057,9 +7627,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8090,9 +7658,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8123,9 +7689,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8155,9 +7719,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8188,9 +7750,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8220,9 +7780,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8252,9 +7810,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8284,9 +7840,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8316,9 +7870,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8348,9 +7900,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8380,9 +7930,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8412,9 +7960,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8444,9 +7990,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8476,9 +8020,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8508,9 +8050,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8541,9 +8081,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
@@ -8573,9 +8111,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8606,9 +8142,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8639,9 +8173,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -8672,9 +8204,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
@@ -8705,9 +8235,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
@@ -8739,9 +8267,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 10,
     "risk_reasons": [
@@ -8771,9 +8297,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8803,9 +8327,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8835,9 +8357,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
@@ -8868,9 +8388,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -8901,9 +8419,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -8934,9 +8450,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -8968,9 +8482,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -9001,9 +8513,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -9034,9 +8544,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
@@ -9067,9 +8575,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -9100,9 +8606,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
@@ -9133,9 +8637,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
@@ -9645,7 +9147,7 @@
     "url": "https://github.com/sparticleinc/gbase-onprem/issues/304",
     "state": "OPEN",
     "created_at": "2026-07-07T02:36:48Z",
-    "updated_at": "2026-07-07T08:23:52Z",
+    "updated_at": "2026-07-07T08:30:10Z",
     "labels": [
       "AutoBee"
     ],
@@ -9677,9 +9179,10 @@
     "url": "https://github.com/sparticleinc/gbase-onprem/issues/305",
     "state": "OPEN",
     "created_at": "2026-07-07T03:54:47Z",
-    "updated_at": "2026-07-07T08:01:28Z",
+    "updated_at": "2026-07-07T08:24:31Z",
     "labels": [
-      "AutoBee"
+      "AutoBee",
+      "autobee-impl"
     ],
     "assignees": [
       "zhuchaowe"
@@ -9689,7 +9192,7 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Backlog",
+    "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [
       "new"
@@ -9719,9 +9222,7 @@
     "start_date": null,
     "status": "Backlog",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 245,
     "risk_score": 25,
     "risk_reasons": [
@@ -9751,9 +9252,7 @@
     "start_date": null,
     "status": "Backlog",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 244,
     "risk_score": 25,
     "risk_reasons": [
@@ -9786,7 +9285,7 @@
     "status": "Backlog",
     "days_until_deadline": null,
     "changes": [
-      "new"
+      "deadline_changed"
     ],
     "days_stale": 153,
     "risk_score": 15,
@@ -9817,9 +9316,7 @@
     "start_date": null,
     "status": "In Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
+    "changes": [],
     "days_stale": 256,
     "risk_score": 15,
     "risk_reasons": [

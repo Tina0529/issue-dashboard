@@ -378,7 +378,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-07-07 17:24</div>
+            <div class="sidebar-timestamp">更新: 2026-07-07 17:49</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -668,11 +668,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: [],
+                labels: ["latest"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [],
+                        data: [111],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -680,7 +680,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [],
+                        data: [51],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -688,7 +688,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [],
+                        data: [28],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -796,10 +796,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: [],
+                labels: ["latest"],
                 datasets: [{
                     label: '完成数',
-                    data: [],
+                    data: [0],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -825,10 +825,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: [],
+                labels: ["latest"],
                 datasets: [{
                     label: '新增数',
-                    data: [],
+                    data: [111],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
