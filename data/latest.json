@@ -215,11 +215,11 @@
     "status": "Human in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 55,
+    "days_stale": 56,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 55 天"
+      "停滞 56 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -347,10 +347,10 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 81,
+    "days_stale": 82,
     "risk_score": 25,
     "risk_reasons": [
-      "停滞 81 天",
+      "停滞 82 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -358,7 +358,7 @@
       "分配负责人"
     ],
     "risk_level": "medium",
-    "risk_summary": "停滞 81 天"
+    "risk_summary": "停滞 82 天"
   },
   {
     "number": 1983,
@@ -451,11 +451,11 @@
     "status": "Ready to test",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 81,
+    "days_stale": 82,
     "risk_score": 35,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 81 天",
+      "停滞 82 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -487,12 +487,12 @@
     "days_until_deadline": -131,
     "changes": [],
     "end_date_formatted": "02/26",
-    "days_stale": 132,
+    "days_stale": 133,
     "risk_score": 95,
     "risk_reasons": [
       "已逾期 131 天",
       "P0 最高优先级",
-      "停滞 132 天"
+      "停滞 133 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -817,12 +817,12 @@
     "days_until_deadline": -68,
     "changes": [],
     "end_date_formatted": "04/30",
-    "days_stale": 244,
+    "days_stale": 245,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 68 天",
       "P2 一般优先级",
-      "停滞 244 天"
+      "停滞 245 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -883,16 +883,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 238,
+    "days_stale": 239,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 238 天"
+      "停滞 239 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 238 天"
+    "risk_summary": "停滞 239 天"
   },
   {
     "number": 1326,
@@ -916,11 +916,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 238,
+    "days_stale": 239,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 238 天"
+      "停滞 239 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -1517,12 +1517,12 @@
     "days_until_deadline": -109,
     "changes": [],
     "end_date_formatted": "03/20",
-    "days_stale": 81,
+    "days_stale": 82,
     "risk_score": 100,
     "risk_reasons": [
       "已逾期 109 天",
       "P0 最高优先级",
-      "停滞 81 天",
+      "停滞 82 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -1646,10 +1646,10 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 106,
+    "days_stale": 107,
     "risk_score": 25,
     "risk_reasons": [
-      "停滞 106 天",
+      "停滞 107 天",
       "无负责人"
     ],
     "risk_suggestions": [
@@ -1657,7 +1657,7 @@
       "分配负责人"
     ],
     "risk_level": "medium",
-    "risk_summary": "停滞 106 天"
+    "risk_summary": "停滞 107 天"
   },
   {
     "number": 2445,
@@ -1681,11 +1681,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 105,
+    "days_stale": 106,
     "risk_score": 25,
     "risk_reasons": [
       "P2 一般优先级",
-      "停滞 105 天"
+      "停滞 106 天"
     ],
     "risk_suggestions": [],
     "risk_level": "medium",
@@ -2488,16 +2488,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 42,
+    "days_stale": 43,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 42 天"
+      "停滞 43 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 42 天"
+    "risk_summary": "停滞 43 天"
   },
   {
     "number": 58,
@@ -2720,16 +2720,16 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 35,
+    "days_stale": 36,
     "risk_score": 15,
     "risk_reasons": [
-      "停滞 35 天"
+      "停滞 36 天"
     ],
     "risk_suggestions": [
       "建议设置优先级"
     ],
     "risk_level": "low",
-    "risk_summary": "停滞 35 天"
+    "risk_summary": "停滞 36 天"
   },
   {
     "number": 2725,
@@ -2752,11 +2752,11 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 31,
+    "days_stale": 32,
     "risk_score": 40,
     "risk_reasons": [
       "P1 高优先级",
-      "停滞 31 天"
+      "停滞 32 天"
     ],
     "risk_suggestions": [],
     "risk_level": "high",
@@ -2883,7 +2883,7 @@
     "changes": [
       "priority_up:P2→P0"
     ],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -3036,7 +3036,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 28,
+    "days_stale": 29,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3184,7 +3184,7 @@
     "status": "Ready to deply",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 27,
+    "days_stale": 28,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级"
@@ -3250,7 +3250,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3285,7 +3285,7 @@
       "priority_up:None→P0",
       "deadline_changed"
     ],
-    "days_stale": 24,
+    "days_stale": 25,
     "risk_score": 10,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3348,7 +3348,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3379,7 +3379,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3446,7 +3446,7 @@
     "changes": [
       "priority_up:P2→P1"
     ],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3508,7 +3508,7 @@
     "changes": [
       "priority_up:P2→P0"
     ],
-    "days_stale": 19,
+    "days_stale": 20,
     "risk_score": 50,
     "risk_reasons": [
       "P0 最高优先级"
@@ -3705,7 +3705,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3861,7 +3861,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -3892,7 +3892,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3985,7 +3985,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4016,7 +4016,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4047,7 +4047,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4112,7 +4112,7 @@
     "changes": [
       "priority_up:P2→P0"
     ],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4133,7 +4133,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -4236,7 +4237,7 @@
     "status": "Ready to deply",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 11,
+    "days_stale": 12,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4296,7 +4297,7 @@
     "status": "Ready to deply",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 11,
+    "days_stale": 12,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4327,7 +4328,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4360,7 +4361,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4412,7 +4413,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -4485,7 +4487,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4517,7 +4519,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4758,7 +4760,8 @@
       "autobee-impl"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -4854,7 +4857,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -4948,7 +4952,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -4990,7 +4995,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -5054,7 +5059,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -5109,7 +5114,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -5140,7 +5146,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -5180,7 +5187,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -5210,7 +5217,7 @@
     "status": "Ready to test",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -5242,7 +5249,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -5367,7 +5374,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -5399,7 +5406,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -5420,7 +5427,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -5462,7 +5470,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -5612,7 +5620,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -5795,7 +5804,8 @@
     ],
     "assignees": [
       "annSharon",
-      "lirhcoder"
+      "lirhcoder",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -5836,7 +5846,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -5930,7 +5940,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6058,7 +6068,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6141,7 +6151,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -6172,7 +6183,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -6203,7 +6215,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -6310,7 +6323,7 @@
       "priority_up:None→P0",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6341,7 +6354,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -6373,7 +6386,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6567,7 +6580,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6588,7 +6601,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -6630,7 +6644,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6682,7 +6696,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -6785,7 +6800,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 3,
+    "days_stale": 4,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -6862,7 +6877,7 @@
     "url": "https://github.com/sparticleinc/gbase-onprem/issues/268",
     "state": "OPEN",
     "created_at": "2026-07-03T07:12:34Z",
-    "updated_at": "2026-07-03T07:12:34Z",
+    "updated_at": "2026-07-07T09:51:04Z",
     "labels": [],
     "assignees": [
       "zhuchaowe"
@@ -6875,7 +6890,7 @@
     "status": "Ready to test",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 4,
+    "days_stale": 0,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -7353,7 +7368,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -7384,7 +7399,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -7414,7 +7429,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -7444,7 +7459,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -7474,7 +7489,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -7556,7 +7571,8 @@
       "AutoBee"
     ],
     "assignees": [
-      "annSharon"
+      "annSharon",
+      "csh28"
     ],
     "repo": "mygpt-frontend",
     "project": "Support应用&功能",
@@ -8268,7 +8284,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -8298,7 +8314,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -8328,7 +8344,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -8783,7 +8799,7 @@
     "url": "https://github.com/sparticleinc/gbase-onprem/issues/299",
     "state": "OPEN",
     "created_at": "2026-07-06T09:11:15Z",
-    "updated_at": "2026-07-06T10:10:58Z",
+    "updated_at": "2026-07-07T10:43:28Z",
     "labels": [
       "AutoBee"
     ],
@@ -8815,7 +8831,7 @@
     "url": "https://github.com/sparticleinc/gbase-onprem/issues/301",
     "state": "OPEN",
     "created_at": "2026-07-06T10:07:11Z",
-    "updated_at": "2026-07-06T11:03:54Z",
+    "updated_at": "2026-07-07T09:49:18Z",
     "labels": [
       "AutoBee"
     ],
@@ -8827,7 +8843,7 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Awaiting Human Review",
+    "status": "Ready to test",
     "days_until_deadline": null,
     "changes": [
       "new"
@@ -8847,7 +8863,7 @@
     "url": "https://github.com/sparticleinc/nssol-baddi/issues/414",
     "state": "OPEN",
     "created_at": "2026-07-06T12:30:16Z",
-    "updated_at": "2026-07-07T08:03:29Z",
+    "updated_at": "2026-07-07T09:24:14Z",
     "labels": [
       "BADDI",
       "product",
@@ -8862,7 +8878,7 @@
     "priority": null,
     "end_date": null,
     "start_date": null,
-    "status": "Backlog",
+    "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [
       "new"
@@ -9142,44 +9158,12 @@
     "risk_summary": "正常"
   },
   {
-    "number": 304,
-    "title": "static-hosting URL 未按 bot 分享范围与查看权限控制，未登录也可直接访问",
-    "url": "https://github.com/sparticleinc/gbase-onprem/issues/304",
-    "state": "OPEN",
-    "created_at": "2026-07-07T02:36:48Z",
-    "updated_at": "2026-07-07T08:30:10Z",
-    "labels": [
-      "AutoBee"
-    ],
-    "assignees": [
-      "zhuchaowe"
-    ],
-    "repo": "gbase-onprem",
-    "project": "Support应用&功能",
-    "priority": "P0",
-    "end_date": null,
-    "start_date": null,
-    "status": "Agent in Progress",
-    "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 0,
-    "risk_score": 40,
-    "risk_reasons": [
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
-  },
-  {
     "number": 305,
     "title": "static-hosting 特殊字符路径（# % ? & +）回链看似成功但访问 502",
     "url": "https://github.com/sparticleinc/gbase-onprem/issues/305",
     "state": "OPEN",
     "created_at": "2026-07-07T03:54:47Z",
-    "updated_at": "2026-07-07T08:24:31Z",
+    "updated_at": "2026-07-07T10:23:43Z",
     "labels": [
       "AutoBee",
       "autobee-impl"
@@ -9192,7 +9176,7 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
       "new"
@@ -9205,6 +9189,134 @@
     "risk_suggestions": [],
     "risk_level": "medium",
     "risk_summary": "P1 高优先级"
+  },
+  {
+    "number": 3371,
+    "title": "记录 trans-vendor 域名迁移到 Envoy 并清理 nginx Ingress",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/3371",
+    "state": "OPEN",
+    "created_at": "2026-07-07T09:05:52Z",
+    "updated_at": "2026-07-07T09:26:29Z",
+    "labels": [
+      "AutoBee"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
+    "number": 3372,
+    "title": "明确 felo-mygpt burst backend 的 HTTP 路由边界",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/3372",
+    "state": "OPEN",
+    "created_at": "2026-07-07T09:49:34Z",
+    "updated_at": "2026-07-07T10:52:12Z",
+    "labels": [
+      "AutoBee"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
+    "number": 3373,
+    "title": "收窄 gu/lironghui AWS IAM 权限到必要水平",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/3373",
+    "state": "OPEN",
+    "created_at": "2026-07-07T09:55:38Z",
+    "updated_at": "2026-07-07T10:56:36Z",
+    "labels": [
+      "AutoBee"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
+  },
+  {
+    "number": 3375,
+    "title": "删除旧 AWS IAM 用户 gu",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/3375",
+    "state": "OPEN",
+    "created_at": "2026-07-07T10:12:02Z",
+    "updated_at": "2026-07-07T10:46:21Z",
+    "labels": [
+      "AutoBee"
+    ],
+    "assignees": [
+      "qq98982"
+    ],
+    "repo": "felo-mygpt",
+    "project": "Support应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
+    "risk_suggestions": [
+      "建议设置优先级"
+    ],
+    "risk_level": "low",
+    "risk_summary": "正常"
   },
   {
     "number": 2,

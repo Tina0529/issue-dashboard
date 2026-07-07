@@ -56,7 +56,7 @@
       "new"
     ],
     "end_date_formatted": "06/30",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 65,
     "risk_reasons": [
       "已逾期 7 天",
@@ -748,7 +748,7 @@
       "new"
     ],
     "end_date_formatted": "06/26",
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 40,
     "risk_reasons": [
       "已逾期 11 天"
@@ -893,11 +893,11 @@
       "new"
     ],
     "end_date_formatted": "05/29",
-    "days_stale": 42,
+    "days_stale": 43,
     "risk_score": 55,
     "risk_reasons": [
       "已逾期 39 天",
-      "停滞 42 天"
+      "停滞 43 天"
     ],
     "risk_suggestions": [
       "建议设置优先级",
@@ -965,12 +965,12 @@
       "new"
     ],
     "end_date_formatted": "06/08",
-    "days_stale": 42,
+    "days_stale": 43,
     "risk_score": 95,
     "risk_reasons": [
       "已逾期 29 天",
       "P0 最高优先级",
-      "停滞 42 天"
+      "停滞 43 天"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
@@ -1448,8 +1448,8 @@
       "new"
     ],
     "end_date_formatted": "06/08",
-    "days_stale": 14,
-    "risk_score": 65,
+    "days_stale": 15,
+    "risk_score": 75,
     "risk_reasons": [
       "已逾期 29 天",
       "P1 高优先级"
@@ -1594,7 +1594,7 @@
       "new"
     ],
     "end_date_formatted": "06/16",
-    "days_stale": 27,
+    "days_stale": 28,
     "risk_score": 90,
     "risk_reasons": [
       "已逾期 21 天",
@@ -2059,7 +2059,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -2089,7 +2089,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -2119,7 +2119,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -2149,7 +2149,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -2212,7 +2212,7 @@
       "new"
     ],
     "end_date_formatted": "07/03",
-    "days_stale": 7,
+    "days_stale": 8,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 4 天",
@@ -2338,7 +2338,7 @@
       "new"
     ],
     "end_date_formatted": "06/30",
-    "days_stale": 6,
+    "days_stale": 7,
     "risk_score": 80,
     "risk_reasons": [
       "已逾期 7 天",
@@ -2696,7 +2696,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 5,
+    "days_stale": 6,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2766,7 +2766,7 @@
       "new"
     ],
     "end_date_formatted": "07/31",
-    "days_stale": 4,
+    "days_stale": 5,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -2896,7 +2896,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -3262,7 +3262,7 @@
       "new"
     ],
     "end_date_formatted": "07/17",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"

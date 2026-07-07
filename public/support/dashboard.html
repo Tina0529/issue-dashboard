@@ -369,7 +369,7 @@
             <a href="index.html#priority" class="nav-item">
                 <span class="dot" style="background: #EF4444"></span>
                 P0 紧急
-                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">28</span>
+                <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#FCA5A5;padding:2px 8px;border-radius:10px;font-size:11px;">27</span>
             </a>
             <a href="index.html#assignees" class="nav-item">
                 <span class="dot" style="background: var(--text-muted)"></span>
@@ -378,7 +378,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-07-07 17:48</div>
+            <div class="sidebar-timestamp">更新: 2026-07-07 21:55</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -399,14 +399,14 @@
                 <div class="stat-card-change up">↑ 1</div>
             </div>
             <div class="stat-card warning">
-                <div class="stat-card-value">28</div>
+                <div class="stat-card-value">27</div>
                 <div class="stat-card-label">🔴 P0 紧急</div>
-                <div class="stat-card-change up">↑ 2</div>
+                <div class="stat-card-change up">↑ 1</div>
             </div>
-            <div class="stat-card info">
-                <div class="stat-card-value">292</div>
-                <div class="stat-card-label">📋 总计</div>
-                <div class="stat-card-change up">↑ 12</div>
+            <div class="stat-card info" title="仅统计 OPEN 且未标记 Done 的 Issue；另有 1493 条已关闭、10 条已标记 Done 未计入">
+                <div class="stat-card-value">295</div>
+                <div class="stat-card-label">📋 活跃总计</div>
+                <div class="stat-card-change up">↑ 15</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -430,7 +430,7 @@
                             <div class="health-detail-label">逾期率</div>
                         </div>
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--warning)">10%</div>
+                            <div class="health-detail-value" style="color: var(--warning)">9%</div>
                             <div class="health-detail-label">P0占比</div>
                         </div>
                         <div class="health-detail">
@@ -646,7 +646,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [28, 67, 70, 127],
+                    data: [27, 67, 70, 131],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -667,7 +667,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [39, 2, 4, 3, 244],
+                    data: [39, 2, 4, 3, 247],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -735,7 +735,7 @@
                 datasets: [
                     {
                         label: 'P0',
-                        data: [21, 1, 4, 8, 0, 2, 3, 1, 3, 0, 0, 1, 0, 2, 0],
+                        data: [20, 1, 4, 8, 0, 2, 3, 1, 3, 0, 0, 1, 0, 2, 0],
                         backgroundColor: '#EF4444'
                     },
                     {
@@ -778,21 +778,21 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["annSharon", "qq98982", "shuiRong", "fufengkai", "ianhuangsp", "lirhcoder", "csh28", "zhuchaowe", "qianlir", "vincentdotli", "baoshi1970", "Denya0529"],
+                labels: ["annSharon", "qq98982", "shuiRong", "fufengkai", "ianhuangsp", "csh28", "lirhcoder", "zhuchaowe", "qianlir", "vincentdotli", "baoshi1970", "Denya0529"],
                 datasets: [
                     {
                         label: '逾期',
-                        data: [9, 2, 5, 2, 6, 6, 0, 1, 3, 1, 1, 4],
+                        data: [9, 2, 5, 2, 6, 0, 6, 1, 3, 1, 1, 4],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P0',
-                        data: [2, 0, 4, 2, 4, 4, 0, 3, 5, 0, 1, 3],
+                        data: [2, 0, 4, 2, 4, 0, 4, 2, 5, 0, 1, 3],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [62, 45, 34, 34, 24, 10, 16, 7, 2, 7, 6, 0],
+                        data: [62, 49, 34, 34, 24, 32, 10, 7, 2, 7, 6, 0],
                         backgroundColor: '#3B82F6'
                     }
                 ]

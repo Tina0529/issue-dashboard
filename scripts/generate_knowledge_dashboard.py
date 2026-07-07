@@ -102,8 +102,13 @@ def fetch_project_items(project_id, cursor=None):
 
 
 def fetch_all_issues():
-    """获取所有项目的 Issues"""
+    """获取所有项目的 Issues。
+    仅返回 OPEN 且未标记 Done 的 issue（活跃口径），同时统计被排除的已关闭/已标Done数量，
+    用于在页面上标注清楚“总计”指的是活跃口径而非项目全量。
+    """
     all_items = []
+    excluded_closed = 0
+    excluded_done = 0
 
     for project_id, project_name in PROJECTS:
         print(f"Fetching {project_name}...")
@@ -127,7 +132,10 @@ def fetch_all_issues():
 
             for item in items:
                 content = item.get('content')
-                if not content or content.get('state') != 'OPEN':
+                if not content:
+                    continue
+                if content.get('state') != 'OPEN':
+                    excluded_closed += 1
                     continue
 
                 fields = {}
@@ -149,6 +157,7 @@ def fetch_all_issues():
 
                 status = fields.get('Status')
                 if status and status.lower() == 'done':
+                    excluded_done += 1
                     continue
 
                 item_data = {
@@ -174,8 +183,8 @@ def fetch_all_issues():
                 break
             cursor = page_info.get('endCursor')
 
-    print(f"\nTotal open issues: {len(all_items)}")
-    return all_items
+    print(f"\nTotal open issues: {len(all_items)} (excluded {excluded_closed} closed, {excluded_done} done)")
+    return all_items, {'excluded_closed': excluded_closed, 'excluded_done': excluded_done}
 
 
 def save_snapshot(issues, date_str):
@@ -399,7 +408,7 @@ def get_change_badge(issue):
     return ' '.join(badges)
 
 
-def generate_html(all_issues, changes, yesterday_stats, yesterday_issues=None):
+def generate_html(all_issues, changes, yesterday_stats, yesterday_issues=None, exclusion_stats=None):
     """生成 HTML Dashboard"""
     now = datetime.now(JST)
     today = now.date()
@@ -455,6 +464,7 @@ def generate_html(all_issues, changes, yesterday_stats, yesterday_issues=None):
     sorted_assignees = sorted(assignee_stats.items(), key=lambda x: -(x[1]['overdue'] * 10 + x[1]['p0'] * 5 + x[1]['total']))
 
     # 当前统计
+    exclusion_stats = exclusion_stats or {}
     current_stats = {
         'total': len(all_issues),
         'overdue': len(overdue_issues),
@@ -465,6 +475,8 @@ def generate_html(all_issues, changes, yesterday_stats, yesterday_issues=None):
         'unassigned': len(unassigned),
         'new_count': len(changes.get('new_issues', [])),
         'closed_count': len(changes.get('closed_issues', [])),
+        'excluded_closed': exclusion_stats.get('excluded_closed', 0),
+        'excluded_done': exclusion_stats.get('excluded_done', 0),
     }
 
     # 生成趋势 HTML
@@ -1218,9 +1230,9 @@ def generate_html_template(**kwargs):
                     <div class="value">''' + str(current_stats['unassigned']) + '''</div>
                     <div class="label">👤 未分配 ''' + trends['unassigned'] + '''</div>
                 </div>
-                <div class="stat-box info">
+                <div class="stat-box info" title="仅统计 OPEN 且未标记 Done 的 Issue；另有 ''' + str(current_stats.get('excluded_closed', 0)) + ''' 条已关闭、''' + str(current_stats.get('excluded_done', 0)) + ''' 条已标记 Done 未计入">
                     <div class="value">''' + str(current_stats['total']) + '''</div>
-                    <div class="label">📋 总计 ''' + trends['total'] + '''</div>
+                    <div class="label">📋 活跃总计 ''' + trends['total'] + '''</div>
                 </div>
             </div>
             <div class="customer-filter">
@@ -2303,9 +2315,9 @@ def generate_dashboard_html(all_issues, current_stats, yesterday_stats, historic
                        f'<div class="stat-card-change down">↓ {yesterday_stats.get("p0", 0) - current_stats.get("p0", 0)}</div>' if yesterday_stats and current_stats.get('p0', 0) < yesterday_stats.get('p0', 0) else
                        '<div class="stat-card-change">- 无变化</div>') + '''
             </div>
-            <div class="stat-card info">
+            <div class="stat-card info" title="仅统计 OPEN 且未标记 Done 的 Issue；另有 ''' + str(current_stats.get('excluded_closed', 0)) + ''' 条已关闭、''' + str(current_stats.get('excluded_done', 0)) + ''' 条已标记 Done 未计入">
                 <div class="stat-card-value">''' + str(current_stats.get('total', 0)) + '''</div>
-                <div class="stat-card-label">📋 总计</div>
+                <div class="stat-card-label">📋 活跃总计</div>
                 ''' + (f'<div class="stat-card-change up">↑ {current_stats.get("total", 0) - yesterday_stats.get("total", 0)}</div>' if yesterday_stats and current_stats.get('total', 0) > yesterday_stats.get('total', 0) else
                        f'<div class="stat-card-change down">↓ {yesterday_stats.get("total", 0) - current_stats.get("total", 0)}</div>' if yesterday_stats and current_stats.get('total', 0) < yesterday_stats.get('total', 0) else
                        '<div class="stat-card-change">- 无变化</div>') + '''
@@ -2804,7 +2816,7 @@ def main():
     print(f"Run mode: {RUN_MODE}")
 
     # 获取所有 Issues
-    all_issues = fetch_all_issues()
+    all_issues, exclusion_stats = fetch_all_issues()
 
     # 始终加载昨天早8点的定时快照作为基准
     yesterday_issues = load_snapshot(yesterday_str)
@@ -2850,7 +2862,7 @@ def main():
             issue['days_until_deadline'] = None
 
     # 生成主页 HTML
-    html, current_stats = generate_html(all_issues, changes, yesterday_stats, yesterday_issues)
+    html, current_stats = generate_html(all_issues, changes, yesterday_stats, yesterday_issues, exclusion_stats)
 
     # 保存主页 HTML
     os.makedirs(PUBLIC_DIR, exist_ok=True)
