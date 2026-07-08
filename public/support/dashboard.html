@@ -378,7 +378,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-07-08 08:46</div>
+            <div class="sidebar-timestamp">更新: 2026-07-08 11:35</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -403,10 +403,10 @@
                 <div class="stat-card-label">🔴 P0 紧急</div>
                 <div class="stat-card-change up">↑ 1</div>
             </div>
-            <div class="stat-card info" title="仅统计 OPEN 且未标记 Done 的 Issue；另有 1493 条已关闭、10 条已标记 Done 未计入">
-                <div class="stat-card-value">295</div>
+            <div class="stat-card info" title="仅统计 OPEN 且未标记 Done 的 Issue；另有 1494 条已关闭、10 条已标记 Done 未计入">
+                <div class="stat-card-value">297</div>
                 <div class="stat-card-label">📋 活跃总计</div>
-                <div class="stat-card-change up">↑ 11</div>
+                <div class="stat-card-change up">↑ 13</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -426,7 +426,7 @@
                     <div class="health-label">健康评分 (满分100)</div>
                     <div class="health-details">
                         <div class="health-detail">
-                            <div class="health-detail-value" style="color: var(--danger)">14%</div>
+                            <div class="health-detail-value" style="color: var(--danger)">13%</div>
                             <div class="health-detail-label">逾期率</div>
                         </div>
                         <div class="health-detail">
@@ -571,7 +571,16 @@
                     <div class="card-title"><span class="icon green">🏆</span>昨日完成排行</div>
                 </div>
                 <div class="top-list">
-                    <div style="text-align:center;padding:40px;color:var(--text-muted)">暂无昨日完成数据</div>
+
+                    <div class="top-item">
+                        <div class="top-rank success">1</div>
+                        <div class="top-content">
+                            <div class="top-title">👤 baoshi1970</div>
+                            <div class="top-meta"><a href="https://github.com/sparticleinc/nssol-baddi/issues/414" target="_blank" style="color:var(--text-muted)">#414</a></div>
+                        </div>
+                        <div class="top-value success">+1</div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -628,7 +637,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [27, 67, 70, 131],
+                    data: [27, 67, 70, 133],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -649,7 +658,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [40, 1, 4, 3, 247],
+                    data: [40, 1, 4, 3, 249],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -668,11 +677,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07"],
+                labels: ["2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [193, 199, 192, 191, 201, 214, 233, 235, 236, 234, 236, 256, 280, 284],
+                        data: [199, 192, 191, 201, 214, 233, 235, 236, 234, 236, 256, 280, 284, 295],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -680,7 +689,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [44, 43, 42, 43, 43, 41, 42, 45, 42, 38, 39, 39, 38, 39],
+                        data: [43, 42, 43, 43, 41, 42, 45, 42, 38, 39, 39, 38, 39, 40],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -688,7 +697,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [32, 32, 30, 29, 29, 28, 30, 28, 23, 25, 26, 26, 26, 26],
+                        data: [32, 30, 29, 29, 28, 30, 28, 23, 25, 26, 26, 26, 26, 27],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -713,21 +722,21 @@
         new Chart(document.getElementById('labelChart'), {
             type: 'bar',
             data: {
-                labels: ["AutoBee", "bug", "autobee-impl", "onPrem", "\u7cbe\u5ea6\u4e0einfra", "Novare", "roadMap", "BADDI", "\u30ea\u30be\u30fc\u30e0", "enhancement", "\u901f\u5ea6\u4e0e\u6027\u80fd", "product", "saas staging", "DevAgent", "SaaS staging"],
+                labels: ["AutoBee", "bug", "autobee-impl", "onPrem", "\u7cbe\u5ea6\u4e0einfra", "Novare", "BADDI", "roadMap", "product", "\u30ea\u30be\u30fc\u30e0", "enhancement", "\u901f\u5ea6\u4e0e\u6027\u80fd", "saas staging", "DevAgent", "SaaS staging"],
                 datasets: [
                     {
                         label: 'P0',
-                        data: [20, 1, 4, 8, 0, 2, 3, 1, 3, 0, 0, 1, 0, 2, 0],
+                        data: [20, 1, 4, 8, 0, 2, 1, 3, 1, 3, 0, 0, 0, 2, 0],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P1',
-                        data: [41, 22, 3, 5, 1, 1, 2, 4, 1, 5, 1, 3, 2, 1, 0],
+                        data: [41, 22, 3, 5, 1, 1, 4, 2, 3, 1, 5, 1, 2, 1, 0],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: 'P2',
-                        data: [57, 52, 7, 0, 4, 1, 2, 0, 0, 1, 0, 0, 2, 0, 2],
+                        data: [57, 52, 7, 0, 4, 1, 0, 2, 0, 0, 1, 0, 2, 0, 2],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -760,7 +769,7 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["annSharon", "qq98982", "shuiRong", "fufengkai", "ianhuangsp", "csh28", "lirhcoder", "zhuchaowe", "qianlir", "vincentdotli", "baoshi1970", "Denya0529"],
+                labels: ["annSharon", "qq98982", "shuiRong", "fufengkai", "ianhuangsp", "csh28", "lirhcoder", "zhuchaowe", "qianlir", "baoshi1970", "vincentdotli", "Denya0529"],
                 datasets: [
                     {
                         label: '逾期',
@@ -769,12 +778,12 @@
                     },
                     {
                         label: 'P0',
-                        data: [2, 0, 4, 2, 4, 0, 4, 2, 5, 0, 1, 3],
+                        data: [2, 0, 4, 2, 4, 0, 4, 2, 5, 1, 0, 3],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [61, 49, 34, 34, 24, 32, 10, 7, 2, 7, 6, 0],
+                        data: [61, 50, 34, 34, 24, 32, 10, 7, 2, 7, 7, 0],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -796,10 +805,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07"],
+                labels: ["2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08"],
                 datasets: [{
                     label: '完成数',
-                    data: [17, 3, 19, 9, 0, 4, 5, 9, 12, 12, 12, 1, 5, 5],
+                    data: [3, 19, 9, 0, 4, 5, 9, 12, 12, 12, 1, 5, 5, 0],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -825,10 +834,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07"],
+                labels: ["2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08"],
                 datasets: [{
                     label: '新增数',
-                    data: [21, 9, 11, 9, 10, 16, 24, 12, 14, 8, 14, 20, 29, 9],
+                    data: [9, 11, 9, 10, 16, 24, 12, 14, 8, 14, 20, 29, 9, 11],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
