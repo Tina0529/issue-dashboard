@@ -18,13 +18,13 @@
     "priority": "P2",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Backlog",
     "days_until_deadline": null,
     "changes": [
-      "priority_up:P2→P1",
+      "priority_down:P1→P2",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -34,48 +34,12 @@
     "risk_summary": "P2 一般优先级"
   },
   {
-    "number": 95,
-    "title": "进入project页后，刷新project页，输入@，无法自动匹配已解析文件",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/95",
-    "state": "OPEN",
-    "created_at": "2026-06-03T06:21:58Z",
-    "updated_at": "2026-06-11T02:51:31Z",
-    "labels": [],
-    "assignees": [
-      "GeminiMing"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": null,
-    "end_date": "2026-06-19",
-    "start_date": "2026-06-10",
-    "status": "Agent review & test",
-    "days_until_deadline": -32,
-    "changes": [
-      "priority_down:P2→None",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/19",
-    "days_stale": 39,
-    "risk_score": 55,
-    "risk_reasons": [
-      "已逾期 32 天",
-      "停滞 39 天"
-    ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "high",
-    "risk_summary": "已逾期 32 天"
-  },
-  {
     "number": 122,
     "title": "[功能改善][注册] 自助注册误建组织问题——注册入口分流与企业组织发现机制（P0-P2 三层方案）",
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/122",
     "state": "OPEN",
     "created_at": "2026-06-10T09:53:10Z",
-    "updated_at": "2026-06-30T08:53:39Z",
+    "updated_at": "2026-07-22T01:22:52Z",
     "labels": [],
     "assignees": [
       "GeminiMing",
@@ -87,179 +51,24 @@
     "end_date": "2026-06-30",
     "start_date": "2026-06-10",
     "status": "Agent review & test",
-    "days_until_deadline": -21,
+    "days_until_deadline": -22,
     "changes": [
       "priority_up:P2→P1",
       "new_assigned",
       "deadline_changed"
     ],
     "end_date_formatted": "06/30",
-    "days_stale": 20,
-    "risk_score": 75,
+    "days_stale": 0,
+    "risk_score": 65,
     "risk_reasons": [
-      "已逾期 21 天",
+      "已逾期 22 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 21 天"
-  },
-  {
-    "number": 85,
-    "title": "积分页面通过点击可以跳转到详细对话页面",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/85",
-    "state": "OPEN",
-    "created_at": "2026-05-29T06:21:04Z",
-    "updated_at": "2026-06-29T02:55:39Z",
-    "labels": [
-      "enhancement"
-    ],
-    "assignees": [
-      "GeminiMing",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P1",
-    "end_date": "2026-06-05",
-    "start_date": "2026-05-29",
-    "status": "Agent review & test",
-    "days_until_deadline": -46,
-    "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/05",
-    "days_stale": 21,
-    "risk_score": 75,
-    "risk_reasons": [
-      "已逾期 46 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 46 天"
-  },
-  {
-    "number": 106,
-    "title": "[CBP][UX] Agent后台处理中刷新浏览器致上下文破坏 + 初期Plan阶段约10分无反馈看似卡死",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/106",
-    "state": "OPEN",
-    "created_at": "2026-06-04T05:47:06Z",
-    "updated_at": "2026-07-02T02:06:03Z",
-    "labels": [
-      "CBP"
-    ],
-    "assignees": [
-      "GeminiMing",
-      "alex-712",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-06-11",
-    "start_date": "2026-06-04",
-    "status": "Agent review & test",
-    "days_until_deadline": -40,
-    "changes": [
-      "priority_up:P2→P0",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/11",
-    "days_stale": 18,
-    "risk_score": 90,
-    "risk_reasons": [
-      "已逾期 40 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 40 天"
-  },
-  {
-    "number": 114,
-    "title": "[CBP][功能] 积分不足·统一拦截错误码与前端统一提示",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/114",
-    "state": "OPEN",
-    "created_at": "2026-06-09T05:40:14Z",
-    "updated_at": "2026-06-29T02:58:25Z",
-    "labels": [
-      "CBP"
-    ],
-    "assignees": [
-      "GeminiMing",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-06-16",
-    "start_date": "2026-06-09",
-    "status": "Agent review & test",
-    "days_until_deadline": -35,
-    "changes": [
-      "priority_up:P1→P0",
-      "new_assigned",
-      "deadline_changed",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/16",
-    "days_stale": 21,
-    "risk_score": 90,
-    "risk_reasons": [
-      "已逾期 35 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 35 天"
-  },
-  {
-    "number": 105,
-    "title": "积分不足时，确保当前处理完以后，在下次用户请求时再提示积分不足",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/105",
-    "state": "OPEN",
-    "created_at": "2026-06-04T05:00:24Z",
-    "updated_at": "2026-06-29T02:58:33Z",
-    "labels": [
-      "bug"
-    ],
-    "assignees": [
-      "GeminiMing",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-06-11",
-    "start_date": "2026-06-04",
-    "status": "Agent review & test",
-    "days_until_deadline": -40,
-    "changes": [
-      "priority_up:P2→P0",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/11",
-    "days_stale": 21,
-    "risk_score": 90,
-    "risk_reasons": [
-      "已逾期 40 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 40 天"
+    "risk_summary": "已逾期 22 天"
   },
   {
     "number": 8,
@@ -267,7 +76,7 @@
     "url": "https://github.com/sparticleinc/gbase-bops-front/issues/8",
     "state": "OPEN",
     "created_at": "2026-03-16T02:43:41Z",
-    "updated_at": "2026-07-20T07:17:10Z",
+    "updated_at": "2026-07-21T04:52:37Z",
     "labels": [
       "AutoBee"
     ],
@@ -279,8 +88,8 @@
     "priority": "P2",
     "end_date": "2026-05-31",
     "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": -51,
+    "status": "Backlog",
+    "days_until_deadline": -52,
     "changes": [
       "priority_up:None→P2",
       "new_assigned",
@@ -290,14 +99,14 @@
     "days_stale": 0,
     "risk_score": 50,
     "risk_reasons": [
-      "已逾期 51 天",
+      "已逾期 52 天",
       "P2 一般优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "high",
-    "risk_summary": "已逾期 51 天"
+    "risk_summary": "已逾期 52 天"
   },
   {
     "number": 185,
@@ -305,7 +114,7 @@
     "url": "https://github.com/sparticleinc/gbase_ai_slides_backend/issues/185",
     "state": "OPEN",
     "created_at": "2026-04-07T10:21:39Z",
-    "updated_at": "2026-07-20T08:14:09Z",
+    "updated_at": "2026-07-22T01:58:35Z",
     "labels": [
       "CBP"
     ],
@@ -316,95 +125,20 @@
     "repo": "gbase_ai_slides_backend",
     "project": "GBase Knowledge应用&功能",
     "priority": "P0",
-    "end_date": "2026-06-30",
+    "end_date": "2026-07-31",
     "start_date": "2026-06-26",
-    "status": "Agent in Progress",
-    "days_until_deadline": -21,
-    "changes": [
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/30",
+    "status": "Awaiting Human Review",
+    "days_until_deadline": 9,
+    "changes": [],
+    "end_date_formatted": "07/31",
     "days_stale": 0,
-    "risk_score": 80,
+    "risk_score": 40,
     "risk_reasons": [
-      "已逾期 21 天",
       "P0 最高优先级"
     ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 21 天"
-  },
-  {
-    "number": 187,
-    "title": "[CBP][功能] 数据驱动图表自动生成（Perceptis/Xavier 对标）",
-    "url": "https://github.com/sparticleinc/gbase_ai_slides_backend/issues/187",
-    "state": "OPEN",
-    "created_at": "2026-04-09T09:54:11Z",
-    "updated_at": "2026-07-19T03:30:36Z",
-    "labels": [
-      "CBP"
-    ],
-    "assignees": [
-      "fufengkai"
-    ],
-    "repo": "gbase_ai_slides_backend",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P1",
-    "end_date": "2026-06-30",
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": -21,
-    "changes": [
-      "priority_down:P0→P1",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/30",
-    "days_stale": 1,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 21 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 21 天"
-  },
-  {
-    "number": 194,
-    "title": "MiniBee 开发环境自动化测试打通. 当前gbase-core等项目无法完成自动化单元测试, 和部署方式, 集群连接有关. 需要一套运行环境方案, 让MiniBee可以自己运行, 检查代码运行情况, 修改是否正确, 是否有报错.",
-    "url": "https://github.com/sparticleinc/gbase_ai_slides_backend/issues/194",
-    "state": "OPEN",
-    "created_at": "2026-04-17T01:56:48Z",
-    "updated_at": "2026-07-19T03:00:37Z",
-    "labels": [],
-    "assignees": [
-      "alex-712",
-      "fufengkai"
-    ],
-    "repo": "gbase_ai_slides_backend",
-    "project": "GBase Knowledge应用&功能",
-    "priority": null,
-    "end_date": "2026-07-31",
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [
-      "priority_down:P1→None",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "07/31",
-    "days_stale": 1,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
-    ],
-    "risk_level": "low",
-    "risk_summary": "正常"
+    "risk_suggestions": [],
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 215,
@@ -427,57 +161,20 @@
     "end_date": "2026-06-17",
     "start_date": "2026-07-06",
     "status": "Human in Progress",
-    "days_until_deadline": -34,
+    "days_until_deadline": -35,
     "changes": [],
     "end_date_formatted": "06/17",
-    "days_stale": 10,
+    "days_stale": 11,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 34 天",
+      "已逾期 35 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 34 天"
-  },
-  {
-    "number": 49,
-    "title": "[CBP][测定] 统计・监控基础设施精细化（北极星指标）",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/49",
-    "state": "OPEN",
-    "created_at": "2026-05-15T07:19:53Z",
-    "updated_at": "2026-05-21T03:02:10Z",
-    "labels": [
-      "CBP"
-    ],
-    "assignees": [
-      "alex-712"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P2",
-    "end_date": "2026-05-22",
-    "start_date": "2026-05-15",
-    "status": "Human in Progress",
-    "days_until_deadline": -60,
-    "changes": [
-      "deadline_changed"
-    ],
-    "end_date_formatted": "05/22",
-    "days_stale": 60,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 60 天",
-      "P2 一般优先级",
-      "停滞 60 天"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 60 天"
+    "risk_summary": "已逾期 35 天"
   },
   {
     "number": 92,
@@ -485,7 +182,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/92",
     "state": "OPEN",
     "created_at": "2026-05-21T00:35:57Z",
-    "updated_at": "2026-07-19T04:21:48Z",
+    "updated_at": "2026-07-21T02:28:51Z",
     "labels": [
       "会议转录",
       "AutoBee"
@@ -495,27 +192,24 @@
     ],
     "repo": "gbase-knowledge",
     "project": "GBase Knowledge应用&功能",
-    "priority": null,
-    "end_date": "2026-06-24",
+    "priority": "P0",
+    "end_date": "2026-08-31",
     "start_date": null,
     "status": "Awaiting Human Review",
-    "days_until_deadline": -27,
+    "days_until_deadline": 40,
     "changes": [
-      "priority_down:P1→None",
+      "priority_up:P1→P0",
       "deadline_changed"
     ],
-    "end_date_formatted": "06/24",
-    "days_stale": 1,
+    "end_date_formatted": "08/31",
+    "days_stale": 0,
     "risk_score": 40,
     "risk_reasons": [
-      "已逾期 27 天"
+      "P0 最高优先级"
     ],
-    "risk_suggestions": [
-      "建议设置优先级",
-      "立即处理或调整截止日期"
-    ],
+    "risk_suggestions": [],
     "risk_level": "high",
-    "risk_summary": "已逾期 27 天"
+    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 61,
@@ -523,7 +217,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/61",
     "state": "OPEN",
     "created_at": "2026-05-25T02:18:02Z",
-    "updated_at": "2026-07-19T07:06:22Z",
+    "updated_at": "2026-07-21T03:20:47Z",
     "labels": [
       "enhancement",
       "AutoBee"
@@ -534,26 +228,23 @@
     "repo": "gbase-knowledge",
     "project": "GBase Knowledge应用&功能",
     "priority": null,
-    "end_date": "2026-05-29",
+    "end_date": "2026-07-31",
     "start_date": "2026-05-25",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -53,
+    "days_until_deadline": 9,
     "changes": [
       "priority_down:P2→None",
       "deadline_changed"
     ],
-    "end_date_formatted": "05/29",
-    "days_stale": 1,
-    "risk_score": 40,
-    "risk_reasons": [
-      "已逾期 53 天"
-    ],
+    "end_date_formatted": "07/31",
+    "days_stale": 0,
+    "risk_score": 0,
+    "risk_reasons": [],
     "risk_suggestions": [
-      "建议设置优先级",
-      "立即处理或调整截止日期"
+      "建议设置优先级"
     ],
-    "risk_level": "high",
-    "risk_summary": "已逾期 53 天"
+    "risk_level": "low",
+    "risk_summary": "正常"
   },
   {
     "number": 62,
@@ -575,24 +266,24 @@
     "end_date": "2026-06-08",
     "start_date": "2026-05-25",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -43,
+    "days_until_deadline": -44,
     "changes": [
       "priority_up:None→P0",
       "new_assigned",
       "deadline_changed"
     ],
     "end_date_formatted": "06/08",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 43 天",
+      "已逾期 44 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 43 天"
+    "risk_summary": "已逾期 44 天"
   },
   {
     "number": 69,
@@ -614,61 +305,22 @@
     "end_date": "2026-06-08",
     "start_date": "2026-05-25",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -43,
+    "days_until_deadline": -44,
     "changes": [
       "deadline_changed"
     ],
     "end_date_formatted": "06/08",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 43 天",
+      "已逾期 44 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 43 天"
-  },
-  {
-    "number": 79,
-    "title": "【会议记录APP】目前状况是启动会议后自动开始，会议结束后却没有自动结束。",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/79",
-    "state": "OPEN",
-    "created_at": "2026-05-27T06:49:26Z",
-    "updated_at": "2026-07-19T07:52:13Z",
-    "labels": [
-      "bug",
-      "会议转录",
-      "AutoBee"
-    ],
-    "assignees": [
-      "derrick1xin"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-06-04",
-    "start_date": "2026-05-27",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": -47,
-    "changes": [
-      "priority_up:P2→P0",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/04",
-    "days_stale": 1,
-    "risk_score": 80,
-    "risk_reasons": [
-      "已逾期 47 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 47 天"
+    "risk_summary": "已逾期 44 天"
   },
   {
     "number": 3076,
@@ -676,7 +328,7 @@
     "url": "https://github.com/sparticleinc/felo-mygpt/issues/3076",
     "state": "OPEN",
     "created_at": "2026-05-31T04:27:30Z",
-    "updated_at": "2026-07-20T04:32:50Z",
+    "updated_at": "2026-07-22T02:17:48Z",
     "labels": [
       "AutoBee",
       "CBP"
@@ -690,20 +342,20 @@
     "end_date": "2026-06-07",
     "start_date": "2026-05-31",
     "status": "Agent in Progress",
-    "days_until_deadline": -44,
+    "days_until_deadline": -45,
     "changes": [],
     "end_date_formatted": "06/07",
     "days_stale": 0,
     "risk_score": 50,
     "risk_reasons": [
-      "已逾期 44 天",
+      "已逾期 45 天",
       "P2 一般优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "high",
-    "risk_summary": "已逾期 44 天"
+    "risk_summary": "已逾期 45 天"
   },
   {
     "number": 94,
@@ -711,7 +363,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/94",
     "state": "OPEN",
     "created_at": "2026-06-03T05:32:10Z",
-    "updated_at": "2026-07-19T05:30:19Z",
+    "updated_at": "2026-07-22T01:23:59Z",
     "labels": [
       "CBP",
       "AutoBee"
@@ -724,24 +376,24 @@
     "priority": "P2",
     "end_date": "2026-06-10",
     "start_date": "2026-06-03",
-    "status": "Agent in Progress",
-    "days_until_deadline": -41,
+    "status": "Awaiting Human Review",
+    "days_until_deadline": -42,
     "changes": [
       "priority_down:P1→P2",
       "deadline_changed"
     ],
     "end_date_formatted": "06/10",
-    "days_stale": 1,
+    "days_stale": 0,
     "risk_score": 50,
     "risk_reasons": [
-      "已逾期 41 天",
+      "已逾期 42 天",
       "P2 一般优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "high",
-    "risk_summary": "已逾期 41 天"
+    "risk_summary": "已逾期 42 天"
   },
   {
     "number": 96,
@@ -766,7 +418,7 @@
     "changes": [
       "priority_down:P2→None"
     ],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -796,7 +448,7 @@
     "changes": [
       "priority_down:P2→None"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -828,7 +480,7 @@
     "changes": [
       "priority_down:P2→None"
     ],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -838,50 +490,12 @@
     "risk_summary": "正常"
   },
   {
-    "number": 107,
-    "title": "改善GBase Home页风格",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/107",
-    "state": "OPEN",
-    "created_at": "2026-06-04T07:42:52Z",
-    "updated_at": "2026-07-19T07:33:18Z",
-    "labels": [
-      "enhancement",
-      "AutoBee"
-    ],
-    "assignees": [
-      "GeminiMing"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P1",
-    "end_date": "2026-06-08",
-    "start_date": "2026-06-04",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": -43,
-    "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/08",
-    "days_stale": 1,
-    "risk_score": 65,
-    "risk_reasons": [
-      "已逾期 43 天",
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 43 天"
-  },
-  {
     "number": 110,
     "title": "[CBP][架构] cc-agent 从 felo-mygpt 拆分为独立 Python 服务 — 可行性 + 工作量评估",
     "url": "https://github.com/sparticleinc/claude-code-server/issues/110",
     "state": "OPEN",
     "created_at": "2026-06-08T04:40:52Z",
-    "updated_at": "2026-07-13T01:34:52Z",
+    "updated_at": "2026-07-22T02:03:44Z",
     "labels": [
       "CBP"
     ],
@@ -894,23 +508,23 @@
     "end_date": "2026-06-22",
     "start_date": "2026-06-08",
     "status": "Human in Progress",
-    "days_until_deadline": -29,
+    "days_until_deadline": -30,
     "changes": [
-      "priority_up:P2→P1",
+      "priority_down:P1→P2",
       "deadline_changed"
     ],
     "end_date_formatted": "06/22",
-    "days_stale": 7,
+    "days_stale": 0,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 29 天",
+      "已逾期 30 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 29 天"
+    "risk_summary": "已逾期 30 天"
   },
   {
     "number": 4,
@@ -918,7 +532,7 @@
     "url": "https://github.com/sparticleinc/gbase-pay/issues/4",
     "state": "OPEN",
     "created_at": "2026-06-11T16:08:11Z",
-    "updated_at": "2026-07-19T02:29:44Z",
+    "updated_at": "2026-07-22T01:54:52Z",
     "labels": [
       "CBP"
     ],
@@ -928,27 +542,24 @@
     "repo": "gbase-pay",
     "project": "GBase Knowledge应用&功能",
     "priority": "P2",
-    "end_date": "2026-06-30",
+    "end_date": "2026-09-30",
     "start_date": "2026-06-12",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": -21,
+    "status": "Agent in Progress",
+    "days_until_deadline": 70,
     "changes": [
       "priority_up:None→P2",
       "new_assigned",
       "deadline_changed"
     ],
-    "end_date_formatted": "06/30",
-    "days_stale": 1,
-    "risk_score": 50,
+    "end_date_formatted": "09/30",
+    "days_stale": 0,
+    "risk_score": 10,
     "risk_reasons": [
-      "已逾期 21 天",
       "P2 一般优先级"
     ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "high",
-    "risk_summary": "已逾期 21 天"
+    "risk_suggestions": [],
+    "risk_level": "low",
+    "risk_summary": "P2 一般优先级"
   },
   {
     "number": 126,
@@ -970,13 +581,13 @@
     "end_date": "2026-07-31",
     "start_date": "2026-06-11",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [
       "new_assigned",
       "deadline_changed"
     ],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -984,45 +595,6 @@
     "risk_suggestions": [],
     "risk_level": "low",
     "risk_summary": "P2 一般优先级"
-  },
-  {
-    "number": 128,
-    "title": "[CBP][UX] GBase Knowledge iOS App リデザイン実装（定版 v1.0）",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/128",
-    "state": "OPEN",
-    "created_at": "2026-06-16T17:43:29Z",
-    "updated_at": "2026-06-29T08:00:24Z",
-    "labels": [
-      "CBP"
-    ],
-    "assignees": [
-      "GeminiMing",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-06-30",
-    "start_date": "2026-06-16",
-    "status": "Agent review & test",
-    "days_until_deadline": -21,
-    "changes": [
-      "priority_up:P2→P0",
-      "new_assigned",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "06/30",
-    "days_stale": 21,
-    "risk_score": 90,
-    "risk_reasons": [
-      "已逾期 21 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 21 天"
   },
   {
     "number": 130,
@@ -1046,7 +618,7 @@
       "priority_down:P1→None",
       "new_assigned"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1076,24 +648,24 @@
     "end_date": "2026-06-30",
     "start_date": "2026-06-24",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -21,
+    "days_until_deadline": -22,
     "changes": [
       "priority_up:P2→P0",
       "new_assigned",
       "deadline_changed"
     ],
     "end_date_formatted": "06/30",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 21 天",
+      "已逾期 22 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 21 天"
+    "risk_summary": "已逾期 22 天"
   },
   {
     "number": 10,
@@ -1120,7 +692,7 @@
       "priority_up:None→P2",
       "new_assigned"
     ],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1148,13 +720,13 @@
     "end_date": "2026-07-31",
     "start_date": "2026-06-29",
     "status": "Human in Progress",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [
       "new_assigned",
       "deadline_changed"
     ],
     "end_date_formatted": "07/31",
-    "days_stale": 10,
+    "days_stale": 11,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -1184,9 +756,10 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "priority_up:None→P1"
+      "priority_down:P1→None",
+      "new_assigned"
     ],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1194,38 +767,6 @@
     ],
     "risk_level": "low",
     "risk_summary": "正常"
-  },
-  {
-    "number": 136,
-    "title": "反复退至后台回到APP录音几次，结束的时候出现错误提示，不是必现  （长时间录音，手机自动息屏）能复现",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/136",
-    "state": "OPEN",
-    "created_at": "2026-06-29T08:25:20Z",
-    "updated_at": "2026-07-19T04:32:25Z",
-    "labels": [
-      "AutoBee"
-    ],
-    "assignees": [
-      "GeminiMing"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [
-      "priority_down:P0→P1"
-    ],
-    "days_stale": 1,
-    "risk_score": 40,
-    "risk_reasons": [
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 143,
@@ -1247,20 +788,20 @@
     "end_date": "2026-07-03",
     "start_date": "2026-06-29",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -18,
+    "days_until_deadline": -19,
     "changes": [],
     "end_date_formatted": "07/03",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 50,
     "risk_reasons": [
-      "已逾期 18 天",
+      "已逾期 19 天",
       "P2 一般优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "high",
-    "risk_summary": "已逾期 18 天"
+    "risk_summary": "已逾期 19 天"
   },
   {
     "number": 147,
@@ -1281,7 +822,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1310,50 +851,20 @@
     "end_date": "2026-06-30",
     "start_date": "2026-06-30",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -21,
+    "days_until_deadline": -22,
     "changes": [],
     "end_date_formatted": "06/30",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 21 天",
+      "已逾期 22 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 21 天"
-  },
-  {
-    "number": 152,
-    "title": "https://hub-dev.gbase.ai/my-base/project/1199949593256046601  这个project@文件显示0解析，实际有文件",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/152",
-    "state": "OPEN",
-    "created_at": "2026-07-01T02:26:42Z",
-    "updated_at": "2026-07-19T07:21:09Z",
-    "labels": [
-      "AutoBee"
-    ],
-    "assignees": [
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": null,
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 1,
-    "risk_score": 0,
-    "risk_reasons": [],
-    "risk_suggestions": [
-      "建议设置优先级"
-    ],
-    "risk_level": "low",
-    "risk_summary": "正常"
+    "risk_summary": "已逾期 22 天"
   },
   {
     "number": 154,
@@ -1361,9 +872,10 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/154",
     "state": "OPEN",
     "created_at": "2026-07-01T04:17:41Z",
-    "updated_at": "2026-07-01T04:17:41Z",
+    "updated_at": "2026-07-22T02:08:24Z",
     "labels": [
-      "CBP"
+      "CBP",
+      "AutoBee"
     ],
     "assignees": [
       "GeminiMing"
@@ -1373,11 +885,11 @@
     "priority": null,
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 19,
-    "risk_score": 10,
+    "days_stale": 0,
+    "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
       "建议设置优先级"
@@ -1406,7 +918,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1437,7 +949,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1452,7 +964,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/162",
     "state": "OPEN",
     "created_at": "2026-07-02T02:09:50Z",
-    "updated_at": "2026-07-19T04:57:30Z",
+    "updated_at": "2026-07-21T02:15:27Z",
     "labels": [
       "CBP",
       "AutoBee"
@@ -1466,52 +978,20 @@
     "end_date": "2026-07-03",
     "start_date": "2026-07-02",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -18,
+    "days_until_deadline": -19,
     "changes": [],
     "end_date_formatted": "07/03",
     "days_stale": 1,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 18 天",
+      "已逾期 19 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 18 天"
-  },
-  {
-    "number": 163,
-    "title": "优化积分消费明细记录的log信息",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/163",
-    "state": "OPEN",
-    "created_at": "2026-07-02T09:20:23Z",
-    "updated_at": "2026-07-19T02:17:58Z",
-    "labels": [
-      "enhancement"
-    ],
-    "assignees": [
-      "GeminiMing",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P1",
-    "end_date": "2026-07-31",
-    "start_date": "2026-07-02",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [],
-    "end_date_formatted": "07/31",
-    "days_stale": 1,
-    "risk_score": 25,
-    "risk_reasons": [
-      "P1 高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "medium",
-    "risk_summary": "P1 高优先级"
+    "risk_summary": "已逾期 19 天"
   },
   {
     "number": 30,
@@ -1535,7 +1015,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1566,7 +1046,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -1581,7 +1061,7 @@
     "url": "https://github.com/sparticleinc/claude-code-server/issues/114",
     "state": "OPEN",
     "created_at": "2026-07-03T09:19:27Z",
-    "updated_at": "2026-07-16T02:47:54Z",
+    "updated_at": "2026-07-22T02:07:45Z",
     "labels": [
       "CBP"
     ],
@@ -1594,25 +1074,23 @@
     "end_date": "2026-07-10",
     "start_date": "2026-07-03",
     "status": "Agent review & test",
-    "days_until_deadline": -11,
+    "days_until_deadline": -12,
     "changes": [
-      "priority_up:P1→P0",
       "new_assigned",
-      "deadline_changed",
       "deadline_changed"
     ],
     "end_date_formatted": "07/10",
-    "days_stale": 4,
+    "days_stale": 0,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 11 天",
+      "已逾期 12 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 11 天"
+    "risk_summary": "已逾期 12 天"
   },
   {
     "number": 32,
@@ -1620,7 +1098,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/32",
     "state": "OPEN",
     "created_at": "2026-07-03T18:17:08Z",
-    "updated_at": "2026-07-20T12:02:59Z",
+    "updated_at": "2026-07-22T01:34:29Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -1634,7 +1112,7 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
     "days_stale": 0,
@@ -1668,7 +1146,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1683,9 +1161,10 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/34",
     "state": "OPEN",
     "created_at": "2026-07-04T10:32:46Z",
-    "updated_at": "2026-07-20T07:55:24Z",
+    "updated_at": "2026-07-22T01:33:55Z",
     "labels": [
-      "bug"
+      "bug",
+      "AutoBee"
     ],
     "assignees": [
       "fufengkai"
@@ -1695,7 +1174,7 @@
     "priority": "P2",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
     "days_stale": 0,
@@ -1729,7 +1208,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1759,7 +1238,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1774,7 +1253,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/37",
     "state": "OPEN",
     "created_at": "2026-07-04T21:49:18Z",
-    "updated_at": "2026-07-20T12:30:18Z",
+    "updated_at": "2026-07-21T07:50:34Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -1820,7 +1299,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1851,7 +1330,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1881,7 +1360,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1911,7 +1390,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1942,7 +1421,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -1970,20 +1449,20 @@
     "end_date": "2026-07-17",
     "start_date": "2026-07-05",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -4,
+    "days_until_deadline": -5,
     "changes": [],
     "end_date_formatted": "07/17",
-    "days_stale": 1,
+    "days_stale": 3,
     "risk_score": 50,
     "risk_reasons": [
-      "已逾期 4 天",
+      "已逾期 5 天",
       "P2 一般优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "high",
-    "risk_summary": "已逾期 4 天"
+    "risk_summary": "已逾期 5 天"
   },
   {
     "number": 43,
@@ -2007,7 +1486,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2038,7 +1517,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2053,7 +1532,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/45",
     "state": "OPEN",
     "created_at": "2026-07-05T17:18:22Z",
-    "updated_at": "2026-07-20T19:42:11Z",
+    "updated_at": "2026-07-21T09:28:25Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -2097,10 +1576,10 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -2131,7 +1610,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2162,7 +1641,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2191,10 +1670,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2202,41 +1679,6 @@
     "risk_suggestions": [],
     "risk_level": "low",
     "risk_summary": "P2 一般优先级"
-  },
-  {
-    "number": 167,
-    "title": "【VOC】VOC分析出错",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/167",
-    "state": "OPEN",
-    "created_at": "2026-07-06T02:19:17Z",
-    "updated_at": "2026-07-20T01:59:46Z",
-    "labels": [
-      "VOC"
-    ],
-    "assignees": [
-      "alex-712",
-      "fufengkai"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-07-09",
-    "start_date": "2026-07-06",
-    "status": "Agent review & test",
-    "days_until_deadline": -12,
-    "changes": [],
-    "end_date_formatted": "07/09",
-    "days_stale": 0,
-    "risk_score": 80,
-    "risk_reasons": [
-      "已逾期 12 天",
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [
-      "立即处理或调整截止日期"
-    ],
-    "risk_level": "critical",
-    "risk_summary": "已逾期 12 天"
   },
   {
     "number": 168,
@@ -2259,7 +1701,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2287,7 +1729,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 2,
+    "days_stale": 3,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2317,7 +1759,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2347,7 +1789,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -2375,20 +1817,20 @@
     "end_date": "2026-07-15",
     "start_date": "2026-07-08",
     "status": "Human in Progress",
-    "days_until_deadline": -6,
+    "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "07/15",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 6 天",
+      "已逾期 7 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 6 天"
+    "risk_summary": "已逾期 7 天"
   },
   {
     "number": 58,
@@ -2412,7 +1854,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2443,7 +1885,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2474,7 +1916,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2508,7 +1950,7 @@
       "priority_down:P2→None",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2539,7 +1981,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2570,7 +2012,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2600,7 +2042,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2631,7 +2073,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2662,7 +2104,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2677,12 +2119,12 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/69",
     "state": "OPEN",
     "created_at": "2026-07-09T22:49:37Z",
-    "updated_at": "2026-07-20T04:45:04Z",
+    "updated_at": "2026-07-21T07:56:41Z",
     "labels": [
       "bug"
     ],
     "assignees": [
-      "fufengkai"
+      "alex-712"
     ],
     "repo": "MiniBee",
     "project": "GBase Knowledge应用&功能",
@@ -2709,10 +2151,11 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/70",
     "state": "OPEN",
     "created_at": "2026-07-09T23:45:18Z",
-    "updated_at": "2026-07-20T09:52:52Z",
+    "updated_at": "2026-07-21T08:15:32Z",
     "labels": [
       "bug",
-      "AutoBee"
+      "AutoBee",
+      "autobee-impl"
     ],
     "assignees": [
       "fufengkai"
@@ -2740,7 +2183,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/71",
     "state": "OPEN",
     "created_at": "2026-07-10T01:28:50Z",
-    "updated_at": "2026-07-20T15:02:23Z",
+    "updated_at": "2026-07-21T08:13:27Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -2786,7 +2229,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -2796,43 +2239,12 @@
     "risk_summary": "P2 一般优先级"
   },
   {
-    "number": 177,
-    "title": "【AI会议】iOS APP 后台长时间录音丢失问题（录音健壮性课题）",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/177",
-    "state": "OPEN",
-    "created_at": "2026-07-10T09:58:41Z",
-    "updated_at": "2026-07-19T01:27:17Z",
-    "labels": [
-      "CBP"
-    ],
-    "assignees": [
-      "GeminiMing"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-07-31",
-    "start_date": "2026-07-10",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [],
-    "end_date_formatted": "07/31",
-    "days_stale": 2,
-    "risk_score": 40,
-    "risk_reasons": [
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
-  },
-  {
     "number": 178,
     "title": "【VOC】过场动效误导用户 / 旧会议未补跑 VOC / 排队与失败状态区分",
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/178",
     "state": "OPEN",
     "created_at": "2026-07-10T09:58:57Z",
-    "updated_at": "2026-07-16T09:16:18Z",
+    "updated_at": "2026-07-21T02:30:13Z",
     "labels": [
       "CBP"
     ],
@@ -2846,10 +2258,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-10",
     "status": "Human in Progress",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 4,
+    "days_stale": 0,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -2864,7 +2276,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/179",
     "state": "OPEN",
     "created_at": "2026-07-10T09:58:59Z",
-    "updated_at": "2026-07-19T08:16:22Z",
+    "updated_at": "2026-07-21T01:43:29Z",
     "labels": [
       "CBP",
       "AutoBee"
@@ -2879,7 +2291,7 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-10",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
     "days_stale": 1,
@@ -2906,21 +2318,23 @@
     ],
     "repo": "gbase-knowledge",
     "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
+    "priority": "P1",
     "end_date": "2026-07-31",
     "start_date": "2026-07-10",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [],
+    "days_until_deadline": 9,
+    "changes": [
+      "priority_down:P0→P1"
+    ],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
-    "risk_score": 40,
+    "days_stale": 3,
+    "risk_score": 25,
     "risk_reasons": [
-      "P0 最高优先级"
+      "P1 高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
+    "risk_level": "medium",
+    "risk_summary": "P1 高优先级"
   },
   {
     "number": 73,
@@ -2928,9 +2342,10 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/73",
     "state": "OPEN",
     "created_at": "2026-07-10T10:50:45Z",
-    "updated_at": "2026-07-20T04:57:13Z",
+    "updated_at": "2026-07-22T01:43:55Z",
     "labels": [
-      "bug"
+      "bug",
+      "AutoBee"
     ],
     "assignees": [
       "fufengkai"
@@ -2940,7 +2355,7 @@
     "priority": "P2",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
     "days_stale": 0,
@@ -2974,7 +2389,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3005,7 +2420,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3036,7 +2451,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3067,7 +2482,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3098,7 +2513,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3128,11 +2543,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:P2→P0",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3147,9 +2559,11 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/80",
     "state": "OPEN",
     "created_at": "2026-07-11T04:16:46Z",
-    "updated_at": "2026-07-20T07:43:50Z",
+    "updated_at": "2026-07-21T08:33:26Z",
     "labels": [
-      "bug"
+      "bug",
+      "AutoBee",
+      "autobee-impl"
     ],
     "assignees": [
       "fufengkai"
@@ -3192,7 +2606,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3223,37 +2637,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
-    "risk_score": 10,
-    "risk_reasons": [
-      "P2 一般优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "low",
-    "risk_summary": "P2 一般优先级"
-  },
-  {
-    "number": 83,
-    "title": "[用户巡查][gbase] [通知中心] 会议转录总结通知正文含未替换占位符「${meetingTitle}」，用户看到字面量而非实际会议标题",
-    "url": "https://github.com/sparticleinc/MiniBee/issues/83",
-    "state": "OPEN",
-    "created_at": "2026-07-11T10:24:00Z",
-    "updated_at": "2026-07-20T07:43:39Z",
-    "labels": [
-      "bug"
-    ],
-    "assignees": [
-      "fufengkai"
-    ],
-    "repo": "MiniBee",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P2",
-    "end_date": null,
-    "start_date": null,
-    "status": "Awaiting Human Review",
-    "days_until_deadline": null,
-    "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3284,7 +2668,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3314,11 +2698,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3348,7 +2729,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3379,7 +2760,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -3409,7 +2790,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3440,7 +2821,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3471,7 +2852,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3501,7 +2882,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -3516,10 +2897,11 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/91",
     "state": "OPEN",
     "created_at": "2026-07-12T00:17:39Z",
-    "updated_at": "2026-07-20T17:12:13Z",
+    "updated_at": "2026-07-22T02:26:38Z",
     "labels": [
       "bug",
-      "AutoBee"
+      "AutoBee",
+      "autobee-impl"
     ],
     "assignees": [
       "fufengkai"
@@ -3529,7 +2911,7 @@
     "priority": "P2",
     "end_date": null,
     "start_date": null,
-    "status": "Awaiting Human Review",
+    "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
     "days_stale": 0,
@@ -3547,7 +2929,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/92",
     "state": "OPEN",
     "created_at": "2026-07-12T02:55:30Z",
-    "updated_at": "2026-07-20T16:10:43Z",
+    "updated_at": "2026-07-21T09:45:13Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -3560,10 +2942,10 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "priority_down:P1→None",
+      "priority_up:P1→P0",
       "deadline_changed"
     ],
     "days_stale": 0,
@@ -3597,7 +2979,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3612,7 +2994,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/94",
     "state": "OPEN",
     "created_at": "2026-07-12T06:46:18Z",
-    "updated_at": "2026-07-20T07:02:19Z",
+    "updated_at": "2026-07-22T01:43:44Z",
     "labels": [
       "bug"
     ],
@@ -3624,7 +3006,7 @@
     "priority": "P1",
     "end_date": null,
     "start_date": null,
-    "status": "Awaiting Human Review",
+    "status": "Backlog",
     "days_until_deadline": null,
     "changes": [
       "priority_down:P1→P2",
@@ -3645,10 +3027,11 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/95",
     "state": "OPEN",
     "created_at": "2026-07-12T10:36:06Z",
-    "updated_at": "2026-07-20T16:00:59Z",
+    "updated_at": "2026-07-21T09:12:03Z",
     "labels": [
       "bug",
-      "AutoBee"
+      "AutoBee",
+      "autobee-impl"
     ],
     "assignees": [
       "fufengkai"
@@ -3660,10 +3043,7 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_down:P2→None",
-      "deadline_changed"
-    ],
+    "changes": [],
     "days_stale": 0,
     "risk_score": 10,
     "risk_reasons": [
@@ -3679,7 +3059,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/96",
     "state": "OPEN",
     "created_at": "2026-07-12T10:38:38Z",
-    "updated_at": "2026-07-20T16:00:32Z",
+    "updated_at": "2026-07-22T01:55:08Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -3692,7 +3072,7 @@
     "priority": "P2",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
       "priority_down:P2→None"
@@ -3728,7 +3108,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3760,7 +3140,7 @@
     "changes": [
       "priority_down:P2→None"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3788,20 +3168,20 @@
     "end_date": "2026-07-16",
     "start_date": "2026-07-13",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -5,
+    "days_until_deadline": -6,
     "changes": [],
     "end_date_formatted": "07/16",
-    "days_stale": 1,
+    "days_stale": 3,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 5 天",
+      "已逾期 6 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 5 天"
+    "risk_summary": "已逾期 6 天"
   },
   {
     "number": 99,
@@ -3826,7 +3206,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3841,7 +3221,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/183",
     "state": "OPEN",
     "created_at": "2026-07-12T14:23:49Z",
-    "updated_at": "2026-07-19T04:06:40Z",
+    "updated_at": "2026-07-22T01:21:36Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -3855,20 +3235,20 @@
     "end_date": "2026-07-15",
     "start_date": "2026-07-13",
     "status": "Awaiting Human Review",
-    "days_until_deadline": -6,
+    "days_until_deadline": -7,
     "changes": [],
     "end_date_formatted": "07/15",
-    "days_stale": 1,
+    "days_stale": 0,
     "risk_score": 80,
     "risk_reasons": [
-      "已逾期 6 天",
+      "已逾期 7 天",
       "P0 最高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 6 天"
+    "risk_summary": "已逾期 7 天"
   },
   {
     "number": 100,
@@ -3889,10 +3269,10 @@
     "priority": "P2",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Backlog",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3923,7 +3303,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3954,7 +3334,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -3984,7 +3364,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4014,7 +3394,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 0,
     "risk_reasons": [],
     "risk_suggestions": [
@@ -4047,7 +3427,7 @@
     "changes": [
       "priority_down:P2→None"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4077,11 +3457,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:P2→P0",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4111,11 +3488,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:P2→P0",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4145,11 +3519,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:P2→P1",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4164,11 +3535,12 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/185",
     "state": "OPEN",
     "created_at": "2026-07-14T06:24:34Z",
-    "updated_at": "2026-07-19T02:05:35Z",
+    "updated_at": "2026-07-21T03:08:15Z",
     "labels": [
       "CBP"
     ],
     "assignees": [
+      "lenqing6",
       "fufengkai"
     ],
     "repo": "gbase-knowledge",
@@ -4177,12 +3549,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [
-      "deadline_changed"
-    ],
+    "days_until_deadline": 9,
+    "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 0,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4197,7 +3567,7 @@
     "url": "https://github.com/sparticleinc/gbase.meeting.core/issues/28",
     "state": "OPEN",
     "created_at": "2026-07-14T06:24:37Z",
-    "updated_at": "2026-07-19T07:10:34Z",
+    "updated_at": "2026-07-21T03:10:33Z",
     "labels": [],
     "assignees": [
       "lenqing6",
@@ -4209,14 +3579,14 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [
       "priority_up:None→P0",
       "new_assigned",
       "deadline_changed"
     ],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 0,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4246,79 +3616,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [
-      "priority_down:P0→P1",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "07/31",
-    "days_stale": 1,
-    "risk_score": 40,
-    "risk_reasons": [
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
-  },
-  {
-    "number": 27,
-    "title": "【AI会议】桌面版混合模式转录异常（全 speaker 0 / 内容重复）+ 融合失败重试机制",
-    "url": "https://github.com/sparticleinc/gbase.meeting.core/issues/27",
-    "state": "OPEN",
-    "created_at": "2026-07-14T06:24:42Z",
-    "updated_at": "2026-07-19T01:22:43Z",
-    "labels": [],
-    "assignees": [
-      "lenqing6",
-      "fufengkai"
-    ],
-    "repo": "gbase.meeting.core",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-07-31",
-    "start_date": "2026-07-14",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
-    "changes": [
-      "priority_up:None→P0",
-      "new_assigned",
-      "deadline_changed"
-    ],
-    "end_date_formatted": "07/31",
-    "days_stale": 2,
-    "risk_score": 40,
-    "risk_reasons": [
-      "P0 最高优先级"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "high",
-    "risk_summary": "P0 最高优先级"
-  },
-  {
-    "number": 189,
-    "title": "【iOS】录音杀进程后「全部复原」只恢复中断后半段，中断前内容丢失",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/189",
-    "state": "OPEN",
-    "created_at": "2026-07-14T06:24:59Z",
-    "updated_at": "2026-07-19T03:26:06Z",
-    "labels": [
-      "CBP",
-      "AutoBee"
-    ],
-    "assignees": [
-      "GeminiMing"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-07-31",
-    "start_date": "2026-07-14",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4347,10 +3648,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4380,10 +3681,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 40,
     "risk_reasons": [
       "P0 最高优先级"
@@ -4398,7 +3699,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/192",
     "state": "OPEN",
     "created_at": "2026-07-14T06:25:05Z",
-    "updated_at": "2026-07-20T15:04:43Z",
+    "updated_at": "2026-07-22T01:35:33Z",
     "labels": [
       "CBP"
     ],
@@ -4413,7 +3714,7 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Human in Progress",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
     "days_stale": 0,
@@ -4431,9 +3732,10 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/193",
     "state": "OPEN",
     "created_at": "2026-07-14T10:30:12Z",
-    "updated_at": "2026-07-19T01:48:20Z",
+    "updated_at": "2026-07-22T01:35:54Z",
     "labels": [
-      "CBP"
+      "CBP",
+      "AutoBee"
     ],
     "assignees": [
       "GeminiMing",
@@ -4442,21 +3744,22 @@
     "repo": "gbase-knowledge",
     "project": "GBase Knowledge应用&功能",
     "priority": "P0",
-    "end_date": "2026-07-21",
+    "end_date": "2026-07-31",
     "start_date": "2026-07-14",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 0,
-    "changes": [],
-    "end_date_formatted": "07/21",
-    "days_stale": 1,
-    "risk_score": 75,
+    "days_until_deadline": 9,
+    "changes": [
+      "deadline_changed"
+    ],
+    "end_date_formatted": "07/31",
+    "days_stale": 0,
+    "risk_score": 40,
     "risk_reasons": [
-      "今天截止",
       "P0 最高优先级"
     ],
     "risk_suggestions": [],
-    "risk_level": "critical",
-    "risk_summary": "今天截止"
+    "risk_level": "high",
+    "risk_summary": "P0 最高优先级"
   },
   {
     "number": 109,
@@ -4480,7 +3783,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -4495,7 +3798,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/194",
     "state": "OPEN",
     "created_at": "2026-07-16T02:16:44Z",
-    "updated_at": "2026-07-16T02:27:36Z",
+    "updated_at": "2026-07-22T02:16:22Z",
     "labels": [
       "CBP"
     ],
@@ -4508,23 +3811,20 @@
     "end_date": "2026-07-18",
     "start_date": "2026-07-15",
     "status": "Human in Progress",
-    "days_until_deadline": -3,
-    "changes": [
-      "priority_down:P1→None",
-      "deadline_changed"
-    ],
+    "days_until_deadline": -4,
+    "changes": [],
     "end_date_formatted": "07/18",
-    "days_stale": 4,
+    "days_stale": 0,
     "risk_score": 65,
     "risk_reasons": [
-      "已逾期 3 天",
+      "已逾期 4 天",
       "P1 高优先级"
     ],
     "risk_suggestions": [
       "立即处理或调整截止日期"
     ],
     "risk_level": "critical",
-    "risk_summary": "已逾期 3 天"
+    "risk_summary": "已逾期 4 天"
   },
   {
     "number": 195,
@@ -4546,10 +3846,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-16",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4578,10 +3878,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-16",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4609,10 +3909,10 @@
     "end_date": "2026-07-31",
     "start_date": "2026-07-16",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 10,
+    "days_until_deadline": 9,
     "changes": [],
     "end_date_formatted": "07/31",
-    "days_stale": 1,
+    "days_stale": 2,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -4641,7 +3941,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 50,
     "risk_reasons": [
       "P0 最高优先级",
@@ -4659,7 +3959,7 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/112",
     "state": "OPEN",
     "created_at": "2026-07-16T13:13:27Z",
-    "updated_at": "2026-07-20T12:18:10Z",
+    "updated_at": "2026-07-22T02:17:40Z",
     "labels": [
       "bug",
       "AutoBee"
@@ -4670,7 +3970,7 @@
     "priority": "P0",
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
     "days_stale": 0,
@@ -4704,7 +4004,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4735,7 +4035,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4767,7 +4067,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4803,7 +4103,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4834,7 +4134,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4865,7 +4165,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4897,7 +4197,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4933,7 +4233,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4964,7 +4264,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -4999,7 +4299,7 @@
       "priority_up:None→P2",
       "new_assigned"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5030,7 +4330,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5062,7 +4362,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5094,7 +4394,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5125,7 +4425,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5156,7 +4456,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5188,7 +4488,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5219,7 +4519,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5250,7 +4550,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5282,7 +4582,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5314,7 +4614,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5345,7 +4645,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5377,7 +4677,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5408,7 +4708,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5440,7 +4740,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5458,9 +4758,10 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/25",
     "state": "OPEN",
     "created_at": "2026-07-01T04:41:08Z",
-    "updated_at": "2026-07-20T06:19:11Z",
+    "updated_at": "2026-07-22T01:22:21Z",
     "labels": [
-      "bug"
+      "bug",
+      "AutoBee"
     ],
     "assignees": [],
     "repo": "MiniBee",
@@ -5468,7 +4769,7 @@
     "priority": null,
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
     "days_stale": 0,
@@ -5502,7 +4803,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5533,12 +4834,8 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:None→P0",
-      "new_assigned",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5574,7 +4871,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5605,7 +4902,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5637,7 +4934,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5669,7 +4966,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5700,7 +4997,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5729,10 +5026,10 @@
     "priority": null,
     "end_date": null,
     "start_date": null,
-    "status": "Agent in Progress",
+    "status": "Backlog",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5763,7 +5060,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5794,7 +5091,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 2,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5825,7 +5122,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5854,7 +5151,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5872,9 +5169,10 @@
     "url": "https://github.com/sparticleinc/MiniBee/issues/62",
     "state": "OPEN",
     "created_at": "2026-07-08T20:19:08Z",
-    "updated_at": "2026-07-20T07:48:17Z",
+    "updated_at": "2026-07-22T02:22:16Z",
     "labels": [
-      "bug"
+      "bug",
+      "AutoBee"
     ],
     "assignees": [],
     "repo": "MiniBee",
@@ -5921,7 +5219,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "无负责人"
@@ -5955,7 +5253,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -5984,12 +5282,10 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [
-      "priority_up:P1→P0",
       "new_assigned",
-      "deadline_changed",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6021,7 +5317,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6053,7 +5349,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6087,7 +5383,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -6115,7 +5411,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6147,7 +5443,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6181,7 +5477,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 25,
     "risk_reasons": [
       "P1 高优先级"
@@ -6210,7 +5506,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6246,7 +5542,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6277,7 +5573,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6308,7 +5604,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6339,7 +5635,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6374,7 +5670,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6406,7 +5702,7 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6437,12 +5733,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_up:P2→P0",
-      "new_assigned",
-      "deadline_changed"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6474,10 +5766,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new_assigned"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 10,
     "risk_reasons": [
       "P2 一般优先级"
@@ -6508,7 +5798,7 @@
       "priority_down:P1→None",
       "new_assigned"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6543,7 +5833,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6577,7 +5867,7 @@
       "new_assigned",
       "deadline_changed"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6609,7 +5899,7 @@
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
     "changes": [],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6640,10 +5930,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6661,7 +5949,7 @@
     "url": "https://github.com/sparticleinc/gbase-knowledge/issues/198",
     "state": "OPEN",
     "created_at": "2026-07-20T08:55:13Z",
-    "updated_at": "2026-07-20T16:51:43Z",
+    "updated_at": "2026-07-22T02:19:58Z",
     "labels": [
       "CBP",
       "AutoBee"
@@ -6675,51 +5963,14 @@
     "end_date": "2026-07-27",
     "start_date": "2026-07-20",
     "status": "Awaiting Human Review",
-    "days_until_deadline": 6,
-    "changes": [
-      "new"
-    ],
+    "days_until_deadline": 5,
+    "changes": [],
     "end_date_formatted": "07/27",
     "days_stale": 0,
     "risk_score": 60,
     "risk_reasons": [
       "P0 最高优先级",
-      "6 天后截止"
-    ],
-    "risk_suggestions": [],
-    "risk_level": "critical",
-    "risk_summary": "P0 最高优先级"
-  },
-  {
-    "number": 199,
-    "title": "[CBP][Bug] Agent Chat 出典引用图标点击无响应，无法查看引用源文件",
-    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/199",
-    "state": "OPEN",
-    "created_at": "2026-07-20T09:24:35Z",
-    "updated_at": "2026-07-20T13:35:11Z",
-    "labels": [
-      "CBP",
-      "AutoBee"
-    ],
-    "assignees": [
-      "alex-712"
-    ],
-    "repo": "gbase-knowledge",
-    "project": "GBase Knowledge应用&功能",
-    "priority": "P0",
-    "end_date": "2026-07-27",
-    "start_date": "2026-07-20",
-    "status": "Awaiting Human Review",
-    "days_until_deadline": 6,
-    "changes": [
-      "new"
-    ],
-    "end_date_formatted": "07/27",
-    "days_stale": 0,
-    "risk_score": 60,
-    "risk_reasons": [
-      "P0 最高优先级",
-      "6 天后截止"
+      "5 天后截止"
     ],
     "risk_suggestions": [],
     "risk_level": "critical",
@@ -6745,9 +5996,10 @@
     "status": "Agent in Progress",
     "days_until_deadline": null,
     "changes": [
-      "priority_up:None→P1"
+      "priority_down:P1→None",
+      "new_assigned"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6778,10 +6030,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "priority_down:P0→P1"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6812,10 +6062,8 @@
     "start_date": null,
     "status": "Agent in Progress",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 20,
     "risk_reasons": [
       "P2 一般优先级",
@@ -6846,10 +6094,8 @@
     "start_date": null,
     "status": "Awaiting Human Review",
     "days_until_deadline": null,
-    "changes": [
-      "new"
-    ],
-    "days_stale": 0,
+    "changes": [],
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6883,7 +6129,7 @@
     "changes": [
       "new"
     ],
-    "days_stale": 0,
+    "days_stale": 1,
     "risk_score": 35,
     "risk_reasons": [
       "P1 高优先级",
@@ -6894,5 +6140,72 @@
     ],
     "risk_level": "medium",
     "risk_summary": "P1 高优先级"
+  },
+  {
+    "number": 3605,
+    "title": "[CC Agent] 图片显示行为不一致（提示词未定义）+ parsed 图片 S3 公开直链的合规风险",
+    "url": "https://github.com/sparticleinc/felo-mygpt/issues/3605",
+    "state": "OPEN",
+    "created_at": "2026-07-21T07:13:12Z",
+    "updated_at": "2026-07-22T02:26:50Z",
+    "labels": [
+      "bug",
+      "精度与infra",
+      "AutoBee"
+    ],
+    "assignees": [
+      "alex-712"
+    ],
+    "repo": "felo-mygpt",
+    "project": "GBase Knowledge应用&功能",
+    "priority": "P0",
+    "end_date": "2026-07-28",
+    "start_date": "2026-07-21",
+    "status": "Awaiting Human Review",
+    "days_until_deadline": 6,
+    "changes": [
+      "new"
+    ],
+    "end_date_formatted": "07/28",
+    "days_stale": 0,
+    "risk_score": 60,
+    "risk_reasons": [
+      "P0 最高优先级",
+      "6 天后截止"
+    ],
+    "risk_suggestions": [],
+    "risk_level": "critical",
+    "risk_summary": "P0 最高优先级"
+  },
+  {
+    "number": 201,
+    "title": "VOC/時系列・成果物 + 要約テンプレート Word/Excel 閉環 + インサイトUX改善（前端shell、後端3接口待）",
+    "url": "https://github.com/sparticleinc/gbase-knowledge/issues/201",
+    "state": "OPEN",
+    "created_at": "2026-07-22T01:22:53Z",
+    "updated_at": "2026-07-22T01:23:31Z",
+    "labels": [],
+    "assignees": [],
+    "repo": "gbase-knowledge",
+    "project": "GBase Knowledge应用&功能",
+    "priority": null,
+    "end_date": null,
+    "start_date": null,
+    "status": "Backlog",
+    "days_until_deadline": null,
+    "changes": [
+      "new"
+    ],
+    "days_stale": 0,
+    "risk_score": 10,
+    "risk_reasons": [
+      "无负责人"
+    ],
+    "risk_suggestions": [
+      "建议设置优先级",
+      "分配负责人"
+    ],
+    "risk_level": "low",
+    "risk_summary": "无负责人"
   }
 ]

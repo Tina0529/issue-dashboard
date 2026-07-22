@@ -378,7 +378,7 @@
             </a>
         </nav>
         <div class="sidebar-footer">
-            <div class="sidebar-timestamp">更新: 2026-07-22 08:47</div>
+            <div class="sidebar-timestamp">更新: 2026-07-22 11:27</div>
             <button class="sidebar-refresh-btn" id="refreshBtn" onclick="triggerRefresh()" title="手动更新数据">
                 <span class="refresh-icon">🔄</span>
                 <span class="refresh-text">更新数据</span>
@@ -404,9 +404,9 @@
                 <div class="stat-card-change down">↓ 2</div>
             </div>
             <div class="stat-card info" title="仅统计 OPEN 且未标记 Done 的 Issue；另有 1650 条已关闭、12 条已标记 Done 未计入">
-                <div class="stat-card-value">430</div>
+                <div class="stat-card-value">432</div>
                 <div class="stat-card-label">📋 活跃总计</div>
-                <div class="stat-card-change down">↓ 3</div>
+                <div class="stat-card-change down">↓ 1</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-card-value">0</div>
@@ -700,7 +700,7 @@
             data: {
                 labels: ['P0', 'P1', 'P2', '未设置'],
                 datasets: [{
-                    data: [50, 125, 139, 116],
+                    data: [50, 125, 139, 118],
                     backgroundColor: ['#EF4444', '#EAB308', '#3B82F6', '#475569'],
                     borderWidth: 0
                 }]
@@ -721,7 +721,7 @@
             data: {
                 labels: ['已逾期', '本周内', '本月内', '更晚', '无截止日'],
                 datasets: [{
-                    data: [37, 1, 2, 2, 388],
+                    data: [37, 1, 2, 2, 390],
                     backgroundColor: ['#EF4444', '#F97316', '#EAB308', '#22C55E', '#475569'],
                     borderWidth: 0
                 }]
@@ -740,11 +740,11 @@
         new Chart(document.getElementById('trendChart'), {
             type: 'line',
             data: {
-                labels: ["2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21"],
+                labels: ["2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22"],
                 datasets: [
                     {
                         label: '总数',
-                        data: [295, 300, 274, 268, 282, 295, 325, 335, 329, 355, 377, 392, 422, 433],
+                        data: [300, 274, 268, 282, 295, 325, 335, 329, 355, 377, 392, 422, 433, 430],
                         borderColor: '#3B82F6',
                         backgroundColor: 'rgba(59, 130, 246, 0.1)',
                         fill: true,
@@ -752,7 +752,7 @@
                     },
                     {
                         label: '逾期',
-                        data: [40, 38, 37, 36, 36, 36, 37, 36, 35, 35, 38, 38, 38, 38],
+                        data: [38, 37, 36, 36, 36, 37, 36, 35, 35, 38, 38, 38, 38, 37],
                         borderColor: '#EF4444',
                         backgroundColor: 'rgba(239, 68, 68, 0.1)',
                         fill: true,
@@ -760,7 +760,7 @@
                     },
                     {
                         label: 'P0',
-                        data: [27, 26, 25, 24, 24, 24, 26, 25, 30, 33, 41, 42, 51, 52],
+                        data: [26, 25, 24, 24, 24, 26, 25, 30, 33, 41, 42, 51, 52, 50],
                         borderColor: '#EAB308',
                         backgroundColor: 'rgba(234, 179, 8, 0.1)',
                         fill: true,
@@ -785,21 +785,21 @@
         new Chart(document.getElementById('labelChart'), {
             type: 'bar',
             data: {
-                labels: ["AutoBee", "bug", "security", "staging", "AutoBird", "P1-High", "P2-Medium", "autobee-impl", "P0-Critical", "onPrem", "\u7cbe\u5ea6\u4e0einfra", "auth", "roadMap", "Novare", "enhancement"],
+                labels: ["AutoBee", "bug", "security", "staging", "AutoBird", "P1-High", "P2-Medium", "autobee-impl", "P0-Critical", "onPrem", "\u7cbe\u5ea6\u4e0einfra", "auth", "enhancement", "roadMap", "Novare"],
                 datasets: [
                     {
                         label: 'P0',
-                        data: [37, 24, 19, 12, 9, 0, 0, 3, 19, 5, 2, 3, 3, 1, 0],
+                        data: [37, 24, 19, 12, 9, 0, 0, 3, 19, 5, 2, 3, 0, 3, 1],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P1',
-                        data: [102, 79, 32, 26, 19, 30, 0, 5, 0, 6, 2, 6, 2, 1, 4],
+                        data: [102, 79, 32, 26, 19, 30, 0, 5, 0, 6, 2, 6, 4, 2, 1],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: 'P2',
-                        data: [120, 121, 32, 24, 19, 0, 26, 7, 0, 0, 3, 4, 2, 1, 1],
+                        data: [120, 121, 32, 24, 19, 0, 26, 7, 0, 0, 3, 4, 1, 2, 1],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -832,21 +832,21 @@
         new Chart(document.getElementById('assigneeChart'), {
             type: 'bar',
             data: {
-                labels: ["csh28", "ianhuangsp", "shuiRong", "fufengkai", "qq98982", "annSharon", "vincentdotli", "zhuchaowe", "lirhcoder", "qianlir", "chenbug2", "baoshi1970"],
+                labels: ["csh28", "ianhuangsp", "shuiRong", "fufengkai", "qq98982", "annSharon", "vincentdotli", "zhuchaowe", "lirhcoder", "qianlir", "baoshi1970", "chenbug2"],
                 datasets: [
                     {
                         label: '逾期',
-                        data: [0, 5, 4, 4, 1, 9, 1, 2, 7, 2, 2, 1],
+                        data: [0, 5, 4, 4, 1, 9, 1, 2, 7, 2, 1, 2],
                         backgroundColor: '#EF4444'
                     },
                     {
                         label: 'P0',
-                        data: [10, 13, 7, 6, 3, 2, 1, 8, 4, 4, 2, 0],
+                        data: [10, 13, 7, 6, 3, 2, 1, 8, 4, 4, 0, 2],
                         backgroundColor: '#EAB308'
                     },
                     {
                         label: '其他',
-                        data: [82, 52, 56, 54, 54, 45, 35, 15, 10, 7, 3, 6],
+                        data: [82, 52, 56, 54, 54, 46, 35, 15, 10, 7, 7, 3],
                         backgroundColor: '#3B82F6'
                     }
                 ]
@@ -868,10 +868,10 @@
         new Chart(document.getElementById('closedChart'), {
             type: 'line',
             data: {
-                labels: ["2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21"],
+                labels: ["2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22"],
                 datasets: [{
                     label: '完成数',
-                    data: [0, 5, 33, 28, 10, 3, 3, 12, 23, 5, 6, 0, 2, 2],
+                    data: [5, 33, 28, 10, 3, 3, 12, 23, 5, 6, 0, 2, 2, 11],
                     borderColor: '#22C55E',
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
                     fill: true,
@@ -897,10 +897,10 @@
         new Chart(document.getElementById('newChart'), {
             type: 'line',
             data: {
-                labels: ["2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21"],
+                labels: ["2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19", "2026-07-20", "2026-07-21", "2026-07-22"],
                 datasets: [{
                     label: '新增数',
-                    data: [11, 10, 8, 21, 21, 16, 33, 22, 17, 31, 27, 14, 31, 11],
+                    data: [10, 8, 21, 21, 16, 33, 22, 17, 31, 27, 14, 31, 11, 8],
                     borderColor: '#3B82F6',
                     backgroundColor: 'rgba(59, 130, 246, 0.2)',
                     fill: true,
