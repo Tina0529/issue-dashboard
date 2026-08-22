@@ -1,0 +1,13 @@
+{
+  "total": 527,
+  "overdue": 45,
+  "due_soon": 2,
+  "p0": 67,
+  "p1": 184,
+  "p2": 139,
+  "unassigned": 39,
+  "new_count": 18,
+  "closed_count": 0,
+  "excluded_closed": 1987,
+  "excluded_done": 17
+}
